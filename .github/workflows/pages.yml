@@ -1,0 +1,50 @@
+name: Deploy Unit Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - "cursor/unit-5-**"
+      - "cursor/unit-6-**"
+      - "cursor/unit-7-**"
+      - "cursor/unit-8-**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine subfolder name
+        id: folder
+        run: |
+          BR="${GITHUB_REF_NAME}"
+          if [[ "$BR" == cursor/unit-5* ]]; then echo "name=unit-5" >> $GITHUB_OUTPUT
+          elif [[ "$BR" == cursor/unit-6* ]]; then echo "name=unit-6" >> $GITHUB_OUTPUT
+          elif [[ "$BR" == cursor/unit-7* ]]; then echo "name=unit-7" >> $GITHUB_OUTPUT
+          elif [[ "$BR" == cursor/unit-8* ]]; then echo "name=unit-8" >> $GITHUB_OUTPUT
+          else echo "name=site" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Stage site files
+        run: |
+          mkdir -p _publish
+          rsync -av --exclude='.git' --exclude='.github' --exclude='_publish' ./ _publish/
+
+      - name: Deploy to gh-pages (subfolder per unit)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_publish
+          publish_branch: gh-pages
+          destination_dir: ${{ steps.folder.outputs.name }}
+          keep_files: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'deploy ${{ steps.folder.outputs.name }} from ${{ github.sha }}'

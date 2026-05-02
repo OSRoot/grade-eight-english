@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Pearls – Unit 5: Community & Volunteering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --purple: #7b2d8b;
+      --purple-light: #9c3fb0;
+      --purple-dark: #5a1f66;
+      --orange: #e07b39;
+      --orange-light: #f09050;
+      --gold: #f5a623;
+      --green: #2e8b57;
+      --green-light: #3aad6f;
+      --blue: #2563eb;
+      --blue-light: #3b82f6;
+      --red: #dc2626;
+      --bg: #f7f3fc;
+      --card: #ffffff;
+      --text: #1a1a2e;
+      --text-muted: #6b6b8a;
+      --border: #e5d8f5;
+      --shadow: 0 4px 20px rgba(123,45,139,0.10);
+      --shadow-hover: 0 8px 32px rgba(123,45,139,0.18);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', 'Cairo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    body.ar {
+      font-family: 'Cairo', 'Nunito', sans-serif;
+      direction: rtl;
+    }
+    body.ar [dir="ltr"] { direction: rtl; }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1e8fa; }
+    ::-webkit-scrollbar-thumb { background: var(--purple-light); border-radius: 4px; }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 60%, var(--purple-light) 100%);
+      color: #fff;
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(90,31,102,0.35);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .header-title {
+      display: flex;
+      flex-direction: column;
+    }
+    .header-title .series { font-size: 0.75rem; opacity: 0.8; letter-spacing: 1.5px; text-transform: uppercase; }
+    .header-title h1 { font-size: 1.25rem; font-weight: 800; line-height: 1.2; }
+    .header-title .unit-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border-radius: 20px;
+      font-size: 0.72rem;
+      padding: 2px 12px;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+    .header-controls { display: flex; align-items: center; gap: 10px; }
+    .lang-toggle {
+      background: rgba(255,255,255,0.18);
+      border: 2px solid rgba(255,255,255,0.45);
+      border-radius: 30px;
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 18px;
+      transition: all 0.25s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lang-toggle:hover { background: rgba(255,255,255,0.32); transform: scale(1.04); }
+    .progress-bar-wrap {
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.15);
+    }
+    #progressBar {
+      height: 4px;
+      background: var(--gold);
+      width: 0%;
+      transition: width 0.4s;
+    }
+
+    /* ===== NAV TABS ===== */
+    .lessons-nav {
+      background: #fff;
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 80px;
+      z-index: 90;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .lessons-nav::-webkit-scrollbar { display: none; }
+    .lessons-nav-inner {
+      display: flex;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+    .nav-tab {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 12px 14px;
+      transition: all 0.2s;
+      white-space: nowrap;
+      letter-spacing: 0.3px;
+    }
+    .nav-tab:hover { color: var(--purple); background: var(--bg); }
+    .nav-tab.active {
+      color: var(--purple);
+      border-bottom-color: var(--purple);
+      background: #fbf5ff;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px 60px;
+    }
+
+    /* ===== SECTION PANELS ===== */
+    .lesson-section {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    .lesson-section.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== HERO BANNER ===== */
+    .unit-hero {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+      border-radius: var(--radius);
+      color: #fff;
+      padding: 40px 32px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .unit-hero::before {
+      content: '🌟';
+      position: absolute;
+      font-size: 120px;
+      right: 20px;
+      top: -10px;
+      opacity: 0.12;
+    }
+    .unit-hero h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 8px; }
+    .unit-hero p { font-size: 1rem; opacity: 0.9; max-width: 600px; }
+    .unit-hero .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .unit-hero .hero-tag {
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+    /* ===== LESSON HEADER ===== */
+    .lesson-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .lesson-num {
+      background: var(--purple);
+      color: #fff;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .lesson-header h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--purple-dark);
+    }
+    .lesson-header .skill-badge {
+      background: var(--purple-light);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== CARDS ===== */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s;
+    }
+    .card:hover { box-shadow: var(--shadow-hover); }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--purple-dark);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title .icon { font-size: 1.2rem; }
+
+    /* ===== VOCABULARY GRID ===== */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .vocab-chip {
+      background: linear-gradient(135deg, #f5eeff, #ede0ff);
+      border: 1px solid #d8bfff;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .vocab-chip:hover { background: linear-gradient(135deg, #ede0ff, #d8bfff); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(123,45,139,0.15); }
+    .vocab-chip .word { font-weight: 700; color: var(--purple-dark); font-size: 0.9rem; }
+    .vocab-chip .pos { font-size: 0.68rem; color: var(--purple-light); font-weight: 600; margin-left: 4px; }
+    .vocab-chip .meaning {
+      display: none;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed #c8a8e9;
+      font-size: 0.82rem;
+      color: var(--text);
+    }
+    .vocab-chip .meaning .ar { color: var(--purple); font-weight: 700; font-size: 0.88rem; }
+    .vocab-chip .meaning .en { color: var(--text-muted); }
+    .vocab-chip.open .meaning { display: block; }
+    .vocab-chip.open { background: linear-gradient(135deg, #ede0ff, #d8bfff); }
+
+    /* ===== READING TEXT ===== */
+    .reading-text {
+      background: linear-gradient(to bottom, #fdf9ff, #f9f3fe);
+      border-left: 4px solid var(--purple);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin: 12px 0;
+    }
+    body.ar .reading-text {
+      border-left: none;
+      border-right: 4px solid var(--purple);
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+    .reading-text p { margin-bottom: 12px; }
+    .reading-text p:last-child { margin-bottom: 0; }
+
+    /* ===== GRAMMAR BOXES ===== */
+    .grammar-box {
+      background: linear-gradient(135deg, #fff8e7, #fff3d0);
+      border: 2px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 12px 0;
+    }
+    .grammar-box h3 { color: #b07600; font-size: 1rem; font-weight: 800; margin-bottom: 10px; }
+    .grammar-box .formula {
+      background: #fff;
+      border: 1px solid #f0d080;
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--purple-dark);
+      display: inline-block;
+      margin: 6px 0;
+    }
+    .grammar-box .example { font-style: italic; color: #7a5500; margin: 4px 0; font-size: 0.88rem; }
+    .tip-box {
+      background: #e8f5e9;
+      border-left: 4px solid var(--green);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 12px 16px;
+      margin: 10px 0;
+      font-size: 0.85rem;
+      color: #1b5e20;
+    }
+    body.ar .tip-box {
+      border-left: none;
+      border-right: 4px solid var(--green);
+      border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+    }
+
+    /* ===== EXERCISES ===== */
+    .exercise-container { margin: 10px 0; }
+    .exercise-item {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      margin-bottom: 10px;
+    }
+    .exercise-item .q { font-weight: 700; color: var(--text); margin-bottom: 8px; font-size: 0.9rem; }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .opt-btn {
+      background: #fff;
+      border: 2px solid #ddd;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.83rem;
+      padding: 8px 12px;
+      text-align: start;
+      transition: all 0.2s;
+    }
+    .opt-btn:hover { border-color: var(--purple-light); background: #f5eeff; }
+    .opt-btn.correct { background: #e8f5e9; border-color: var(--green); color: #1b5e20; font-weight: 700; }
+    .opt-btn.wrong { background: #fdecea; border-color: var(--red); color: #b71c1c; }
+    .opt-btn:disabled { cursor: default; }
+    .feedback-msg {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin-top: 8px;
+      display: none;
+    }
+    .feedback-msg.show { display: inline-block; }
+    .feedback-msg.ok { background: #e8f5e9; color: #2e7d32; }
+    .feedback-msg.err { background: #fdecea; color: #c62828; }
+
+    /* ===== FILL BLANKS ===== */
+    .blank-input {
+      border: 2px solid var(--purple-light);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 4px 10px;
+      outline: none;
+      width: 130px;
+      transition: border-color 0.2s;
+    }
+    .blank-input:focus { border-color: var(--purple); }
+    .blank-input.correct { border-color: var(--green); background: #e8f5e9; }
+    .blank-input.wrong { border-color: var(--red); background: #fdecea; }
+    .check-btn, .reveal-btn {
+      background: var(--purple);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin: 8px 4px 0 0;
+      padding: 7px 18px;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .check-btn:hover { background: var(--purple-dark); transform: translateY(-1px); }
+    .reveal-btn { background: var(--orange); }
+    .reveal-btn:hover { background: var(--orange-light); }
+
+    /* ===== MATCHING EXERCISE ===== */
+    .match-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 10px 0;
+    }
+    .match-table td, .match-table th {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      vertical-align: middle;
+    }
+    .match-table th { background: var(--purple); color: #fff; font-weight: 700; }
+    .match-table tr:nth-child(even) td { background: #fbf5ff; }
+    .match-select {
+      border: 2px solid var(--purple-light);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      padding: 4px 8px;
+      width: 100%;
+    }
+
+    /* ===== WORD CATEGORY TABLE ===== */
+    .word-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .word-table th, .word-table td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: start;
+    }
+    .word-table th { background: var(--purple); color: #fff; }
+    .word-table tr:nth-child(even) td { background: #f9f5ff; }
+
+    /* ===== INFO BOXES ===== */
+    .info-box {
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      margin: 12px 0;
+    }
+    .info-box.blue { background: #e3f0ff; border-left: 4px solid var(--blue); }
+    .info-box.purple { background: #f5eeff; border-left: 4px solid var(--purple-light); }
+    .info-box.green { background: #e8f5e9; border-left: 4px solid var(--green); }
+    .info-box.orange { background: #fff3e0; border-left: 4px solid var(--orange); }
+    body.ar .info-box { border-left: none; border-right: 4px solid; }
+    body.ar .info-box.blue { border-right-color: var(--blue); }
+    body.ar .info-box.purple { border-right-color: var(--purple-light); }
+    body.ar .info-box.green { border-right-color: var(--green); }
+    body.ar .info-box.orange { border-right-color: var(--orange); }
+    .info-box strong { color: var(--purple-dark); }
+
+    /* ===== OUTCOME LIST ===== */
+    .outcome-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .outcome-list li {
+      background: linear-gradient(135deg, #f5eeff, #ede0ff);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px 10px 36px;
+      position: relative;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      border: 1px solid #d5b8f7;
+    }
+    .outcome-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      color: var(--green);
+      font-weight: 800;
+    }
+    body.ar .outcome-list li { padding: 10px 36px 10px 14px; }
+    body.ar .outcome-list li::before { left: auto; right: 12px; }
+
+    /* ===== CHAIN REACTION ===== */
+    .chain-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0;
+    }
+    .chain-box {
+      background: linear-gradient(135deg, var(--purple), var(--purple-light));
+      border-radius: 12px;
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 10px 14px;
+      max-width: 160px;
+      text-align: center;
+    }
+    .chain-arrow {
+      color: var(--purple-light);
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    /* ===== TABLE ===== */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 12px 0;
+    }
+    .data-table th {
+      background: var(--purple);
+      color: #fff;
+      padding: 10px 14px;
+      text-align: start;
+    }
+    .data-table td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      vertical-align: top;
+    }
+    .data-table tr:nth-child(even) td { background: #faf5ff; }
+
+    /* ===== LINKER EXERCISE ===== */
+    .linker-select {
+      border: 2px solid var(--purple-light);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      padding: 3px 8px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .linker-select.correct { border-color: var(--green); background: #e8f5e9; }
+    .linker-select.wrong { border-color: var(--red); background: #fdecea; }
+
+    /* ===== CHECKLIST ===== */
+    .checklist {
+      list-style: none;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0e8fa;
+      font-size: 0.88rem;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--purple); flex-shrink: 0; margin-top: 1px; cursor: pointer; }
+
+    /* ===== SCORE DISPLAY ===== */
+    .score-display {
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+      border-radius: var(--radius);
+      color: #fff;
+      padding: 20px 24px;
+      text-align: center;
+      margin: 16px 0;
+    }
+    .score-display .score-num { font-size: 3rem; font-weight: 800; line-height: 1; }
+    .score-display .score-label { font-size: 0.9rem; opacity: 0.85; margin-top: 4px; }
+
+    /* ===== WRITING OUTLINE ===== */
+    .outline-section {
+      background: linear-gradient(to bottom, #f9f5ff, #f5eeff);
+      border: 1px dashed var(--purple-light);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      margin: 10px 0;
+    }
+    .outline-section h4 { color: var(--purple-dark); font-size: 0.92rem; font-weight: 800; margin-bottom: 8px; }
+    .outline-textarea {
+      width: 100%;
+      min-height: 80px;
+      border: 2px solid var(--purple-light);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      padding: 10px 14px;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .outline-textarea:focus { border-color: var(--purple); }
+
+    /* ===== HIGHLIGHT ===== */
+    .highlight-purple { color: var(--purple-dark); font-weight: 700; }
+    .highlight-red { color: var(--red); font-weight: 700; }
+    .highlight-green { color: var(--green); font-weight: 700; }
+    .highlight-orange { color: var(--orange); font-weight: 700; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .header-title h1 { font-size: 1rem; }
+      .unit-hero h2 { font-size: 1.3rem; }
+      .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+      .options-grid { grid-template-columns: 1fr; }
+      main { padding: 16px 10px 50px; }
+    }
+
+    /* ===== HIDDEN ===== */
+    .en-text, .ar-text { }
+    body.en .ar-text { display: none; }
+    body.ar .en-text { display: none; }
+
+    /* ===== NAV ARROWS ===== */
+    .lesson-nav-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+      gap: 10px;
+    }
+    .nav-lesson-btn {
+      background: var(--purple);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 22px;
+      transition: background 0.2s, transform 0.1s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-lesson-btn:hover { background: var(--purple-dark); transform: translateY(-1px); }
+    .nav-lesson-btn:disabled { background: #ccc; cursor: default; }
+
+    /* ===== QUOTE ===== */
+    .quote-box {
+      background: linear-gradient(135deg, var(--purple), var(--purple-light));
+      border-radius: var(--radius);
+      color: #fff;
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 600;
+      padding: 20px 28px;
+      text-align: center;
+      margin: 16px 0;
+      position: relative;
+    }
+    .quote-box::before { content: '"'; font-size: 3rem; position: absolute; top: -8px; left: 14px; opacity: 0.3; line-height: 1; }
+    body.ar .quote-box::before { left: auto; right: 14px; }
+
+    /* ===== VALUES & SKILLS BADGES ===== */
+    .badge-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0;
+    }
+    .badge {
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 14px;
+    }
+    .badge.skill { background: #e3f0ff; color: #1565c0; border: 1px solid #90caf9; }
+    .badge.value { background: #fce4ec; color: #880e4f; border: 1px solid #f48fb1; }
+
+    /* ===== SPEAKING CHECKLIST ===== */
+    .speaker-card {
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      border: 1px solid #a5d6a7;
+      border-radius: var(--radius);
+      padding: 18px 22px;
+    }
+    .speaker-card h4 { color: #1b5e20; font-size: 0.95rem; font-weight: 800; margin-bottom: 10px; }
+  </style>
+</head>
+<body class="en">
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="header-title">
+      <span class="series en-text">English Pearls of Kuwait · Grade 8</span>
+      <span class="series ar-text">لؤلؤ الإنجليزية الكويتية · الصف الثامن</span>
+      <h1 class="en-text">Unit 5: Community &amp; Volunteering</h1>
+      <h1 class="ar-text">الوحدة 5: المجتمع والتطوع</h1>
+      <span class="unit-tag en-text">Interactive Learning Experience</span>
+      <span class="unit-tag ar-text">تجربة تعليمية تفاعلية</span>
+    </div>
+    <div class="header-controls">
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">
+        <span>🌐</span>
+        <span id="langLabel">العربية</span>
+      </button>
+    </div>
+  </div>
+  <div class="progress-bar-wrap"><div id="progressBar"></div></div>
+</header>
+
+<!-- LESSONS NAV -->
+<nav class="lessons-nav">
+  <div class="lessons-nav-inner">
+    <button class="nav-tab active" onclick="showLesson('overview', 0)" id="tab-overview">
+      <span class="en-text">📋 Overview</span>
+      <span class="ar-text">📋 نظرة عامة</span>
+    </button>
+    <button class="nav-tab" onclick="showLesson('lesson1', 1)" id="tab-lesson1">
+      <span class="en-text">📖 L1 Reading</span>
+      <span class="ar-text">📖 درس 1 قراءة</span>
+    </button>
+    <button class="nav-tab" onclick="showLesson('lesson2', 2)" id="tab-lesson2">
+      <span class="en-text">✏️ L2 Grammar</span>
+      <span class="ar-text">✏️ درس 2 قواعد</span>
+    </button>
+    <button class="nav-tab" onclick="showLesson('lesson3', 3)" id="tab-lesson3">
+      <span class="en-text">🎧 L3 Listening</span>
+      <span class="ar-text">🎧 درس 3 استماع</span>
+    </button>
+    <button class="nav-tab" onclick="showLesson('lesson4', 4)" id="tab-lesson4">
+      <span class="en-text">🗣️ L4 Speaking</span>
+      <span class="ar-text">🗣️ درس 4 تحدث</span>
+    </button>
+    <button class="nav-tab" onclick="showLesson('lesson5', 5)" id="tab-lesson5">
+      <span class="en-text">📖 L5 Reading</span>
+      <span class="ar-text">📖 درس 5 قراءة</span>
+    </button>
+    <button class="nav-tab" onclick="showLesson('lesson6', 6)" id="tab-lesson6">
+      <span class="en-text">✏️ L6 Grammar</span>
+      <span class="ar-text">✏️ درس 6 قواعد</span>
+    </button>
+    <button class="nav-tab" onclick="showLesson('lesson7', 7)" id="tab-lesson7">
+      <span class="en-text">✍️ L7 Writing</span>
+      <span class="ar-text">✍️ درس 7 كتابة</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<!-- ========== OVERVIEW ========== -->
+<section class="lesson-section active" id="overview">
+  <div class="unit-hero">
+    <h2 class="en-text">Unit 5: Community &amp; Volunteering</h2>
+    <h2 class="ar-text">الوحدة 5: المجتمع والتطوع</h2>
+    <p class="en-text">Explore how small acts of kindness can create a big impact in your community. Learn vocabulary, grammar, reading, speaking, listening, and writing skills across 7 interactive lessons.</p>
+    <p class="ar-text">اكتشف كيف يمكن لأعمال اللطف الصغيرة أن تُحدث أثرًا كبيرًا في مجتمعك. تعلّم المفردات والقواعد والقراءة والتحدث والاستماع والكتابة عبر 7 دروس تفاعلية.</p>
+    <div class="hero-tags">
+      <span class="hero-tag en-text">7 Lessons</span>
+      <span class="hero-tag ar-text">7 دروس</span>
+      <span class="hero-tag en-text">Interactive Exercises</span>
+      <span class="hero-tag ar-text">تمارين تفاعلية</span>
+      <span class="hero-tag en-text">Arabic &amp; English</span>
+      <span class="hero-tag ar-text">عربي وإنجليزي</span>
+      <span class="hero-tag en-text">Vocabulary Flashcards</span>
+      <span class="hero-tag ar-text">بطاقات المفردات</span>
+    </div>
+  </div>
+
+  <!-- Scope & Sequence -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🗓️</span>
+      <span class="en-text">Scope &amp; Sequence</span>
+      <span class="ar-text">نطاق الوحدة وتسلسلها</span>
+    </div>
+    <div class="en-text">
+      <table class="data-table">
+        <thead><tr><th>Area</th><th>Content</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Grammar Focus</strong></td><td>The First Conditional · Verbs Followed by a Gerund (verb + -ing)</td></tr>
+          <tr><td><strong>Listening</strong></td><td>"Small Acts, Big Impact"</td></tr>
+          <tr><td><strong>Speaking &amp; Pronunciation</strong></td><td>Present a chain reaction "The Chain of Kindness Challenge!" · Present a persuasive speech "My School Campaign"</td></tr>
+          <tr><td><strong>Writing</strong></td><td>Expository Writing: A two-paragraph report explaining the importance of community service and actions we can take</td></tr>
+          <tr><td><strong>Language Functions</strong></td><td>Express feelings · Express opinion · Make suggestions · Give reasons · Describe benefits · Express future results</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ar-text">
+      <table class="data-table">
+        <thead><tr><th>المجال</th><th>المحتوى</th></tr></thead>
+        <tbody>
+          <tr><td><strong>القواعد</strong></td><td>الشرط الأول · الأفعال المتبوعة بالمصدر المضاف إليه ing</td></tr>
+          <tr><td><strong>الاستماع</strong></td><td>"أعمال صغيرة، تأثير كبير"</td></tr>
+          <tr><td><strong>التحدث</strong></td><td>تقديم تفاعل متسلسل "تحدي سلسلة اللطف" · إلقاء خطاب إقناع "حملة مدرستي"</td></tr>
+          <tr><td><strong>الكتابة</strong></td><td>الكتابة التوضيحية: تقرير من فقرتين يشرح أهمية خدمة المجتمع</td></tr>
+          <tr><td><strong>وظائف اللغة</strong></td><td>التعبير عن المشاعر · إبداء الرأي · تقديم الاقتراحات · إعطاء الأسباب · وصف الفوائد · التعبير عن نتائج المستقبل</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Learning Outcomes -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🎯</span>
+      <span class="en-text">Learning Outcomes</span>
+      <span class="ar-text">نتائج التعلم</span>
+    </div>
+    <div class="en-text">
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px;font-weight:700;">LISTENING &amp; VIEWING</p>
+      <ul class="outcome-list">
+        <li>Locate main idea, supporting details, and inferred meanings in a text about community and citizenship</li>
+        <li>Recognise attitudes, feelings and opinions expressed through tone of voice about volunteering</li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:12px 0 10px;font-weight:700;">SPEAKING &amp; REPRESENTING</p>
+      <ul class="outcome-list">
+        <li>Deliver well-organised spoken presentations about school campaigns using effective body language</li>
+        <li>Participate in group discussions about community and citizenship by listening attentively</li>
+        <li>Use accurate vocabulary and grammar to express ideas in short presentations or discussions</li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:12px 0 10px;font-weight:700;">READING &amp; VIEWING</p>
+      <ul class="outcome-list">
+        <li>Analyse an expository text about voluntary work and charitable organisations</li>
+        <li>Determine the writer's attitude, purpose, main message and viewpoint</li>
+        <li>Use reference tools to confirm meaning of unfamiliar vocabulary in context</li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:12px 0 10px;font-weight:700;">WRITING &amp; REPRESENTING</p>
+      <ul class="outcome-list">
+        <li>Produce a coherent expository report about community service using appropriate paragraphing</li>
+        <li>Use linking words correctly to organise ideas (In conclusion, in addition, however, despite)</li>
+        <li>Apply grammar rules to write grammatically accurate and meaningful sentences</li>
+      </ul>
+    </div>
+    <div class="ar-text">
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px;font-weight:700;">الاستماع والمشاهدة</p>
+      <ul class="outcome-list">
+        <li>تحديد الفكرة الرئيسية والتفاصيل الداعمة والمعاني المستنتجة في نص عن المجتمع</li>
+        <li>التعرف على المواقف والمشاعر المُعبَّر عنها من خلال نبرة الصوت</li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:12px 0 10px;font-weight:700;">التحدث والتمثيل</p>
+      <ul class="outcome-list">
+        <li>إلقاء عروض شفهية منظمة عن حملات المدرسة باستخدام لغة الجسد الفعّالة</li>
+        <li>المشاركة في نقاشات جماعية حول المجتمع والمواطنة</li>
+        <li>استخدام المفردات والقواعد الصحيحة للتعبير عن الأفكار</li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:12px 0 10px;font-weight:700;">القراءة والمشاهدة</p>
+      <ul class="outcome-list">
+        <li>تحليل نص توضيحي عن العمل التطوعي والمؤسسات الخيرية</li>
+        <li>تحديد موقف الكاتب وغرضه والرسالة الرئيسية</li>
+        <li>استخدام أدوات مرجعية للتحقق من معنى المفردات غير المألوفة</li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:12px 0 10px;font-weight:700;">الكتابة والتمثيل</p>
+      <ul class="outcome-list">
+        <li>إنتاج تقرير توضيحي متماسك عن خدمة المجتمع</li>
+        <li>استخدام الروابط الصحيحة لتنظيم الأفكار</li>
+        <li>تطبيق قواعد النحو لكتابة جمل دقيقة وذات معنى</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 21st Century Skills & Values -->
+  <div class="card">
+    <div class="card-title"><span class="icon">💡</span>
+      <span class="en-text">21st Century Skills &amp; Values</span>
+      <span class="ar-text">مهارات القرن الحادي والعشرين والقيم</span>
+    </div>
+    <div class="badge-grid">
+      <span class="badge skill en-text">Critical Thinking</span>
+      <span class="badge skill ar-text">التفكير الناقد</span>
+      <span class="badge skill en-text">Problem Solving</span>
+      <span class="badge skill ar-text">حل المشكلات</span>
+      <span class="badge skill en-text">Communication</span>
+      <span class="badge skill ar-text">التواصل</span>
+      <span class="badge skill en-text">Teamwork</span>
+      <span class="badge skill ar-text">العمل الجماعي</span>
+      <span class="badge skill en-text">Cultural Awareness</span>
+      <span class="badge skill ar-text">الوعي الثقافي</span>
+      <span class="badge skill en-text">Responsible Citizenship</span>
+      <span class="badge skill ar-text">المواطنة المسؤولة</span>
+    </div>
+    <div class="badge-grid" style="margin-top:8px;">
+      <span class="badge value en-text">Reliability</span>
+      <span class="badge value ar-text">الموثوقية</span>
+      <span class="badge value en-text">Responsibility</span>
+      <span class="badge value ar-text">المسؤولية</span>
+      <span class="badge value en-text">Cooperation</span>
+      <span class="badge value ar-text">التعاون</span>
+      <span class="badge value en-text">Empathy</span>
+      <span class="badge value ar-text">التعاطف</span>
+      <span class="badge value en-text">Justice</span>
+      <span class="badge value ar-text">العدالة</span>
+    </div>
+  </div>
+
+  <div class="lesson-nav-btns">
+    <button class="nav-lesson-btn" disabled>←</button>
+    <button class="nav-lesson-btn" onclick="showLesson('lesson1',1)">
+      <span class="en-text">Lesson 1: Reading →</span>
+      <span class="ar-text">الدرس 1: القراءة →</span>
+    </button>
+  </div>
+</section>
+
+<!-- ========== LESSON 1: READING ========== -->
+<section class="lesson-section" id="lesson1">
+  <div class="lesson-header">
+    <div class="lesson-num">1</div>
+    <div>
+      <h2 class="en-text">A Journey of Helping Others</h2>
+      <h2 class="ar-text">رحلة مساعدة الآخرين</h2>
+      <span class="skill-badge en-text">READING</span>
+      <span class="skill-badge ar-text">قراءة</span>
+    </div>
+  </div>
+
+  <!-- Vocabulary -->
+  <div class="card">
+    <div class="card-title"><span class="icon">📚</span>
+      <span class="en-text">Key Vocabulary — Click a word to reveal its meaning</span>
+      <span class="ar-text">المفردات الرئيسية — انقر على الكلمة لمعرفة معناها</span>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">charity</span><span class="pos">(n)</span>
+        <div class="meaning">
+          <div class="ar">خيرية / صدقة</div>
+          <div class="en">Organisation that helps people in need / act of giving</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">contribution</span><span class="pos">(n)</span>
+        <div class="meaning">
+          <div class="ar">مساهمة</div>
+          <div class="en">Something given or done to help a shared effort</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">impact</span><span class="pos">(n)</span>
+        <div class="meaning">
+          <div class="ar">أثر / تأثير</div>
+          <div class="en">A strong effect on something or someone</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">pandemic</span><span class="pos">(n)</span>
+        <div class="meaning">
+          <div class="ar">جائحة / وباء عالمي</div>
+          <div class="en">A disease that spreads over a whole country or world</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">resident</span><span class="pos">(n)</span>
+        <div class="meaning">
+          <div class="ar">مقيم / ساكن</div>
+          <div class="en">A person who lives in a particular place</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">volunteering</span><span class="pos">(n)</span>
+        <div class="meaning">
+          <div class="ar">التطوع</div>
+          <div class="en">Doing work by choice to help others without payment</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">demonstrate</span><span class="pos">(v)</span>
+        <div class="meaning">
+          <div class="ar">يُظهر / يُثبت</div>
+          <div class="en">To show clearly that something is true or exists</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">establish</span><span class="pos">(v)</span>
+        <div class="meaning">
+          <div class="ar">يُؤسِّس / يُنشئ</div>
+          <div class="en">To start or create something that will last for a long time</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">persuade</span><span class="pos">(v)</span>
+        <div class="meaning">
+          <div class="ar">يُقنع</div>
+          <div class="en">To cause someone to do or believe something by using arguments</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">realise</span><span class="pos">(v)</span>
+        <div class="meaning">
+          <div class="ar">يُدرك / يتفهّم</div>
+          <div class="en">To become aware of a fact or situation</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">put together</span><span class="pos">(ph.v)</span>
+        <div class="meaning">
+          <div class="ar">يُجمّع / يُرتّب</div>
+          <div class="en">To assemble or organise something</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">elderly</span><span class="pos">(adj)</span>
+        <div class="meaning">
+          <div class="ar">مسنّ / كبير في السن</div>
+          <div class="en">Old or fairly old (people)</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">necessary</span><span class="pos">(adj)</span>
+        <div class="meaning">
+          <div class="ar">ضروري</div>
+          <div class="en">Needed in order to achieve a result</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">vital</span><span class="pos">(adj)</span>
+        <div class="meaning">
+          <div class="ar">حيوي / بالغ الأهمية</div>
+          <div class="en">Extremely important or essential</div>
+        </div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">gladly</span><span class="pos">(adv)</span>
+        <div class="meaning">
+          <div class="ar">بكل سرور / بسعادة</div>
+          <div class="en">In a willing and happy way</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reading Text -->
+  <div class="card">
+    <div class="card-title"><span class="icon">📰</span>
+      <span class="en-text">Blog Post: "My Experience at the Cooperative Society"</span>
+      <span class="ar-text">مدوّنة: "تجربتي في الجمعية التعاونية"</span>
+    </div>
+    <div class="info-box orange en-text" style="margin-bottom:10px;">
+      <strong>Expository text:</strong> <em>Voluntary work means you do the work by choice to help others without getting paid.</em>
+    </div>
+    <div class="info-box orange ar-text" style="margin-bottom:10px;">
+      <strong>نص توضيحي:</strong> <em>العمل التطوعي يعني أنك تُؤدي العمل باختيارك لمساعدة الآخرين دون الحصول على أجر.</em>
+    </div>
+    <div class="reading-text en-text">
+      <p>My name is Jassim, and last summer I decided to do something meaningful with my time. My sister persuaded me to volunteer at our local cooperative society. At first, I wasn't sure, but I soon realised it was one of the best decisions I had ever made.</p>
+      <p>The cooperative society is a vital part of our neighbourhood. Every day, they provide goods at fair prices to residents, especially the elderly and families in need. As a volunteer, I helped sort packages, assist customers, and put together food baskets for those who couldn't leave their homes during the pandemic.</p>
+      <p>What I found most necessary was simply being present and kind. I saw firsthand how a smile or a helping hand can change someone's day. The staff gladly welcomed me and demonstrated how teamwork makes everything easier. I feel proud of the contribution I made and hope to persuade more young people to get involved.</p>
+      <p>Volunteering taught me that community life depends on people who care. When we help each other, we establish a stronger, happier society for everyone.</p>
+    </div>
+    <div class="reading-text ar-text">
+      <p>اسمي جاسم، وفي الصيف الماضي قررت أن أقضي وقتي في شيء ذي معنى. أقنعتني أختي بالتطوع في الجمعية التعاونية في حيّنا. في البداية، لم أكن متأكدًا، لكنني أدركت سريعًا أنه كان أحد أفضل القرارات التي اتخذتها على الإطلاق.</p>
+      <p>الجمعية التعاونية جزء حيوي من حيّنا. يوفرون يوميًا بضائع بأسعار عادلة للسكان، خاصةً كبار السن والأسر المحتاجة. كمتطوع، ساعدت في ترتيب الطرود ومساعدة الزبائن وتجهيز سلال الطعام لأولئك الذين لم يستطيعوا مغادرة منازلهم خلال الجائحة.</p>
+      <p>ما وجدته أكثر ضرورةً كان مجرد التواجد واللطف. رأيت بنفسي كيف يمكن لابتسامة أو يد مساعدة أن تُغيّر يوم أحدهم. استقبلني الموظفون بكل سرور وأظهروا لي كيف يُيسّر العمل الجماعي كل شيء. أشعر بالفخر بما قدّمته وآمل أن أُقنع المزيد من الشباب بالمشاركة.</p>
+      <p>علّمني التطوع أن الحياة المجتمعية تعتمد على الأشخاص الذين يهتمون. حين نتعاون، نُؤسِّس مجتمعًا أقوى وأسعد للجميع.</p>
+    </div>
+  </div>
+
+  <!-- Comprehension Questions -->
+  <div class="card">
+    <div class="card-title"><span class="icon">❓</span>
+      <span class="en-text">Comprehension: Choose the Correct Answer</span>
+      <span class="ar-text">الفهم: اختر الإجابة الصحيحة</span>
+    </div>
+    <div class="exercise-container">
+      <!-- Q1 -->
+      <div class="exercise-item">
+        <div class="q en-text">1. What is Jassim's blog post mainly about?</div>
+        <div class="q ar-text">1. ما الموضوع الرئيسي لمدوّنة جاسم؟</div>
+        <div class="options-grid">
+          <button class="opt-btn" onclick="checkMCQ(this,'wrong','q1')">
+            <span class="en-text">a. The importance of buying local goods</span>
+            <span class="ar-text">أ. أهمية شراء البضائع المحلية</span>
+          </button>
+          <button class="opt-btn" onclick="checkMCQ(this,'wrong','q1')">
+            <span class="en-text">b. How to help the elderly with daily tasks</span>
+            <span class="ar-text">ب. كيفية مساعدة كبار السن في المهام اليومية</span>
+          </button>
+          <button class="opt-btn" onclick="checkMCQ(this,'wrong','q1')">
+            <span class="en-text">c. The steps of managing home deliveries</span>
+            <span class="ar-text">ج. خطوات إدارة التوصيل للمنازل</span>
+          </button>
+          <button class="opt-btn" onclick="checkMCQ(this,'correct','q1')">
+            <span class="en-text">d. How to be an active and helpful part of our society</span>
+            <span class="ar-text">د. كيف تكون عضوًا فاعلًا ومفيدًا في مجتمعنا</span>
+          </button>
+        </div>
+        <div class="feedback-msg" id="q1-fb"></div>
+      </div>
+      <!-- Q2 -->
+      <div class="exercise-item">
+        <div class="q en-text">2. The underlined word "they" in the 2nd paragraph refers to:</div>
+        <div class="q ar-text">2. الكلمة المسطّرة "they" في الفقرة الثانية تعود على:</div>
+        <div class="options-grid">
+          <button class="opt-btn" onclick="checkMCQ(this,'wrong','q2')">
+            <span class="en-text">a. prices</span><span class="ar-text">أ. الأسعار</span>
+          </button>
+          <button class="opt-btn" onclick="checkMCQ(this,'correct','q2')">
+            <span class="en-text">b. cooperative society (staff)</span><span class="ar-text">ب. الجمعية التعاونية</span>
+          </button>
+          <button class="opt-btn" onclick="checkMCQ(this,'wrong','q2')">
+            <span class="en-text">c. people</span><span class="ar-text">ج. الناس</span>
+          </button>
+          <button class="opt-btn" onclick="checkMCQ(this,'wrong','q2')">
+            <span class="en-text">d. co-ops</span><span class="ar-text">د. الجمعيات</span>
+          </button>
+        </div>
+        <div class="feedback-msg" id="q2-fb"></div>
+      </div>
+      <!-- Q3 -->
+      <div class="exercise-item">
+        <div class="q en-text">3. How did Jassim feel about this experience?</div>
+        <div class="q ar-text">3. كيف شعر جاسم تجاه هذه التجربة؟</div>
+        <div class="options-grid">
+          <button class="opt-btn" onclick="checkMCQ(this,'wrong','q3')">
+            <span class="en-text">a. bored</span><span class="ar-text">أ. ممل</span>
+          </button>
+          <button class="opt-btn" onclick="checkMCQ(this,'correct','q3')">
+            <span class="en-text">b. proud</span><span class="ar-text">ب. فخور</span>
+          </button>
+          <button class="opt-btn" onclick="checkMCQ(this,'wrong','q3')">
+            <span class="en-text">c. relaxed</span><span class="ar-text">ج. مسترخٍ</span>
+          </button>
+          <button class="opt-btn" onclick="checkMCQ(this,'wrong','q3')">
+            <span class="en-text">d. confused</span><span class="ar-text">د. مُرتبك</span>
+          </button>
+        </div>
+        <div class="feedback-msg" id="q3-fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feel it Say it -->
+  <div class="card">
+    <div class="card-title"><span class="icon">💬</span>
+      <span class="en-text">Feel it, Say it — Write a Comment</span>
+      <span class="ar-text">اشعر بها وعبّر عنها — اكتب تعليقًا</span>
+    </div>
+    <div class="info-box blue en-text">
+      <strong>Task:</strong> Imagine you are one of Jassim's friends. Write a 3–4 sentence comment under his post. Show your feelings about his voluntary work.
+    </div>
+    <div class="info-box blue ar-text">
+      <strong>المهمة:</strong> تخيّل أنك أحد أصدقاء جاسم. اكتب تعليقًا من 3-4 جمل تحت منشوره. أظهر مشاعرك تجاه عمله التطوعي.
+    </div>
+    <div class="info-box green en-text" style="margin:10px 0;">
+      <strong>Useful Language:</strong> "I felt… when I…" · "One idea that made me feel (proud / happy / surprised) was…" · "This part of the post made me feel…" · "I felt inspired to…"
+    </div>
+    <div class="info-box green ar-text" style="margin:10px 0;">
+      <strong>لغة مفيدة:</strong> "شعرت… عندما…" · "الفكرة التي جعلتني أشعر بـ(الفخر / السعادة / الدهشة) هي…" · "هذا الجزء من المنشور جعلني أشعر…" · "شعرت بالإلهام لـ…"
+    </div>
+    <textarea class="outline-textarea" placeholder="Write your comment here... / اكتب تعليقك هنا..."></textarea>
+  </div>
+
+  <div class="lesson-nav-btns">
+    <button class="nav-lesson-btn" onclick="showLesson('overview',0)">← <span class="en-text">Overview</span><span class="ar-text">نظرة عامة</span></button>
+    <button class="nav-lesson-btn" onclick="showLesson('lesson2',2)"><span class="en-text">Lesson 2: Grammar</span><span class="ar-text">الدرس 2: القواعد</span> →</button>
+  </div>
+</section>
+
+<!-- ========== LESSON 2: GRAMMAR ========== -->
+<section class="lesson-section" id="lesson2">
+  <div class="lesson-header">
+    <div class="lesson-num">2</div>
+    <div>
+      <h2 class="en-text">The First Conditional</h2>
+      <h2 class="ar-text">الشرط الأول</h2>
+      <span class="skill-badge en-text">GRAMMAR</span>
+      <span class="skill-badge ar-text">قواعد</span>
+    </div>
+  </div>
+
+  <!-- Grammar Explanation -->
+  <div class="card">
+    <div class="card-title"><span class="icon">📐</span>
+      <span class="en-text">Grammar Rule: The First Conditional</span>
+      <span class="ar-text">قاعدة نحوية: الشرط الأول</span>
+    </div>
+    <div class="grammar-box">
+      <h3 class="en-text">What is the First Conditional?</h3>
+      <h3 class="ar-text">ما هو الشرط الأول؟</h3>
+      <p class="en-text" style="font-size:0.9rem;margin-bottom:10px;">We use the first conditional to talk about <strong>real or possible future results</strong> that depend on a present condition.</p>
+      <p class="ar-text" style="font-size:0.9rem;margin-bottom:10px;">نستخدم الشرط الأول للحديث عن <strong>نتائج مستقبلية حقيقية أو محتملة</strong> تعتمد على شرط في الحاضر.</p>
+      <div class="formula en-text">If + present simple verb → will + base verb</div>
+      <div class="formula ar-text">إذا + فعل مضارع بسيط ← will + الفعل الأساسي</div>
+      <div class="example en-text">✦ If volunteers <span class="highlight-purple">join</span> the campaign, the community <span class="highlight-green">will benefit</span>.</div>
+      <div class="example ar-text">✦ إذا انضم المتطوعون إلى الحملة، سيستفيد المجتمع.</div>
+      <div class="example en-text">✦ If more volunteers <span class="highlight-purple">help</span>, the beach <span class="highlight-green">will be</span> cleaner.</div>
+      <div class="example ar-text">✦ إذا ساعد المزيد من المتطوعين، ستكون الشاطئ أنظف.</div>
+    </div>
+    <div class="tip-box">
+      <strong class="en-text">📝 Note:</strong>
+      <strong class="ar-text">📝 ملاحظة:</strong>
+      <ul style="margin-top:6px;padding-left:18px;">
+        <li class="en-text">You can put the "if" clause at the beginning or at the end.</li>
+        <li class="ar-text">يمكنك وضع جملة "إذا" في البداية أو في النهاية.</li>
+        <li class="en-text">Add a comma only when the "if" clause comes first.</li>
+        <li class="ar-text">أضف فاصلة فقط عندما تأتي جملة "إذا" أولًا.</li>
+      </ul>
+    </div>
+    <div class="tip-box" style="background:#fce4ec;border-color:#e91e63;color:#880e4f;">
+      <strong>⚠️ Tip:</strong>
+      <span class="en-text"> Do <strong>NOT</strong> use 'will' in the if-clause: ✗ If people will help… ✓ If people help…</span>
+      <span class="ar-text"> لا تستخدم 'will' في جملة الشرط: ✗ If people will help… ✓ If people help…</span>
+    </div>
+  </div>
+
+  <!-- Matching Exercise -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🔗</span>
+      <span class="en-text">Exercise 1: Match each beginning to its correct ending</span>
+      <span class="ar-text">تمرين 1: طابق كل بداية بنهايتها الصحيحة</span>
+    </div>
+    <table class="match-table">
+      <thead>
+        <tr>
+          <th class="en-text">Beginning</th>
+          <th class="ar-text">البداية</th>
+          <th class="en-text">Your Match</th>
+          <th class="ar-text">إجابتك</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="en-text">1. If you donate your clothes to charity,</span>
+            <span class="ar-text">1. إذا تبرّعت بملابسك للجمعيات الخيرية،</span>
+          </td>
+          <td>
+            <select class="match-select" onchange="checkMatch(this,'m1','families in need will receive useful items.')">
+              <option value="">-- select --</option>
+              <option>many children will attend and enjoy it.</option>
+              <option>we will be able to finish moving faster.</option>
+              <option>people will donate food to the mosque.</option>
+              <option>families in need will receive useful items.</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="en-text">2. If we help each other carry the heavy boxes,</span>
+            <span class="ar-text">2. إذا ساعدنا بعضنا في حمل الصناديق الثقيلة،</span>
+          </td>
+          <td>
+            <select class="match-select" onchange="checkMatch(this,'m2','we will be able to finish moving faster.')">
+              <option value="">-- select --</option>
+              <option>many children will attend and enjoy it.</option>
+              <option>we will be able to finish moving faster.</option>
+              <option>people will donate food to the mosque.</option>
+              <option>families in need will receive useful items.</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="en-text">3. If the library starts a story-telling activity,</span>
+            <span class="ar-text">3. إذا أطلقت المكتبة نشاطًا لسرد القصص،</span>
+          </td>
+          <td>
+            <select class="match-select" onchange="checkMatch(this,'m3','many children will attend and enjoy it.')">
+              <option value="">-- select --</option>
+              <option>many children will attend and enjoy it.</option>
+              <option>we will be able to finish moving faster.</option>
+              <option>people will donate food to the mosque.</option>
+              <option>families in need will receive useful items.</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="en-text">4. If local mosques have iftar campaigns,</span>
+            <span class="ar-text">4. إذا أقامت المساجد المحلية حملات إفطار،</span>
+          </td>
+          <td>
+            <select class="match-select" onchange="checkMatch(this,'m4','people will donate food to the mosque.')">
+              <option value="">-- select --</option>
+              <option>many children will attend and enjoy it.</option>
+              <option>we will be able to finish moving faster.</option>
+              <option>people will donate food to the mosque.</option>
+              <option>families in need will receive useful items.</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Fill in the Blanks -->
+  <div class="card">
+    <div class="card-title"><span class="icon">✍️</span>
+      <span class="en-text">Exercise 2: Fill in the blanks with the correct verb form</span>
+      <span class="ar-text">تمرين 2: أكمل الفراغات بالصيغة الصحيحة للفعل</span>
+    </div>
+    <div class="exercise-container">
+      <div class="exercise-item">
+        <p class="en-text">a. If people <input class="blank-input" id="b2a1" placeholder="volunteer"> at the hospital, patients <input class="blank-input" id="b2a2" placeholder="will feel"> happier.</p>
+        <p class="ar-text">أ. إذا <input class="blank-input" id="b2a1ar" placeholder="volunteer"> الناس في المستشفى، سيشعر المرضى بسعادة أكبر.</p>
+        <button class="check-btn" onclick="checkFill2a()">
+          <span class="en-text">Check</span><span class="ar-text">تحقق</span>
+        </button>
+        <button class="reveal-btn" onclick="revealFill2a()">
+          <span class="en-text">Reveal</span><span class="ar-text">اكشف</span>
+        </button>
+        <div class="feedback-msg" id="fill2a-fb"></div>
+      </div>
+      <div class="exercise-item">
+        <p class="en-text">b. Our area <input class="blank-input" id="b2b1" placeholder="will become"> greener, if Ali <input class="blank-input" id="b2b2" placeholder="participates"> in planting trees.</p>
+        <p class="ar-text">ب. ستصبح منطقتنا أكثر خضرة إذا <input class="blank-input" id="b2b2ar" placeholder="participates"> علي في زراعة الأشجار.</p>
+        <button class="check-btn" onclick="checkFill2b()">
+          <span class="en-text">Check</span><span class="ar-text">تحقق</span>
+        </button>
+        <button class="reveal-btn" onclick="revealFill2b()">
+          <span class="en-text">Reveal</span><span class="ar-text">اكشف</span>
+        </button>
+        <div class="feedback-msg" id="fill2b-fb"></div>
+      </div>
+      <div class="exercise-item">
+        <p class="en-text">c. If schools <input class="blank-input" id="b2c1" placeholder="raise"> awareness, students <input class="blank-input" id="b2c2" placeholder="will understand"> the effects of bullying.</p>
+        <p class="ar-text">ج. إذا <input class="blank-input" id="b2c1ar" placeholder="raise"> المدارس الوعي، سيفهم الطلاب آثار التنمر.</p>
+        <button class="check-btn" onclick="checkFill2c()">
+          <span class="en-text">Check</span><span class="ar-text">تحقق</span>
+        </button>
+        <button class="reveal-btn" onclick="revealFill2c()">
+          <span class="en-text">Reveal</span><span class="ar-text">اكشف</span>
+        </button>
+        <div class="feedback-msg" id="fill2c-fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design a Card -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🃏</span>
+      <span class="en-text">Design a Card: Small Actions Create Positive Results</span>
+      <span class="ar-text">صمّم بطاقة: الأعمال الصغيرة تُحقق نتائج إيجابية</span>
+    </div>
+    <div class="info-box green en-text">
+      <strong>Topic Ideas:</strong> Planting trees in the neighbourhood · Helping younger students · Starting a health/fitness day · Collecting toys or clothes for families in need · Recycling
+    </div>
+    <div class="info-box green ar-text">
+      <strong>أفكار للموضوع:</strong> زراعة الأشجار في الحي · مساعدة الطلاب الأصغر سنًا · إطلاق يوم للصحة واللياقة · جمع الألعاب أو الملابس للأسر المحتاجة · إعادة التدوير
+    </div>
+    <p class="en-text" style="font-size:0.88rem;margin:10px 0;">Write three First Conditional sentences about a helpful action in your community:</p>
+    <p class="ar-text" style="font-size:0.88rem;margin:10px 0;">اكتب ثلاث جمل بالشرط الأول عن عمل مفيد في مجتمعك:</p>
+    <textarea class="outline-textarea" placeholder="If ... , ... will ...&#10;If ... , ... will ...&#10;If ... , ... will ..."></textarea>
+  </div>
+
+  <div class="lesson-nav-btns">
+    <button class="nav-lesson-btn" onclick="showLesson('lesson1',1)">← <span class="en-text">Lesson 1</span><span class="ar-text">الدرس 1</span></button>
+    <button class="nav-lesson-btn" onclick="showLesson('lesson3',3)"><span class="en-text">Lesson 3: Listening</span><span class="ar-text">الدرس 3: الاستماع</span> →</button>
+  </div>
+</section>
+
+<!-- ========== LESSON 3: LISTENING ========== -->
+<section class="lesson-section" id="lesson3">
+  <div class="lesson-header">
+    <div class="lesson-num">3</div>
+    <div>
+      <h2 class="en-text">Small Acts, Big Impact</h2>
+      <h2 class="ar-text">أعمال صغيرة، تأثير كبير</h2>
+      <span class="skill-badge en-text">LISTENING</span>
+      <span class="skill-badge ar-text">استماع</span>
+    </div>
+  </div>
+
+  <!-- Before you listen -->
+  <div class="card">
+    <div class="card-title"><span class="icon">💭</span>
+      <span class="en-text">Before You Listen — Discussion Questions</span>
+      <span class="ar-text">قبل الاستماع — أسئلة نقاش</span>
+    </div>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+      <li class="info-box blue en-text">💬 What does being a good citizen mean to you?</li>
+      <li class="info-box blue ar-text">💬 ماذا تعني لك المواطنة الجيدة؟</li>
+      <li class="info-box blue en-text">💬 Can small acts of kindness make a difference? Give examples.</li>
+      <li class="info-box blue ar-text">💬 هل يمكن لأعمال اللطف الصغيرة أن تُحدث فرقًا؟ أعطِ أمثلة.</li>
+      <li class="info-box blue en-text">💬 How do responsible people help their neighbourhood?</li>
+      <li class="info-box blue ar-text">💬 كيف يساعد الأشخاص المسؤولون حيّهم؟</li>
+    </ul>
+  </div>
+
+  <!-- Summary & Tasks -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🎙️</span>
+      <span class="en-text">Listening Summary: Ali &amp; Salman in the Diwaniya</span>
+      <span class="ar-text">ملخص الاستماع: علي وسلمان في الديوانية</span>
+    </div>
+    <div class="reading-text en-text">
+      <p>Ali and Salman are having a conversation in the diwaniya about community and volunteering. Ali explains that being a good citizen does not require grand gestures — small acts of kindness can transform a neighbourhood. He shares that volunteering when you can makes the community stronger and more connected.</p>
+      <p>Ali also mentions helping younger students, which builds their confidence and creates a more supportive class environment. Picking up litter keeps public spaces clean and shows respect for the community. Participating in local events brings people together and strengthens bonds. Finally, he stresses the importance of listening to and respecting others' opinions, which helps create a culture of mutual understanding.</p>
+    </div>
+    <div class="reading-text ar-text">
+      <p>يتحدث علي وسلمان في الديوانية عن المجتمع والتطوع. يشرح علي أن المواطنة الجيدة لا تتطلب أعمالًا كبيرة — فالأعمال اللطيفة الصغيرة يمكنها تحويل الحيّ. ويشارك أن التطوع حين تستطيع يجعل المجتمع أقوى وأكثر ترابطًا.</p>
+      <p>يذكر علي أيضًا مساعدة الطلاب الأصغر سنًا مما يبني ثقتهم ويخلق بيئة صفية أكثر تعاونًا. التقاط القمامة يُبقي الأماكن العامة نظيفة ويُظهر الاحترام للمجتمع. المشاركة في الفعاليات المحلية تجمع الناس وتُعزز الروابط. وأخيرًا، يشدد على أهمية الاستماع إلى آراء الآخرين واحترامها.</p>
+    </div>
+  </div>
+
+  <!-- Main Idea -->
+  <div class="card">
+    <div class="card-title"><span class="icon">✅</span>
+      <span class="en-text">Task A: Choose the Main Idea</span>
+      <span class="ar-text">المهمة أ: اختر الفكرة الرئيسية</span>
+    </div>
+    <div class="exercise-item">
+      <div class="options-grid" style="grid-template-columns:1fr;">
+        <button class="opt-btn" onclick="checkMCQ(this,'wrong','mi1')">
+          <span class="en-text">1. It is important to follow rules and be polite.</span>
+          <span class="ar-text">1. من المهم اتباع القواعد والتهذّب.</span>
+        </button>
+        <button class="opt-btn" onclick="checkMCQ(this,'correct','mi1')">
+          <span class="en-text">2. Small acts of kindness can improve the community. ✓</span>
+          <span class="ar-text">2. يمكن لأعمال اللطف الصغيرة أن تُحسّن المجتمع. ✓</span>
+        </button>
+        <button class="opt-btn" onclick="checkMCQ(this,'wrong','mi1')">
+          <span class="en-text">3. We can help younger children learn respect and honesty.</span>
+          <span class="ar-text">3. يمكننا مساعدة الأطفال الأصغر على تعلّم الاحترام والأمانة.</span>
+        </button>
+        <button class="opt-btn" onclick="checkMCQ(this,'wrong','mi1')">
+          <span class="en-text">4. We should join community clean-ups and school projects.</span>
+          <span class="ar-text">4. يجب أن ننضم إلى حملات التنظيف المجتمعية والمشاريع المدرسية.</span>
+        </button>
+      </div>
+      <div class="feedback-msg" id="mi1-fb"></div>
+    </div>
+  </div>
+
+  <!-- Actions Table -->
+  <div class="card">
+    <div class="card-title"><span class="icon">📋</span>
+      <span class="en-text">Task B: Actions to Be Good Citizens</span>
+      <span class="ar-text">المهمة ب: أعمال للمواطنة الجيدة</span>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th class="en-text">Action</th>
+          <th class="ar-text">العمل</th>
+          <th class="en-text">Why it Helps</th>
+          <th class="ar-text">كيف يساعد</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td class="en-text">Volunteering when you can</td>
+          <td class="ar-text">التطوع حين تستطيع</td>
+          <td class="en-text">It makes the community stronger and more connected</td>
+          <td class="ar-text">يجعل المجتمع أقوى وأكثر ترابطًا</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td class="en-text">Helping younger students</td>
+          <td class="ar-text">مساعدة الطلاب الأصغر</td>
+          <td class="en-text">They feel more confident; class becomes more supportive</td>
+          <td class="ar-text">يشعرون بثقة أكبر؛ تصبح الفصل أكثر دعمًا</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td class="en-text">Picking up litter</td>
+          <td class="ar-text">التقاط القمامة</td>
+          <td class="en-text">Keeps public spaces clean and shows respect</td>
+          <td class="ar-text">يُبقي الأماكن العامة نظيفة ويُظهر الاحترام</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td class="en-text">Participating in local events</td>
+          <td class="ar-text">المشاركة في الفعاليات المحلية</td>
+          <td class="en-text">Brings people together and strengthens community bonds</td>
+          <td class="ar-text">يجمع الناس ويُعزز روابط المجتمع</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Chain of Kindness -->
+  <div class="card">
+    <div class="card-title"><span class="icon">⛓️</span>
+      <span class="en-text">The Chain of Kindness Challenge!</span>
+      <span class="ar-text">تحدي سلسلة اللطف!</span>
+    </div>
+    <p class="en-text" style="font-size:0.88rem;margin-bottom:12px;">See how one kind action leads to another — like a chain reaction:</p>
+    <p class="ar-text" style="font-size:0.88rem;margin-bottom:12px;">انظر كيف يؤدي عمل لطيف إلى آخر — مثل ردّ الفعل المتسلسل:</p>
+    <div class="chain-container">
+      <div class="chain-box en-text">If we help younger students...</div>
+      <div class="chain-box ar-text">إذا ساعدنا الطلاب الأصغر...</div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box en-text">...they will feel more confident.</div>
+      <div class="chain-box ar-text">...سيشعرون بثقة أكبر.</div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box en-text">If they feel more confident...</div>
+      <div class="chain-box ar-text">إذا شعروا بثقة أكبر...</div>
+      <div class="chain-arrow">→</div>
+      <div class="chain-box en-text">...our class will become more supportive.</div>
+      <div class="chain-box ar-text">...سيصبح فصلنا أكثر دعمًا.</div>
+    </div>
+    <p class="en-text" style="font-size:0.88rem;margin:12px 0 6px;">Now write your own chain of kindness:</p>
+    <p class="ar-text" style="font-size:0.88rem;margin:12px 0 6px;">الآن اكتب سلسلة اللطف الخاصة بك:</p>
+    <textarea class="outline-textarea" placeholder="If we... → ...they will... → If they... → ...the community will..."></textarea>
+  </div>
+
+  <div class="lesson-nav-btns">
+    <button class="nav-lesson-btn" onclick="showLesson('lesson2',2)">← <span class="en-text">Lesson 2</span><span class="ar-text">الدرس 2</span></button>
+    <button class="nav-lesson-btn" onclick="showLesson('lesson4',4)"><span class="en-text">Lesson 4: Speaking</span><span class="ar-text">الدرس 4: التحدث</span> →</button>
+  </div>
+</section>
+
+<!-- ========== LESSON 4: SPEAKING ========== -->
+<section class="lesson-section" id="lesson4">
+  <div class="lesson-header">
+    <div class="lesson-num">4</div>
+    <div>
+      <h2 class="en-text">My School, My Responsibility</h2>
+      <h2 class="ar-text">مدرستي، مسؤوليتي</h2>
+      <span class="skill-badge en-text">SPEAKING</span>
+      <span class="skill-badge ar-text">تحدث</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="icon">💭</span>
+      <span class="en-text">Think, Pair, Share</span>
+      <span class="ar-text">فكّر، تحدث، شارك</span>
+    </div>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+      <li class="info-box blue en-text">💬 Why should we take care of our school?</li>
+      <li class="info-box blue ar-text">💬 لماذا يجب أن نهتم بمدرستنا؟</li>
+      <li class="info-box blue en-text">💬 What can students do to keep their school environment healthy?</li>
+      <li class="info-box blue ar-text">💬 ما الذي يمكن للطلاب فعله للحفاظ على بيئة مدرسية صحية؟</li>
+      <li class="info-box blue en-text">💬 What problems do you usually see at school?</li>
+      <li class="info-box blue ar-text">💬 ما المشكلات التي تراها عادةً في المدرسة؟</li>
+    </ul>
+  </div>
+
+  <!-- Problems & Solutions Table -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🔧</span>
+      <span class="en-text">School Problems &amp; Solutions</span>
+      <span class="ar-text">مشكلات المدرسة وحلولها</span>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th class="en-text">Problem</th>
+          <th class="ar-text">المشكلة</th>
+          <th class="en-text">Possible Solution</th>
+          <th class="ar-text">حل محتمل</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td class="en-text">Litter in classrooms and hallways</td>
+          <td class="ar-text">القمامة في الفصول والممرات</td>
+          <td class="en-text">Add signs reminding students not to litter</td>
+          <td class="ar-text">إضافة لافتات تُذكّر الطلاب بعدم إلقاء القمامة</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td class="en-text">Writing on desks and walls</td>
+          <td class="ar-text">الكتابة على المقاعد والجدران</td>
+          <td><textarea class="outline-textarea" style="min-height:50px;" placeholder="Write your solution... / اكتب حلّك..."></textarea></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td class="en-text">Wasting electricity and water</td>
+          <td class="ar-text">إهدار الكهرباء والمياه</td>
+          <td><textarea class="outline-textarea" style="min-height:50px;" placeholder="Write your solution... / اكتب حلّك..."></textarea></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td class="en-text">Not enough plants or green areas</td>
+          <td class="ar-text">نقص النباتات والمناطق الخضراء</td>
+          <td><textarea class="outline-textarea" style="min-height:50px;" placeholder="Write your solution... / اكتب حلّك..."></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Campaign Speech Planner -->
+  <div class="card">
+    <div class="card-title"><span class="icon">📣</span>
+      <span class="en-text">Group Presentation: My School Campaign</span>
+      <span class="ar-text">عرض جماعي: حملة مدرستي</span>
+    </div>
+    <div class="info-box orange en-text">
+      <strong>Your speech should include:</strong><br>
+      • The title of your campaign<br>
+      • The problem you want to solve<br>
+      • The solutions/actions students can take<br>
+      • What will happen if everyone joins
+    </div>
+    <div class="info-box orange ar-text">
+      <strong>يجب أن تتضمن خطبتك:</strong><br>
+      • عنوان حملتك<br>
+      • المشكلة التي تريد حلّها<br>
+      • الحلول والإجراءات التي يمكن للطلاب اتخاذها<br>
+      • ماذا سيحدث إذا انضم الجميع
+    </div>
+    <div class="info-box green en-text" style="margin:10px 0;">
+      <strong>Useful Sentence Starters:</strong> "We can make a difference!" · "We can work as a team!" · "If everyone joins, our school will…" · "I believe that…" · "One important action is…"
+    </div>
+    <div class="info-box green ar-text" style="margin:10px 0;">
+      <strong>بدايات جمل مفيدة:</strong> "يمكننا إحداث فارق!" · "يمكننا العمل كفريق!" · "إذا انضم الجميع، ستصبح مدرستنا…" · "أعتقد أن…" · "أحد الإجراءات المهمة هو…"
+    </div>
+    <textarea class="outline-textarea" placeholder="Plan your speech here... / خطّط لخطبتك هنا..." style="min-height:120px;"></textarea>
+  </div>
+
+  <!-- Speaking Checklist -->
+  <div class="speaker-card">
+    <h4 class="en-text">✅ Speaking Checklist</h4>
+    <h4 class="ar-text">✅ قائمة مراجعة التحدث</h4>
+    <ul class="checklist">
+      <li><input type="checkbox"><span class="en-text">Present clearly and confidently</span><span class="ar-text">التقديم بوضوح وثقة</span></li>
+      <li><input type="checkbox"><span class="en-text">Use full sentences</span><span class="ar-text">استخدام جمل كاملة</span></li>
+      <li><input type="checkbox"><span class="en-text">Use encouraging expressions (e.g., "We can make a difference!")</span><span class="ar-text">استخدام عبارات تشجيعية</span></li>
+      <li><input type="checkbox"><span class="en-text">Show cause and effect using First Conditional</span><span class="ar-text">إظهار السبب والنتيجة باستخدام الشرط الأول</span></li>
+      <li><input type="checkbox"><span class="en-text">Use appropriate body language and gestures</span><span class="ar-text">استخدام لغة الجسد والإيماءات المناسبة</span></li>
+      <li><input type="checkbox"><span class="en-text">Speak at an appropriate pace and volume</span><span class="ar-text">التحدث بوتيرة وصوت مناسبَين</span></li>
+    </ul>
+  </div>
+
+  <div class="lesson-nav-btns">
+    <button class="nav-lesson-btn" onclick="showLesson('lesson3',3)">← <span class="en-text">Lesson 3</span><span class="ar-text">الدرس 3</span></button>
+    <button class="nav-lesson-btn" onclick="showLesson('lesson5',5)"><span class="en-text">Lesson 5: Reading</span><span class="ar-text">الدرس 5: القراءة</span> →</button>
+  </div>
+</section>
+
+<!-- ========== LESSON 5: READING ========== -->
+<section class="lesson-section" id="lesson5">
+  <div class="lesson-header">
+    <div class="lesson-num">5</div>
+    <div>
+      <h2 class="en-text">Leading Humanitarian Institutions in Kuwait</h2>
+      <h2 class="ar-text">المؤسسات الإنسانية الرائدة في الكويت</h2>
+      <span class="skill-badge en-text">READING</span>
+      <span class="skill-badge ar-text">قراءة</span>
+    </div>
+  </div>
+
+  <!-- Vocabulary -->
+  <div class="card">
+    <div class="card-title"><span class="icon">📚</span>
+      <span class="en-text">Key Vocabulary — Click to reveal meaning</span>
+      <span class="ar-text">المفردات الرئيسية — انقر للكشف عن المعنى</span>
+    </div>
+    <div class="vocab-grid">
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">blessing</span><span class="pos">(n)</span>
+        <div class="meaning"><div class="ar">نعمة / بركة</div><div class="en">Something that brings happiness or is very helpful</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">development</span><span class="pos">(n)</span>
+        <div class="meaning"><div class="ar">تنمية / تطوير</div><div class="en">The process of growing or improving</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">disaster</span><span class="pos">(n)</span>
+        <div class="meaning"><div class="ar">كارثة</div><div class="en">A sudden event that causes great damage or suffering</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">generation</span><span class="pos">(n)</span>
+        <div class="meaning"><div class="ar">جيل</div><div class="en">All people born and living at about the same time</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">institution</span><span class="pos">(n)</span>
+        <div class="meaning"><div class="ar">مؤسسة</div><div class="en">An organisation founded for a religious, educational, social purpose</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">shelter</span><span class="pos">(n)</span>
+        <div class="meaning"><div class="ar">مأوى / ملجأ</div><div class="en">A place that provides protection from bad weather or danger</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">acquire</span><span class="pos">(v)</span>
+        <div class="meaning"><div class="ar">يكتسب / يحصل على</div><div class="en">To get or gain something (skills, knowledge, property)</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">construct</span><span class="pos">(v)</span>
+        <div class="meaning"><div class="ar">يبني / يُشيّد</div><div class="en">To build or create something</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">operate</span><span class="pos">(v)</span>
+        <div class="meaning"><div class="ar">يعمل / يُشغّل</div><div class="en">To work or function; to control how something works</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">count on</span><span class="pos">(ph.v)</span>
+        <div class="meaning"><div class="ar">يعتمد على / يثق في</div><div class="en">To trust someone or something; to depend on</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">active</span><span class="pos">(adj)</span>
+        <div class="meaning"><div class="ar">نشط / فعّال</div><div class="en">Doing things, working, or moving a lot</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">environmental</span><span class="pos">(adj)</span>
+        <div class="meaning"><div class="ar">بيئي</div><div class="en">Relating to the natural environment</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">generous</span><span class="pos">(adj)</span>
+        <div class="meaning"><div class="ar">كريم / سخيّ</div><div class="en">Willing to give more than expected</div></div>
+      </div>
+      <div class="vocab-chip" onclick="toggleVocab(this)">
+        <span class="word">independently</span><span class="pos">(adv)</span>
+        <div class="meaning"><div class="ar">باستقلالية / بذاتها</div><div class="en">Without help or control from others</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reading Text -->
+  <div class="card">
+    <div class="card-title"><span class="icon">📰</span>
+      <span class="en-text">Passage: Leading Humanitarian Institutions in Kuwait</span>
+      <span class="ar-text">النص: المؤسسات الإنسانية الرائدة في الكويت</span>
+    </div>
+    <div class="info-box orange en-text" style="margin-bottom:10px;">
+      <strong>Context:</strong> Kuwait is one of the leading Gulf countries that promotes voluntary work.
+    </div>
+    <div class="info-box orange ar-text" style="margin-bottom:10px;">
+      <strong>السياق:</strong> الكويت من أبرز دول الخليج التي تُعزّز العمل التطوعي.
+    </div>
+    <div class="reading-text en-text">
+      <p>Kuwait is known for its generous spirit and care for others. Many Kuwaiti institutions work to help people in need, not only at home but also around the world. One of the oldest and most active institutions is the <strong>Kuwait Red Crescent Society (KRCS)</strong>. Established in 1966, this organisation sends food, medicine, and aid to families affected by natural disasters. Its volunteers have operated in several countries, giving shelter, healthcare, and clean water to those in difficult situations. The KRCS also supports hospitals and schools in Kuwait and coaches young people on how to become responsible volunteers that people can count on.</p>
+      <p>Another important organisation is the <strong>Direct Aid Society</strong>, founded in 1981. It focuses on long-term development instead of short-term help. Direct Aid constructs schools and hospitals, provides clean water, and supports families in Africa and Asia. Its volunteers believe that education and health are the keys to strong communities. The group also runs training programmes to help many women acquire new skills and earn an income independently to support their families.</p>
+      <p>A third well-known centre is the <strong>Kuwait Voluntary Work Centre (KVWC)</strong>, established in 1974. It encourages young Kuwaitis to serve their community. The centre organises activities such as cleaning beaches, planting trees, and visiting hospitals. Members learn about teamwork, leadership, and environmental care. The KVWC has created a new generation of active citizens who see volunteering as a duty and a joy. Together, these institutions show that helping others is a blessing and is at the heart of Kuwait's true progress.</p>
+    </div>
+    <div class="reading-text ar-text">
+      <p>تشتهر الكويت بروحها الكريمة واهتمامها بالآخرين. تعمل مؤسسات كويتية عديدة على مساعدة المحتاجين، ليس فقط في الداخل بل في جميع أنحاء العالم. من أقدم وأكثر المؤسسات نشاطًا <strong>جمعية الهلال الأحمر الكويتي (KRCS)</strong>. تأسست عام 1966، وترسل الغذاء والدواء والمساعدات للأسر المتضررة من الكوارث الطبيعية. عمل متطوعوها في دول عدة مقدّمين المأوى والرعاية الصحية والمياه النظيفة. تدعم الجمعية أيضًا المستشفيات والمدارس في الكويت وتُدرّب الشباب ليصبحوا متطوعين مسؤولين يمكن الاعتماد عليهم.</p>
+      <p>منظمة أخرى مهمة هي <strong>جمعية العون المباشر</strong>، التي تأسست عام 1981. تركّز على التنمية طويلة الأمد بدلًا من المساعدات قصيرة المدى. تبني مدارس ومستشفيات، وتوفر المياه النظيفة، وتدعم الأسر في أفريقيا وآسيا. تُدير برامج تدريبية لمساعدة المرأة على اكتساب مهارات جديدة والكسب المستقل.</p>
+      <p>المركز الثالث المعروف هو <strong>مركز العمل التطوعي الكويتي (KVWC)</strong>، المؤسَّس عام 1974. يشجع الشباب الكويتي على خدمة مجتمعهم من خلال تنظيف الشواطئ وزراعة الأشجار وزيارة المستشفيات. أوجد المركز جيلًا جديدًا من المواطنين الفاعلين الذين يرون في التطوع واجبًا وبهجةً. وتُثبت هذه المؤسسات مجتمعةً أن مساعدة الآخرين نعمة وهي في قلب التقدم الكويتي الحقيقي.</p>
+    </div>
+  </div>
+
+  <!-- Comprehension Table -->
+  <div class="card">
+    <div class="card-title"><span class="icon">📋</span>
+      <span class="en-text">Task: Complete the Table</span>
+      <span class="ar-text">المهمة: أكمل الجدول</span>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th class="en-text">Institution</th>
+          <th class="ar-text">المؤسسة</th>
+          <th class="en-text">Founded</th>
+          <th class="ar-text">تأسست</th>
+          <th class="en-text">Main Work</th>
+          <th class="ar-text">العمل الرئيسي</th>
+          <th class="en-text">Who they Help</th>
+          <th class="ar-text">من يساعدون</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>KRCS</strong></td>
+          <td><strong>KRCS</strong></td>
+          <td>1966</td>
+          <td>1966</td>
+          <td class="en-text">Sends food, medicine, and aid</td>
+          <td class="ar-text">يرسل الغذاء والدواء والمساعدات</td>
+          <td class="en-text">Disaster-affected families worldwide</td>
+          <td class="ar-text">الأسر المتضررة من الكوارث حول العالم</td>
+        </tr>
+        <tr>
+          <td><strong>Direct Aid</strong></td>
+          <td><strong>جمعية العون المباشر</strong></td>
+          <td>1981</td>
+          <td>1981</td>
+          <td class="en-text">Constructs schools/hospitals; long-term development</td>
+          <td class="ar-text">بناء مدارس ومستشفيات؛ تنمية طويلة الأمد</td>
+          <td class="en-text">Families in Africa and Asia</td>
+          <td class="ar-text">الأسر في أفريقيا وآسيا</td>
+        </tr>
+        <tr>
+          <td><strong>KVWC</strong></td>
+          <td><strong>KVWC</strong></td>
+          <td>1974</td>
+          <td>1974</td>
+          <td class="en-text">Organises community activities</td>
+          <td class="ar-text">تنظيم الأنشطة المجتمعية</td>
+          <td class="en-text">Young Kuwaitis and the community</td>
+          <td class="ar-text">الشباب الكويتي والمجتمع</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Word Categories -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🔤</span>
+      <span class="en-text">Vocabulary: Word Categories</span>
+      <span class="ar-text">المفردات: تصنيف الكلمات</span>
+    </div>
+    <p class="en-text" style="font-size:0.88rem;margin-bottom:10px;">Sort these words under the correct headings: <strong>operate – generation – generous – acquire – environmental – disaster</strong></p>
+    <p class="ar-text" style="font-size:0.88rem;margin-bottom:10px;">رتّب هذه الكلمات تحت العناوين الصحيحة: <strong>operate – generation – generous – acquire – environmental – disaster</strong></p>
+    <table class="word-table">
+      <thead>
+        <tr>
+          <th class="en-text">Noun (اسم)</th>
+          <th class="en-text">Verb (فعل)</th>
+          <th class="en-text">Adjective (صفة)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="en-text">generation, disaster</td>
+          <td class="en-text">operate, acquire</td>
+          <td class="en-text">generous, environmental</td>
+        </tr>
+        <tr>
+          <td class="ar-text">جيل، كارثة</td>
+          <td class="ar-text">يعمل، يكتسب</td>
+          <td class="ar-text">كريم، بيئي</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Comprehension MCQ -->
+  <div class="card">
+    <div class="card-title"><span class="icon">❓</span>
+      <span class="en-text">Comprehension Questions</span>
+      <span class="ar-text">أسئلة الفهم</span>
+    </div>
+    <div class="exercise-item">
+      <div class="q en-text">1. The underlined word "their" in the 2nd paragraph refers to:</div>
+      <div class="q ar-text">1. الكلمة المسطّرة "their" في الفقرة الثانية تعود على:</div>
+      <div class="options-grid">
+        <button class="opt-btn" onclick="checkMCQ(this,'wrong','l5q1')">a. new skills</button>
+        <button class="opt-btn" onclick="checkMCQ(this,'wrong','l5q1')">b. training programmes</button>
+        <button class="opt-btn" onclick="checkMCQ(this,'correct','l5q1')">c. many women ✓</button>
+        <button class="opt-btn" onclick="checkMCQ(this,'wrong','l5q1')">d. strong communities</button>
+      </div>
+      <div class="feedback-msg" id="l5q1-fb"></div>
+    </div>
+    <div class="exercise-item" style="margin-top:10px;">
+      <div class="q en-text">2. The main purpose of the writer is to show how:</div>
+      <div class="q ar-text">2. الغرض الرئيسي للكاتب هو إظهار كيف:</div>
+      <div class="options-grid">
+        <button class="opt-btn" onclick="checkMCQ(this,'wrong','l5q2')"><span class="en-text">a. natural disasters affect countries</span><span class="ar-text">أ. تؤثر الكوارث الطبيعية على الدول</span></button>
+        <button class="opt-btn" onclick="checkMCQ(this,'wrong','l5q2')"><span class="en-text">b. schools help volunteering institutes</span><span class="ar-text">ب. تساعد المدارس مؤسسات التطوع</span></button>
+        <button class="opt-btn" onclick="checkMCQ(this,'correct','l5q2')"><span class="en-text">c. Kuwait helps others through volunteering ✓</span><span class="ar-text">ج. تساعد الكويت الآخرين من خلال التطوع ✓</span></button>
+        <button class="opt-btn" onclick="checkMCQ(this,'wrong','l5q2')"><span class="en-text">d. students learn about Asia and Africa</span><span class="ar-text">د. يتعلم الطلاب عن آسيا وأفريقيا</span></button>
+      </div>
+      <div class="feedback-msg" id="l5q2-fb"></div>
+    </div>
+  </div>
+
+  <div class="lesson-nav-btns">
+    <button class="nav-lesson-btn" onclick="showLesson('lesson4',4)">← <span class="en-text">Lesson 4</span><span class="ar-text">الدرس 4</span></button>
+    <button class="nav-lesson-btn" onclick="showLesson('lesson6',6)"><span class="en-text">Lesson 6: Grammar</span><span class="ar-text">الدرس 6: القواعد</span> →</button>
+  </div>
+</section>
+
+<!-- ========== LESSON 6: GRAMMAR ========== -->
+<section class="lesson-section" id="lesson6">
+  <div class="lesson-header">
+    <div class="lesson-num">6</div>
+    <div>
+      <h2 class="en-text">Verbs Followed by a Gerund (verb + -ing)</h2>
+      <h2 class="ar-text">الأفعال المتبوعة بالمصدر (فعل + ing)</h2>
+      <span class="skill-badge en-text">GRAMMAR</span>
+      <span class="skill-badge ar-text">قواعد</span>
+    </div>
+  </div>
+
+  <!-- Grammar Box -->
+  <div class="card">
+    <div class="card-title"><span class="icon">📐</span>
+      <span class="en-text">Grammar Rule: Gerunds after Verbs</span>
+      <span class="ar-text">قاعدة نحوية: المصدر بعد الأفعال</span>
+    </div>
+    <div class="grammar-box">
+      <h3 class="en-text">What is a Gerund?</h3>
+      <h3 class="ar-text">ما هو المصدر المضاف إليه -ing؟</h3>
+      <p class="en-text" style="font-size:0.9rem;margin-bottom:10px;">A gerund is a verb used as a noun by adding <strong>-ing</strong>. Certain verbs are always followed by a gerund.</p>
+      <p class="ar-text" style="font-size:0.9rem;margin-bottom:10px;">المصدر هو فعل يُستخدم كاسم بإضافة <strong>-ing</strong> إليه. بعض الأفعال تتبع دائمًا بالمصدر.</p>
+      <div class="formula en-text">verb + gerund (verb + -ing)</div>
+      <div class="formula ar-text">فعل + مصدر (فعل + ing)</div>
+    </div>
+
+    <!-- Common Verbs Table -->
+    <table class="data-table" style="margin-top:12px;">
+      <thead>
+        <tr>
+          <th class="en-text">Verb</th>
+          <th class="ar-text">الفعل</th>
+          <th class="en-text">Arabic Meaning</th>
+          <th class="ar-text">المعنى</th>
+          <th class="en-text">Example</th>
+          <th class="ar-text">مثال</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>enjoy</strong></td>
+          <td><strong>يستمتع بـ</strong></td>
+          <td class="en-text">to take pleasure in</td>
+          <td class="ar-text">يتلذذ بـ</td>
+          <td class="en-text">He enjoyed <em>painting</em> the walls.</td>
+          <td class="ar-text">استمتع بطلاء الجدران.</td>
+        </tr>
+        <tr>
+          <td><strong>finish</strong></td>
+          <td><strong>ينتهي من</strong></td>
+          <td class="en-text">to complete</td>
+          <td class="ar-text">يُكمل</td>
+          <td class="en-text">They finished <em>watering</em> the flowers.</td>
+          <td class="ar-text">انتهوا من ريّ الزهور.</td>
+        </tr>
+        <tr>
+          <td><strong>practise</strong></td>
+          <td><strong>يتدرب على</strong></td>
+          <td class="en-text">to do repeatedly to improve</td>
+          <td class="ar-text">يتدرّب على</td>
+          <td class="en-text">She practised <em>explaining</em> the lesson.</td>
+          <td class="ar-text">تدرّبت على شرح الدرس.</td>
+        </tr>
+        <tr>
+          <td><strong>suggest</strong></td>
+          <td><strong>يقترح</strong></td>
+          <td class="en-text">to recommend</td>
+          <td class="ar-text">يوصي بـ</td>
+          <td class="en-text">My sister suggested <em>volunteering</em>.</td>
+          <td class="ar-text">اقترحت أختي التطوع.</td>
+        </tr>
+        <tr>
+          <td><strong>discuss</strong></td>
+          <td><strong>يناقش</strong></td>
+          <td class="en-text">to talk about</td>
+          <td class="ar-text">يتحدث عن</td>
+          <td class="en-text">We discussed <em>helping</em> families in need.</td>
+          <td class="ar-text">ناقشنا مساعدة الأسر المحتاجة.</td>
+        </tr>
+        <tr>
+          <td><strong>encourage</strong></td>
+          <td><strong>يشجع على</strong></td>
+          <td class="en-text">to give support</td>
+          <td class="ar-text">يدعم</td>
+          <td class="en-text">The teacher encouraged <em>serving</em> our community.</td>
+          <td class="ar-text">شجّع المعلم على خدمة مجتمعنا.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Exercise 1: Fill in -->
+  <div class="card">
+    <div class="card-title"><span class="icon">✍️</span>
+      <span class="en-text">Exercise 1: Complete with the correct form</span>
+      <span class="ar-text">تمرين 1: أكمل بالصيغة الصحيحة</span>
+    </div>
+    <div class="exercise-container">
+      <div class="exercise-item">
+        <p class="en-text">a. My teacher encouraged ______________ (cooperate) on the project.</p>
+        <p class="ar-text">أ. شجّع معلمي على ______________ (cooperate) في المشروع.</p>
+        <input class="blank-input" id="g6a" placeholder="cooperating">
+        <button class="check-btn" onclick="checkGerund('g6a','cooperating','g6a-fb')">
+          <span class="en-text">Check</span><span class="ar-text">تحقق</span>
+        </button>
+        <button class="reveal-btn" onclick="revealGerund('g6a','cooperating','g6a-fb')">
+          <span class="en-text">Reveal</span><span class="ar-text">اكشف</span>
+        </button>
+        <div class="feedback-msg" id="g6a-fb"></div>
+      </div>
+      <div class="exercise-item">
+        <p class="en-text">b. The team enjoyed ______________ (represent) Kuwait at the competition.</p>
+        <p class="ar-text">ب. استمتع الفريق بـ ______________ (represent) الكويت في المسابقة.</p>
+        <input class="blank-input" id="g6b" placeholder="representing">
+        <button class="check-btn" onclick="checkGerund('g6b','representing','g6b-fb')">
+          <span class="en-text">Check</span><span class="ar-text">تحقق</span>
+        </button>
+        <button class="reveal-btn" onclick="revealGerund('g6b','representing','g6b-fb')">
+          <span class="en-text">Reveal</span><span class="ar-text">اكشف</span>
+        </button>
+        <div class="feedback-msg" id="g6b-fb"></div>
+      </div>
+      <div class="exercise-item">
+        <p class="en-text">c. We discussed ______________ (organise) the school event.</p>
+        <p class="ar-text">ج. ناقشنا ______________ (organise) الفعالية المدرسية.</p>
+        <input class="blank-input" id="g6c" placeholder="organising">
+        <button class="check-btn" onclick="checkGerund('g6c','organising','g6c-fb')">
+          <span class="en-text">Check</span><span class="ar-text">تحقق</span>
+        </button>
+        <button class="reveal-btn" onclick="revealGerund('g6c','organising','g6c-fb')">
+          <span class="en-text">Reveal</span><span class="ar-text">اكشف</span>
+        </button>
+        <div class="feedback-msg" id="g6c-fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exercise 2: Reorder -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🔀</span>
+      <span class="en-text">Exercise 2: Rewrite the words to make correct sentences (use gerunds)</span>
+      <span class="ar-text">تمرين 2: أعد ترتيب الكلمات لتكوين جمل صحيحة (استخدم المصدر)</span>
+    </div>
+    <div class="exercise-item">
+      <p class="en-text" style="font-weight:700;">a. team – the – enjoyed – working – together</p>
+      <textarea class="outline-textarea" style="min-height:50px;" placeholder="The team enjoyed working together."></textarea>
+    </div>
+    <div class="exercise-item" style="margin-top:10px;">
+      <p class="en-text" style="font-weight:700;">b. teacher – suggested – the – joining – campaign – the</p>
+      <textarea class="outline-textarea" style="min-height:50px;" placeholder="The teacher suggested joining the campaign."></textarea>
+    </div>
+    <div class="exercise-item" style="margin-top:10px;">
+      <p class="en-text" style="font-weight:700;">c. students – the – practised – presenting – project – the</p>
+      <textarea class="outline-textarea" style="min-height:50px;" placeholder="The students practised presenting the project."></textarea>
+    </div>
+    <div class="info-box green en-text" style="margin-top:12px;">
+      <strong>Answers:</strong> a. The team enjoyed working together. &nbsp;|&nbsp; b. The teacher suggested joining the campaign. &nbsp;|&nbsp; c. The students practised presenting the project.
+    </div>
+    <div class="info-box green ar-text" style="margin-top:12px;">
+      <strong>الإجابات:</strong> أ. استمتع الفريق بالعمل معًا. &nbsp;|&nbsp; ب. اقترح المعلم الانضمام إلى الحملة. &nbsp;|&nbsp; ج. تدرّب الطلاب على تقديم المشروع.
+    </div>
+  </div>
+
+  <div class="lesson-nav-btns">
+    <button class="nav-lesson-btn" onclick="showLesson('lesson5',5)">← <span class="en-text">Lesson 5</span><span class="ar-text">الدرس 5</span></button>
+    <button class="nav-lesson-btn" onclick="showLesson('lesson7',7)"><span class="en-text">Lesson 7: Writing</span><span class="ar-text">الدرس 7: الكتابة</span> →</button>
+  </div>
+</section>
+
+<!-- ========== LESSON 7: WRITING ========== -->
+<section class="lesson-section" id="lesson7">
+  <div class="lesson-header">
+    <div class="lesson-num">7</div>
+    <div>
+      <h2 class="en-text">Making a Difference</h2>
+      <h2 class="ar-text">إحداث فارق</h2>
+      <span class="skill-badge en-text">WRITING</span>
+      <span class="skill-badge ar-text">كتابة</span>
+    </div>
+  </div>
+
+  <!-- Quote -->
+  <div class="quote-box en-text">"When people work together to help others, even small actions can create big positive changes in the community."</div>
+  <div class="quote-box ar-text">"عندما يتعاون الناس لمساعدة الآخرين، حتى الأعمال الصغيرة يمكنها إحداث تغييرات إيجابية كبيرة في المجتمع."</div>
+
+  <!-- Linkers -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🔗</span>
+      <span class="en-text">Linking Words Practice</span>
+      <span class="ar-text">تمرين روابط الجمل</span>
+    </div>
+    <div class="grammar-box">
+      <h3 class="en-text">Key Linkers for This Unit</h3>
+      <h3 class="ar-text">الروابط الأساسية لهذه الوحدة</h3>
+      <table class="data-table" style="margin-top:8px;">
+        <thead><tr><th class="en-text">Linker</th><th class="ar-text">الرابط</th><th class="en-text">Use</th><th class="ar-text">الاستخدام</th></tr></thead>
+        <tbody>
+          <tr><td><strong>In addition</strong></td><td><strong>علاوة على ذلك</strong></td><td class="en-text">To add another point</td><td class="ar-text">لإضافة نقطة أخرى</td></tr>
+          <tr><td><strong>However</strong></td><td><strong>ومع ذلك</strong></td><td class="en-text">To show contrast</td><td class="ar-text">لإظهار التناقض</td></tr>
+          <tr><td><strong>Despite</strong></td><td><strong>بالرغم من</strong></td><td class="en-text">To show contrast (+ noun/gerund)</td><td class="ar-text">لإظهار التناقض (+ اسم/مصدر)</td></tr>
+          <tr><td><strong>In conclusion</strong></td><td><strong>في الختام</strong></td><td class="en-text">To summarise or conclude</td><td class="ar-text">لتلخيص أو الاختتام</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Linker Fill-in -->
+    <div class="exercise-item" style="margin-top:14px;">
+      <div class="q en-text">Complete the paragraph with the correct linker (use each once):</div>
+      <div class="q ar-text">أكمل الفقرة بالرابط الصحيح (استخدم كل رابط مرة واحدة):</div>
+      <p style="font-size:0.9rem;line-height:2.2;margin:10px 0;">
+        <span class="en-text">Helping others improves mood and builds communities.</span>
+        <span class="ar-text">مساعدة الآخرين تُحسّن المزاج وتبني المجتمعات.</span>
+        <select class="linker-select" id="lk1" onchange="checkLinker('lk1','In addition','lk-fb')">
+          <option value="">--</option>
+          <option>In addition</option>
+          <option>However</option>
+          <option>Despite</option>
+          <option>In conclusion</option>
+        </select>
+        <span class="en-text">, it teaches empathy and responsibility.</span>
+        <span class="ar-text">، يُعلّم التعاطف والمسؤولية.</span>
+        <select class="linker-select" id="lk2" onchange="checkLinker('lk2','However','lk-fb')">
+          <option value="">--</option>
+          <option>In addition</option>
+          <option>However</option>
+          <option>Despite</option>
+          <option>In conclusion</option>
+        </select>
+        <span class="en-text">, some people feel too busy to volunteer.</span>
+        <span class="ar-text">، يشعر بعض الناس أنهم مشغولون جدًا للتطوع.</span>
+        <select class="linker-select" id="lk3" onchange="checkLinker('lk3','Despite','lk-fb')">
+          <option value="">--</option>
+          <option>In addition</option>
+          <option>However</option>
+          <option>Despite</option>
+          <option>In conclusion</option>
+        </select>
+        <span class="en-text"> these challenges, small acts of kindness make a difference.</span>
+        <span class="ar-text"> هذه التحديات، أعمال اللطف الصغيرة تُحدث فارقًا.</span>
+        <select class="linker-select" id="lk4" onchange="checkLinker('lk4','In conclusion','lk-fb')">
+          <option value="">--</option>
+          <option>In addition</option>
+          <option>However</option>
+          <option>Despite</option>
+          <option>In conclusion</option>
+        </select>
+        <span class="en-text">, helping others benefits everyone, including ourselves.</span>
+        <span class="ar-text">، مساعدة الآخرين تفيد الجميع، بما فيهم أنفسنا.</span>
+      </p>
+      <div class="feedback-msg" id="lk-fb"></div>
+    </div>
+  </div>
+
+  <!-- Graphic Organiser -->
+  <div class="card">
+    <div class="card-title"><span class="icon">🗂️</span>
+      <span class="en-text">Graphic Organiser: Volunteering</span>
+      <span class="ar-text">المنظّم الرسومي: التطوع</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:10px;">
+      <div class="outline-section">
+        <h4 class="en-text">Why people volunteer</h4>
+        <h4 class="ar-text">لماذا يتطوع الناس</h4>
+        <textarea class="outline-textarea" placeholder="e.g. To help others, to feel good...&#10;مثال: لمساعدة الآخرين..."></textarea>
+      </div>
+      <div class="outline-section">
+        <h4 class="en-text">What actions they can do</h4>
+        <h4 class="ar-text">الأعمال التي يمكنهم القيام بها</h4>
+        <textarea class="outline-textarea" placeholder="e.g. Clean beaches, visit hospitals...&#10;مثال: تنظيف الشواطئ..."></textarea>
+      </div>
+      <div class="outline-section">
+        <h4 class="en-text">Where people can volunteer</h4>
+        <h4 class="ar-text">أين يمكن للناس التطوع</h4>
+        <textarea class="outline-textarea" placeholder="e.g. Schools, hospitals, mosques...&#10;مثال: المدارس، المستشفيات..."></textarea>
+      </div>
+      <div class="outline-section">
+        <h4 class="en-text">How it benefits the community</h4>
+        <h4 class="ar-text">كيف يفيد المجتمع</h4>
+        <textarea class="outline-textarea" placeholder="e.g. Stronger bonds, cleaner environment...&#10;مثال: روابط أقوى..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- First Conditional Sentences -->
+  <div class="card">
+    <div class="card-title"><span class="icon">💡</span>
+      <span class="en-text">First Conditional: What would happen if everyone volunteered?</span>
+      <span class="ar-text">الشرط الأول: ماذا سيحدث لو تطوّع الجميع؟</span>
+    </div>
+    <div class="info-box green en-text">
+      <strong>Examples:</strong><br>
+      • If everyone volunteers, the neighbourhood will be cleaner.<br>
+      • If more people help each other, society will become kinder.
+    </div>
+    <div class="info-box green ar-text">
+      <strong>أمثلة:</strong><br>
+      • إذا تطوع الجميع، سيصبح الحي أنظف.<br>
+      • إذا تعاون الناس أكثر، سيصبح المجتمع أكثر لطفًا.
+    </div>
+    <textarea class="outline-textarea" style="margin-top:10px;" placeholder="Write your two First Conditional sentences here...&#10;اكتب جملتيك بالشرط الأول هنا..."></textarea>
+  </div>
+
+  <!-- Writing Outline -->
+  <div class="card">
+    <div class="card-title"><span class="icon">✍️</span>
+      <span class="en-text">Writing Outline: Expository Report (Two Paragraphs)</span>
+      <span class="ar-text">مخطط الكتابة: تقرير توضيحي (فقرتان)</span>
+    </div>
+    <div class="info-box purple en-text">
+      <strong>Task:</strong> Plan and write a report of two paragraphs explaining the importance of community service and the many actions we can do.
+    </div>
+    <div class="info-box purple ar-text">
+      <strong>المهمة:</strong> خطّط واكتب تقريرًا من فقرتين يشرح أهمية خدمة المجتمع والأعمال العديدة التي يمكننا القيام بها.
+    </div>
+
+    <div class="outline-section" style="margin-top:14px;">
+      <h4 class="en-text">Introduction</h4>
+      <h4 class="ar-text">المقدمة</h4>
+      <textarea class="outline-textarea" placeholder="Write your introduction here... / اكتب مقدمتك هنا..."></textarea>
+    </div>
+
+    <div class="outline-section">
+      <h4 class="en-text">Paragraph 1: The Importance of Community Service</h4>
+      <h4 class="ar-text">الفقرة الأولى: أهمية خدمة المجتمع</h4>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:6px;" class="en-text">Topic sentence:</p>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:6px;" class="ar-text">الجملة الموضوعية:</p>
+      <textarea class="outline-textarea" style="min-height:60px;" placeholder="Community service is important because..."></textarea>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:8px 0 6px;" class="en-text">Supporting details:</p>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:8px 0 6px;" class="ar-text">التفاصيل الداعمة:</p>
+      <textarea class="outline-textarea" placeholder="In addition, ... / However, ... / Despite ..."></textarea>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:8px 0 6px;" class="en-text">Concluding sentence:</p>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:8px 0 6px;" class="ar-text">جملة الختام:</p>
+      <textarea class="outline-textarea" style="min-height:50px;"></textarea>
+    </div>
+
+    <div class="outline-section">
+      <h4 class="en-text">Paragraph 2: The Actions We Can Do</h4>
+      <h4 class="ar-text">الفقرة الثانية: الأعمال التي يمكننا القيام بها</h4>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:6px;" class="en-text">Topic sentence:</p>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:6px;" class="ar-text">الجملة الموضوعية:</p>
+      <textarea class="outline-textarea" style="min-height:60px;" placeholder="There are many actions we can take to..."></textarea>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:8px 0 6px;" class="en-text">Supporting details (use First Conditional):</p>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:8px 0 6px;" class="ar-text">التفاصيل الداعمة (استخدم الشرط الأول):</p>
+      <textarea class="outline-textarea" placeholder="If we volunteer, ... / If more students help, ..."></textarea>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:8px 0 6px;" class="en-text">Concluding sentence:</p>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin:8px 0 6px;" class="ar-text">جملة الختام:</p>
+      <textarea class="outline-textarea" style="min-height:50px;"></textarea>
+    </div>
+
+    <div class="outline-section">
+      <h4 class="en-text">Conclusion</h4>
+      <h4 class="ar-text">الخاتمة</h4>
+      <textarea class="outline-textarea" placeholder="In conclusion, ... / اكتب خاتمتك هنا..."></textarea>
+    </div>
+  </div>
+
+  <!-- Writing Checklist -->
+  <div class="speaker-card">
+    <h4 class="en-text">✅ Writing Checklist</h4>
+    <h4 class="ar-text">✅ قائمة مراجعة الكتابة</h4>
+    <ul class="checklist">
+      <li><input type="checkbox"><span class="en-text">Write a clear introduction and conclusion</span><span class="ar-text">كتابة مقدمة وخاتمة واضحتين</span></li>
+      <li><input type="checkbox"><span class="en-text">Write two paragraphs with strong topic sentences and related details</span><span class="ar-text">كتابة فقرتين بجمل موضوعية قوية وتفاصيل ذات صلة</span></li>
+      <li><input type="checkbox"><span class="en-text">Use linking words to connect ideas clearly (but, although, however…)</span><span class="ar-text">استخدام روابط لتوصيل الأفكار بوضوح</span></li>
+      <li><input type="checkbox"><span class="en-text">Check spelling and punctuation</span><span class="ar-text">التحقق من التهجئة وعلامات الترقيم</span></li>
+      <li><input type="checkbox"><span class="en-text">Use AI tools to edit your writing</span><span class="ar-text">استخدام أدوات الذكاء الاصطناعي لتحرير كتابتك</span></li>
+      <li><input type="checkbox"><span class="en-text">Apply First Conditional sentences where appropriate</span><span class="ar-text">تطبيق جمل الشرط الأول حيثما يناسب</span></li>
+      <li><input type="checkbox"><span class="en-text">Use gerunds correctly after verbs (enjoy, suggest, discuss…)</span><span class="ar-text">استخدام المصدر بشكل صحيح بعد الأفعال</span></li>
+    </ul>
+  </div>
+
+  <div class="lesson-nav-btns">
+    <button class="nav-lesson-btn" onclick="showLesson('lesson6',6)">← <span class="en-text">Lesson 6</span><span class="ar-text">الدرس 6</span></button>
+    <button class="nav-lesson-btn" onclick="showLesson('overview',0)"><span class="en-text">Back to Overview</span><span class="ar-text">العودة للنظرة العامة</span> 🏠</button>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="background:var(--purple-dark);color:rgba(255,255,255,0.75);text-align:center;padding:18px;font-size:0.8rem;margin-top:20px;">
+  <span class="en-text">English Pearls of Kuwait · Unit 5: Community &amp; Volunteering · Interactive Learning</span>
+  <span class="ar-text">لؤلؤ الإنجليزية الكويتية · الوحدة 5: المجتمع والتطوع · تعلّم تفاعلي</span>
+</footer>
+
+<script>
+// ===== LANGUAGE TOGGLE =====
+let currentLang = 'en';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'ar' : 'en';
+  document.body.className = currentLang;
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  document.getElementById('langLabel').textContent = currentLang === 'en' ? 'العربية' : 'English';
+}
+
+// ===== TAB NAVIGATION =====
+const tabs = ['overview','lesson1','lesson2','lesson3','lesson4','lesson5','lesson6','lesson7'];
+let currentIdx = 0;
+
+function showLesson(id, idx) {
+  document.querySelectorAll('.lesson-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+  currentIdx = idx;
+  updateProgress();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function updateProgress() {
+  const pct = Math.round((currentIdx / (tabs.length - 1)) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+}
+
+// ===== VOCABULARY TOGGLE =====
+function toggleVocab(el) {
+  el.classList.toggle('open');
+}
+
+// ===== MCQ CHECK =====
+function checkMCQ(btn, type, id) {
+  const container = btn.closest('.exercise-item') || btn.closest('.card');
+  const allBtns = btn.closest('.options-grid').querySelectorAll('.opt-btn');
+  allBtns.forEach(b => { b.disabled = true; });
+
+  const fb = document.getElementById(id + '-fb');
+  if (type === 'correct') {
+    btn.classList.add('correct');
+    if (fb) {
+      fb.textContent = currentLang === 'en' ? '✅ Correct! Well done!' : '✅ إجابة صحيحة! أحسنت!';
+      fb.className = 'feedback-msg show ok';
+    }
+  } else {
+    btn.classList.add('wrong');
+    if (fb) {
+      fb.textContent = currentLang === 'en' ? '❌ Not quite. Try reading the text again.' : '❌ ليست الإجابة الصحيحة. حاول قراءة النص مرة أخرى.';
+      fb.className = 'feedback-msg show err';
+    }
+    // Highlight correct answer
+    allBtns.forEach(b => {
+      if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'correct'")) {
+        b.classList.add('correct');
+      }
+    });
+  }
+}
+
+// ===== MATCHING =====
+function checkMatch(sel, id, correct) {
+  if (sel.value === correct) {
+    sel.style.borderColor = 'var(--green)';
+    sel.style.background = '#e8f5e9';
+  } else if (sel.value !== '') {
+    sel.style.borderColor = 'var(--red)';
+    sel.style.background = '#fdecea';
+  }
+}
+
+// ===== FILL BLANKS (Lesson 2) =====
+function checkFill2a() {
+  const v1 = document.getElementById('b2a1').value.trim().toLowerCase();
+  const v2 = document.getElementById('b2a2').value.trim().toLowerCase();
+  const fb = document.getElementById('fill2a-fb');
+  const ok1 = v1 === 'volunteer' || v1 === 'volunteers';
+  const ok2 = v2 === 'will feel' || v2 === 'feel';
+  if (ok1 && ok2) {
+    fb.textContent = currentLang === 'en' ? '✅ Correct!' : '✅ صحيح!';
+    fb.className = 'feedback-msg show ok';
+    document.getElementById('b2a1').classList.add('correct');
+    document.getElementById('b2a2').classList.add('correct');
+  } else {
+    fb.textContent = currentLang === 'en' ? '❌ Check again. Hint: a=volunteer / b=will feel' : '❌ راجع. تلميح: أ=volunteer / ب=will feel';
+    fb.className = 'feedback-msg show err';
+  }
+}
+function revealFill2a() {
+  document.getElementById('b2a1').value = 'volunteer';
+  document.getElementById('b2a2').value = 'will feel';
+  document.getElementById('b2a1').classList.add('correct');
+  document.getElementById('b2a2').classList.add('correct');
+  const fb = document.getElementById('fill2a-fb');
+  fb.textContent = currentLang === 'en' ? '💡 Answer revealed!' : '💡 تم الكشف عن الإجابة!';
+  fb.className = 'feedback-msg show ok';
+}
+
+function checkFill2b() {
+  const v1 = document.getElementById('b2b1').value.trim().toLowerCase();
+  const v2 = document.getElementById('b2b2').value.trim().toLowerCase();
+  const fb = document.getElementById('fill2b-fb');
+  const ok1 = v1 === 'will become' || v1 === 'becomes';
+  const ok2 = v2 === 'participates' || v2 === 'participate';
+  if (ok1 && ok2) {
+    fb.textContent = currentLang === 'en' ? '✅ Correct!' : '✅ صحيح!';
+    fb.className = 'feedback-msg show ok';
+  } else {
+    fb.textContent = currentLang === 'en' ? '❌ Hint: a=will become / b=participates' : '❌ تلميح: أ=will become / ب=participates';
+    fb.className = 'feedback-msg show err';
+  }
+}
+function revealFill2b() {
+  document.getElementById('b2b1').value = 'will become';
+  document.getElementById('b2b2').value = 'participates';
+  document.getElementById('b2b1').classList.add('correct');
+  document.getElementById('b2b2').classList.add('correct');
+  const fb = document.getElementById('fill2b-fb');
+  fb.textContent = currentLang === 'en' ? '💡 Answer revealed!' : '💡 تم الكشف عن الإجابة!';
+  fb.className = 'feedback-msg show ok';
+}
+
+function checkFill2c() {
+  const v1 = document.getElementById('b2c1').value.trim().toLowerCase();
+  const v2 = document.getElementById('b2c2').value.trim().toLowerCase();
+  const fb = document.getElementById('fill2c-fb');
+  const ok1 = v1 === 'raise' || v1 === 'raises';
+  const ok2 = v2 === 'will understand' || v2 === 'understand';
+  if (ok1 && ok2) {
+    fb.textContent = currentLang === 'en' ? '✅ Correct!' : '✅ صحيح!';
+    fb.className = 'feedback-msg show ok';
+  } else {
+    fb.textContent = currentLang === 'en' ? '❌ Hint: a=raise / b=will understand' : '❌ تلميح: أ=raise / ب=will understand';
+    fb.className = 'feedback-msg show err';
+  }
+}
+function revealFill2c() {
+  document.getElementById('b2c1').value = 'raise';
+  document.getElementById('b2c2').value = 'will understand';
+  document.getElementById('b2c1').classList.add('correct');
+  document.getElementById('b2c2').classList.add('correct');
+  const fb = document.getElementById('fill2c-fb');
+  fb.textContent = currentLang === 'en' ? '💡 Answer revealed!' : '💡 تم الكشف عن الإجابة!';
+  fb.className = 'feedback-msg show ok';
+}
+
+// ===== GERUND CHECK =====
+function checkGerund(inputId, answer, fbId) {
+  const val = document.getElementById(inputId).value.trim().toLowerCase();
+  const fb = document.getElementById(fbId);
+  const answerAlt = answer.replace('ing','ing').toLowerCase();
+  const accepted = [answer.toLowerCase(), answer.replace('ise','ize').toLowerCase(), answer.replace('ize','ise').toLowerCase(), answer.replace('organising','organizing').toLowerCase()];
+  if (accepted.includes(val) || val === answer.toLowerCase()) {
+    document.getElementById(inputId).classList.remove('wrong');
+    document.getElementById(inputId).classList.add('correct');
+    fb.textContent = currentLang === 'en' ? '✅ Correct!' : '✅ صحيح!';
+    fb.className = 'feedback-msg show ok';
+  } else {
+    document.getElementById(inputId).classList.remove('correct');
+    document.getElementById(inputId).classList.add('wrong');
+    fb.textContent = (currentLang === 'en' ? '❌ Try again. Answer: ' : '❌ حاول مرة أخرى. الإجابة: ') + answer;
+    fb.className = 'feedback-msg show err';
+  }
+}
+function revealGerund(inputId, answer, fbId) {
+  document.getElementById(inputId).value = answer;
+  document.getElementById(inputId).classList.remove('wrong');
+  document.getElementById(inputId).classList.add('correct');
+  const fb = document.getElementById(fbId);
+  fb.textContent = currentLang === 'en' ? '💡 Answer revealed!' : '💡 تم الكشف عن الإجابة!';
+  fb.className = 'feedback-msg show ok';
+}
+
+// ===== LINKER CHECK =====
+function checkLinker(selId, correct, fbId) {
+  const sel = document.getElementById(selId);
+  if (sel.value === correct) {
+    sel.classList.add('correct');
+    sel.classList.remove('wrong');
+  } else if (sel.value !== '') {
+    sel.classList.add('wrong');
+    sel.classList.remove('correct');
+  }
+}
+
+// ===== INIT =====
+updateProgress();
+</script>
+</body>
+</html>

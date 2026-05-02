@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Unit 5 — Community & Volunteering | English Pearls of Kuwait</title>
+<meta name="description" content="Interactive bilingual (EN/AR) learning website for Learning Unit 5: Community & Volunteering. English Pearls of Kuwait — Grade 8." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🤝%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- Decorative background -->
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+</div>
+
+<!-- Header / Nav -->
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#hero">
+      <span class="brand-badge">5</span>
+      <span class="brand-text">
+        <strong data-i18n="brand.title">Community &amp; Volunteering</strong>
+        <small data-i18n="brand.sub">English Pearls of Kuwait — Grade 8</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Lessons">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="navMenu">
+        <li><a href="#lesson-1" data-i18n="nav.l1">Reading 1</a></li>
+        <li><a href="#lesson-2" data-i18n="nav.l2">Grammar 1</a></li>
+        <li><a href="#lesson-3" data-i18n="nav.l3">Listening</a></li>
+        <li><a href="#lesson-4" data-i18n="nav.l4">Speaking</a></li>
+        <li><a href="#lesson-5" data-i18n="nav.l5">Reading 2</a></li>
+        <li><a href="#lesson-6" data-i18n="nav.l6">Grammar 2</a></li>
+        <li><a href="#lesson-7" data-i18n="nav.l7">Writing</a></li>
+        <li><a href="#vocab" data-i18n="nav.vocab">Vocabulary</a></li>
+      </ul>
+    </nav>
+
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang-btn" data-lang="ar" aria-pressed="false">عربى</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="hero" class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="kicker" data-i18n="hero.kicker">Learning Unit 5</span>
+      <h1 data-i18n="hero.title">Community &amp; Volunteering</h1>
+      <p class="lead" data-i18n="hero.lead">A journey through helping others — explore reading, grammar, listening, speaking, and writing in English with Arabic support to make every word click.</p>
+      <div class="hero-cta">
+        <a href="#lesson-1" class="btn btn-primary" data-i18n="hero.start">Start Lesson 1</a>
+        <a href="#vocab" class="btn btn-ghost" data-i18n="hero.vocab">Vocabulary List</a>
+      </div>
+      <ul class="hero-stats" aria-label="Unit overview">
+        <li><strong>7</strong><span data-i18n="hero.lessons">Lessons</span></li>
+        <li><strong>40+</strong><span data-i18n="hero.words">Words</span></li>
+        <li><strong>2</strong><span data-i18n="hero.grammar">Grammar Topics</span></li>
+        <li><strong>EN/AR</strong><span data-i18n="hero.bilingual">Bilingual</span></li>
+      </ul>
+    </div>
+    <div class="hero-card" aria-hidden="true">
+      <div class="hero-card-emoji">🤝</div>
+      <div class="hero-card-tags">
+        <span>📖 Reading</span><span>✍️ Writing</span><span>🎧 Listening</span>
+        <span>🗣️ Speaking</span><span>💬 Grammar</span><span>🌱 Values</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+<!-- Learning Outcomes -->
+<section class="card outcomes">
+  <h2 class="section-title"><span class="dot"></span><span data-i18n="outcomes.title">Learning Outcomes</span></h2>
+  <div class="outcome-grid">
+    <article>
+      <h3>🎧 <span data-i18n="outcomes.listen">Listening</span></h3>
+      <p data-i18n="outcomes.listenDesc">Find main ideas, supporting details, and infer meanings about community and citizenship. Recognise tone, attitude and feelings in spoken texts.</p>
+    </article>
+    <article>
+      <h3>🗣️ <span data-i18n="outcomes.speak">Speaking</span></h3>
+      <p data-i18n="outcomes.speakDesc">Deliver well-organised presentations about school campaigns, express opinions and empathy, and give respectful feedback in discussions.</p>
+    </article>
+    <article>
+      <h3>📖 <span data-i18n="outcomes.read">Reading</span></h3>
+      <p data-i18n="outcomes.readDesc">Analyse expository texts about voluntary work, identify main ideas and viewpoints, and use context clues to infer meanings.</p>
+    </article>
+    <article>
+      <h3>✍️ <span data-i18n="outcomes.write">Writing</span></h3>
+      <p data-i18n="outcomes.writeDesc">Produce coherent two-paragraph expository reports using linking words (in conclusion, however, despite, in addition).</p>
+    </article>
+  </div>
+</section>
+
+<!-- LESSON 1 — Reading -->
+<section id="lesson-1" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 1</span>
+    <h2><span data-i18n="l1.title">A Journey of Helping Others</span></h2>
+    <p class="lesson-sub" data-i18n="l1.sub">Reading · Expository Blog Post</p>
+  </header>
+
+  <div class="lesson-grid">
+    <div class="card">
+      <h3 data-i18n="l1.before">Before You Read</h3>
+      <ul class="discuss-list">
+        <li data-i18n="l1.q1">Have you ever done anything to help others? What did you do?</li>
+        <li data-i18n="l1.q2">How did it make you feel?</li>
+      </ul>
+      <div class="info-box">
+        <strong data-i18n="l1.expoLabel">Expository</strong>
+        <p data-i18n="l1.expo">Voluntary work means you do the work by choice to help others without getting paid.</p>
+      </div>
+    </div>
+
+    <article class="card reading">
+      <h3 data-i18n="l1.blogTitle">My Experience at the Cooperative Society</h3>
+      <p class="reading-byline" data-i18n="l1.byline">A blog post by Jassim · Volunteer · Kuwait</p>
+
+      <p data-i18n="l1.p1">Last weekend, I decided to volunteer at our local <em class="hl">cooperative society (co-op)</em>. I wanted to be a useful <em class="hl">resident</em> in my neighbourhood and learn how community projects really work.</p>
+
+      <p data-i18n="l1.p2">When I arrived, the manager welcomed me and explained the daily tasks. We helped <em class="hl">put together</em> food <em class="hl">packages</em> for the <em class="hl">elderly</em> who could not leave their homes. People donated rice, sugar, oil and dates as a <em class="hl">contribution</em> to families in need. The volunteers also checked the prices of the goods to make sure <em>they</em> were <em class="hl">fair</em> for every customer.</p>
+
+      <p data-i18n="l1.p3">During the <em class="hl">pandemic</em>, the co-op had a huge <em class="hl">impact</em> on our community. It delivered medicine and food to people who had to stay at home. My job was small, but I <em class="hl">gladly</em> carried boxes, wrote names on the lists, and called families to confirm deliveries. I tried to <em class="hl">demonstrate</em> a positive attitude so others would feel encouraged.</p>
+
+      <p data-i18n="l1.p4">It is <em class="hl">necessary</em> and <em class="hl">vital</em> for young people to support <em class="hl">charity</em> and <em class="hl">volunteering</em>. My grandfather <em class="hl">persuaded</em> me to keep going, and I <em class="hl">realised</em> something important: a community is only strong when everyone <em class="hl">establishes</em> the habit of helping others.</p>
+
+      <p data-i18n="l1.p5">I left the co-op feeling proud. I learnt that small actions can change big things — and I will be back next weekend. Will you join me?</p>
+    </article>
+  </div>
+
+  <!-- Comprehension Quiz -->
+  <div class="card">
+    <h3 data-i18n="l1.checkTitle">Check Your Understanding</h3>
+
+    <div class="quiz" data-quiz="l1">
+      <div class="q">
+        <p class="q-text" data-i18n="l1.qa">a. What is this blog post mostly about?</p>
+        <textarea class="open-answer" placeholder="Type your answer..."></textarea>
+        <details class="model"><summary data-i18n="ui.modelAnswer">Model answer</summary>
+          <p data-i18n="l1.qaModel">It is mostly about how Jassim volunteered at his local cooperative society and how this helped him become an active and helpful part of his community.</p>
+        </details>
+      </div>
+
+      <div class="q mcq" data-correct="d">
+        <p class="q-text" data-i18n="l1.q_main">1. What is Jassim's blog post mainly about?</p>
+        <label><input type="radio" name="l1_main" value="a"><span data-i18n="l1.q_main_a">a. The importance of buying local goods</span></label>
+        <label><input type="radio" name="l1_main" value="b"><span data-i18n="l1.q_main_b">b. How to help the elderly with daily tasks</span></label>
+        <label><input type="radio" name="l1_main" value="c"><span data-i18n="l1.q_main_c">c. The steps of managing home deliveries</span></label>
+        <label><input type="radio" name="l1_main" value="d"><span data-i18n="l1.q_main_d">d. How to be an active and helpful part of our society</span></label>
+      </div>
+
+      <div class="q mcq" data-correct="b">
+        <p class="q-text" data-i18n="l1.q_they">2. The underlined word "they" in the 2nd paragraph refers to:</p>
+        <label><input type="radio" name="l1_they" value="a"><span>a. prices</span></label>
+        <label><input type="radio" name="l1_they" value="b"><span>b. goods</span></label>
+        <label><input type="radio" name="l1_they" value="c"><span>c. people</span></label>
+        <label><input type="radio" name="l1_they" value="d"><span>d. co-ops</span></label>
+      </div>
+
+      <div class="q mcq" data-correct="b">
+        <p class="q-text" data-i18n="l1.q_feel">3. How did Jassim feel about this experience?</p>
+        <label><input type="radio" name="l1_feel" value="a"><span data-i18n="l1.q_feel_a">a. bored</span></label>
+        <label><input type="radio" name="l1_feel" value="b"><span data-i18n="l1.q_feel_b">b. proud</span></label>
+        <label><input type="radio" name="l1_feel" value="c"><span data-i18n="l1.q_feel_c">c. relaxed</span></label>
+        <label><input type="radio" name="l1_feel" value="d"><span data-i18n="l1.q_feel_d">d. confused</span></label>
+      </div>
+
+      <button class="btn btn-primary check-quiz" data-i18n="ui.check">Check Answers</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Feel it, Say it -->
+  <div class="card highlight">
+    <h3>💬 <span data-i18n="l1.feelTitle">Feel it, Say it</span></h3>
+    <p data-i18n="l1.feelInstr">Imagine you are one of Jassim's friends. Write a 3–4 sentence comment under his post.</p>
+    <ul class="checklist">
+      <li data-i18n="l1.feel1">Say how you felt after reading the post.</li>
+      <li data-i18n="l1.feel2">Mention one part that affected you (a specific detail from the text).</li>
+      <li data-i18n="l1.feel3">Explain why that part made you feel this way.</li>
+      <li data-i18n="l1.feel4">End with encouragement (praise, support, or a suggestion to volunteer).</li>
+    </ul>
+    <div class="useful-language">
+      <strong data-i18n="l1.useful">Useful Language — Expressing Feelings</strong>
+      <ul>
+        <li>I felt… when I…</li>
+        <li>One idea that made me feel (proud / happy / surprised) was…</li>
+        <li>This part of the post made me feel…</li>
+        <li>I felt inspired to…</li>
+      </ul>
+    </div>
+    <textarea class="open-answer big" placeholder="Add your comment here..."></textarea>
+  </div>
+</section>
+
+<!-- LESSON 2 — Grammar -->
+<section id="lesson-2" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 2</span>
+    <h2><span data-i18n="l2.title">The First Conditional</span></h2>
+    <p class="lesson-sub" data-i18n="l2.sub">Grammar · Real future possibilities</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l2.ruleT">📘 The Rule</h3>
+    <p data-i18n="l2.rule">We use the <strong>first conditional</strong> to talk about real or possible future results that depend on a present condition.</p>
+    <div class="formula">
+      <span class="chip">If</span> +
+      <span class="chip green">present simple</span> →
+      <span class="chip">will</span> +
+      <span class="chip blue">base verb</span>
+    </div>
+    <ul class="examples">
+      <li><strong>If</strong> volunteers <strong>help</strong>, the beach <strong>will be</strong> cleaner.</li>
+      <li><strong>If</strong> nobody <strong>cleans</strong> the beach, it <strong>will look</strong> dirty.</li>
+      <li>The campaign <strong>will be</strong> successful <strong>if</strong> people <strong>join</strong> it.</li>
+    </ul>
+    <div class="tip">
+      💡 <span data-i18n="l2.tipComma">Add a comma only when the "if" clause comes first.</span>
+    </div>
+    <div class="warn">
+      ⚠️ <span data-i18n="l2.tipWill">Do not use "will" in the if-clause: <span class="bad">If people will help…</span> ✓ <span class="good">If people help…</span></span>
+    </div>
+  </div>
+
+  <!-- Matching exercise -->
+  <div class="card">
+    <h3 data-i18n="l2.matchT">🧩 Match each beginning to its correct ending.</h3>
+    <div class="match" id="matchEx">
+      <div class="match-col left">
+        <div class="match-item" data-id="1" draggable="true">If you donate your clothes to charity,</div>
+        <div class="match-item" data-id="2" draggable="true">If we help each other carry the heavy boxes,</div>
+        <div class="match-item" data-id="3" draggable="true">If the library starts a story-telling activity,</div>
+        <div class="match-item" data-id="4" draggable="true">If local mosques have iftar campaigns,</div>
+      </div>
+      <div class="match-col right">
+        <div class="match-drop" data-accepts="4">families in need will receive useful items.</div>
+        <div class="match-drop" data-accepts="2">we will be able to finish moving faster.</div>
+        <div class="match-drop" data-accepts="3">many children will attend and enjoy it.</div>
+        <div class="match-drop" data-accepts="1">people will donate food to the mosque. <span class="muted">(donations)</span></div>
+      </div>
+    </div>
+    <button class="btn btn-primary check-match" data-i18n="ui.check">Check Match</button>
+    <p class="match-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Fill in the blanks -->
+  <div class="card">
+    <h3 data-i18n="l2.fillT">✏️ Fill in the blanks with the correct verb form.</h3>
+    <div class="fill" data-fill="l2">
+      <p>a. If people <input data-answer="volunteer" placeholder="(volunteer)"> at the hospital, patients <input data-answer="will feel|feel happier|will feel happier" placeholder="(feel)"> happier.</p>
+      <p>b. Our area <input data-answer="will become|become greener" placeholder="(become)"> greener, if Ali <input data-answer="participates" placeholder="(participate)"> in planting trees.</p>
+      <p>c. If schools <input data-answer="raise" placeholder="(raise)"> awareness, students <input data-answer="will understand" placeholder="(understand)"> the effects of bullying.</p>
+      <button class="btn btn-primary check-fill" data-i18n="ui.check">Check</button>
+      <p class="fill-result" aria-live="polite"></p>
+      <details class="model"><summary data-i18n="ui.showAnswers">Show answers</summary>
+        <ul>
+          <li>a. <strong>volunteer</strong> … <strong>will feel</strong></li>
+          <li>b. <strong>will become</strong> … <strong>participates</strong></li>
+          <li>c. <strong>raise</strong> … <strong>will understand</strong></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <!-- Card design activity -->
+  <div class="card highlight">
+    <h3>🎨 <span data-i18n="l2.designT">Design a Card: Small Actions Create Positive Results</span></h3>
+    <p data-i18n="l2.designP">Choose a topic, write three First Conditional sentences, and design a card.</p>
+    <div class="topic-ideas">
+      <span>🌳 Planting trees in the neighbourhood</span>
+      <span>📚 Helping younger students</span>
+      <span>🏃 Starting a health/fitness day</span>
+      <span>🧸 Collecting toys/clothes for families in need</span>
+      <span>♻️ Recycling</span>
+    </div>
+    <textarea class="open-answer big" placeholder="If we plant trees, our streets will be greener..."></textarea>
+  </div>
+</section>
+
+<!-- LESSON 3 — Listening -->
+<section id="lesson-3" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 3</span>
+    <h2><span data-i18n="l3.title">Small Acts, Big Impact</span></h2>
+    <p class="lesson-sub" data-i18n="l3.sub">Listening · Conversation in the diwaniya</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l3.before">Before You Listen</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l3.b1">What does being a good citizen mean to you?</li>
+      <li data-i18n="l3.b2">Can small acts of kindness make a difference? Give examples.</li>
+      <li data-i18n="l3.b3">How do responsible people help their neighbourhood?</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🎧 <span data-i18n="l3.audioT">Listen to the conversation</span></h3>
+    <p class="muted" data-i18n="l3.audioSub">Ali and Salman talk in the diwaniya about Community and Volunteering.</p>
+
+    <div class="player">
+      <button class="play-btn" id="playL3" aria-label="Play"><span class="play-icon">▶</span></button>
+      <div class="player-info">
+        <strong>Track 5.1 — Small Acts, Big Impact</strong>
+        <span class="muted" data-i18n="l3.tts">Browser text-to-speech</span>
+      </div>
+    </div>
+
+    <details class="transcript">
+      <summary data-i18n="l3.showTranscript">Show transcript</summary>
+      <div id="transcriptL3" class="transcript-body">
+        <p><strong>Salman:</strong> Hi Ali! I have been thinking — what does it really mean to be a good citizen?</p>
+        <p><strong>Ali:</strong> Good question, Salman. For me, it means doing small things every day to help others. Volunteering, when you can, makes the community stronger and more connected.</p>
+        <p><strong>Salman:</strong> Like joining a community clean-up?</p>
+        <p><strong>Ali:</strong> Exactly. Picking up litter is a small act, but it has a big impact. The streets become safer and cleaner for everyone.</p>
+        <p><strong>Salman:</strong> What about helping younger students at school?</p>
+        <p><strong>Ali:</strong> Yes! When we help younger students, we teach them respect and honesty. That is how values pass from one generation to the next.</p>
+        <p><strong>Salman:</strong> So even being polite to neighbours counts?</p>
+        <p><strong>Ali:</strong> Absolutely. Greeting your neighbours, helping the elderly carry their bags, or visiting a sick friend — these small acts build trust. Honestly, I love volunteering. It makes me feel useful and proud of my community.</p>
+        <p><strong>Salman:</strong> I will start with our school garden project this week!</p>
+        <p><strong>Ali:</strong> Great! If everyone gives a little time, our community will become a better place for all.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Main idea tick -->
+  <div class="card">
+    <h3 data-i18n="l3.mainT">a. Choose the main idea of the conversation.</h3>
+    <div class="quiz" data-quiz="l3main">
+      <div class="q mcq" data-correct="b">
+        <label><input type="radio" name="l3main" value="a"><span>1. It is important to follow rules and be polite.</span></label>
+        <label><input type="radio" name="l3main" value="b"><span>2. Small acts of kindness can improve the community.</span></label>
+        <label><input type="radio" name="l3main" value="c"><span>3. We can help younger children learn respect and honesty.</span></label>
+        <label><input type="radio" name="l3main" value="d"><span>4. We should join community clean-ups and school projects.</span></label>
+      </div>
+      <button class="btn btn-primary check-quiz" data-i18n="ui.check">Check</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Actions table -->
+  <div class="card">
+    <h3 data-i18n="l3.actionsT">b. Four actions Ali mentioned to be good citizens</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>#</th><th data-i18n="l3.action">Action</th><th data-i18n="l3.why">Why it Helps</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Volunteering when you can</td><td>It makes the community stronger and more connected.</td></tr>
+        <tr><td>2</td><td>Picking up litter / community clean-ups</td><td>Streets become safer and cleaner for everyone.</td></tr>
+        <tr><td>3</td><td>Helping younger students at school</td><td>Teaches respect, honesty, and good values.</td></tr>
+        <tr><td>4</td><td>Greeting neighbours and helping the elderly</td><td>Builds trust and a stronger community spirit.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Chain of Kindness -->
+  <div class="card highlight">
+    <h3>🔗 <span data-i18n="l3.chainT">The Chain of Kindness Challenge!</span></h3>
+    <p data-i18n="l3.chainP">Write how one kind action leads to another, like a chain reaction.</p>
+    <div class="chain">
+      <div class="chain-node">
+        <input type="text" placeholder="If we help younger students,..." />
+      </div>
+      <div class="chain-arrow">↓</div>
+      <div class="chain-node">
+        <input type="text" placeholder="they will feel more confident." />
+      </div>
+      <div class="chain-arrow">↓</div>
+      <div class="chain-node">
+        <input type="text" placeholder="If they feel more confident,..." />
+      </div>
+      <div class="chain-arrow">↓</div>
+      <div class="chain-node accent">
+        <input type="text" placeholder="As a result, our class will become more supportive." />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSON 4 — Speaking -->
+<section id="lesson-4" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 4</span>
+    <h2><span data-i18n="l4.title">My School, My Responsibility</span></h2>
+    <p class="lesson-sub" data-i18n="l4.sub">Speaking · Group Presentation</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l4.tps">Think · Pair · Share</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l4.q1">Why should we take care of our school?</li>
+      <li data-i18n="l4.q2">What can students do to keep their school environment healthy?</li>
+      <li data-i18n="l4.q3">What problems do you usually see at school?</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n="l4.solveT">Problems &amp; Possible Solutions</h3>
+    <table class="data-table editable">
+      <thead><tr><th>#</th><th data-i18n="l4.problem">Possible Problems</th><th data-i18n="l4.solution">Possible Solutions</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Litter in classrooms and hallways</td><td><input type="text" value="Add signs reminding students not to litter."></td></tr>
+        <tr><td>2</td><td>Writing on desks and walls</td><td><input type="text" placeholder="Your idea..."></td></tr>
+        <tr><td>3</td><td>Wasting electricity and water</td><td><input type="text" placeholder="Your idea..."></td></tr>
+        <tr><td>4</td><td>Not enough plants or green areas</td><td><input type="text" placeholder="Your idea..."></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>🎤 <span data-i18n="l4.campT">Group Presentation: My School Campaign</span></h3>
+    <div class="lesson-grid two">
+      <div>
+        <h4 data-i18n="l4.includesT">Your speech should include:</h4>
+        <ul class="checklist">
+          <li data-i18n="l4.in1">The title of your campaign.</li>
+          <li data-i18n="l4.in2">The problem you want to solve.</li>
+          <li data-i18n="l4.in3">The solutions/actions students can take.</li>
+          <li data-i18n="l4.in4">What will happen if everyone joins.</li>
+        </ul>
+      </div>
+      <div class="useful-language">
+        <strong data-i18n="l4.starters">Sentence Starters</strong>
+        <ul>
+          <li>"Our campaign is called…"</li>
+          <li>"The problem in our school is…"</li>
+          <li>"To solve this, we can…"</li>
+          <li>"If everyone joins, our school will…"</li>
+          <li>"We can make a difference!"</li>
+          <li>"Let's work together as a team!"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="checklist-box">
+      <strong data-i18n="l4.checklistT">✅ Speaking Checklist — The speaker can…</strong>
+      <label><input type="checkbox"> <span data-i18n="l4.c1">present clearly and confidently</span></label>
+      <label><input type="checkbox"> <span data-i18n="l4.c2">use full sentences</span></label>
+      <label><input type="checkbox"> <span data-i18n="l4.c3">use encouraging expressions</span></label>
+      <label><input type="checkbox"> <span data-i18n="l4.c4">show cause and effect</span></label>
+      <label><input type="checkbox"> <span data-i18n="l4.c5">use clear gestures and facial expressions</span></label>
+    </div>
+  </div>
+</section>
+
+<!-- LESSON 5 — Reading 2 -->
+<section id="lesson-5" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 5</span>
+    <h2><span data-i18n="l5.title">Leading Humanitarian Institutions in Kuwait</span></h2>
+    <p class="lesson-sub" data-i18n="l5.sub">Reading · Expository Article</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l5.tps">Think · Pair · Share</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l5.q1">Why do countries create organisations to help people in need?</li>
+      <li data-i18n="l5.q2">Which charitable organisations in Kuwait have you heard of? What do they do?</li>
+      <li data-i18n="l5.q3">How do volunteers make their community stronger?</li>
+    </ul>
+    <div class="info-box">
+      <p data-i18n="l5.fact">Kuwait is one of the leading Gulf countries that promotes voluntary work.</p>
+    </div>
+  </div>
+
+  <article class="card reading">
+    <p data-i18n="l5.p1">Kuwait is known for its <em class="hl">generous</em> spirit and care for others. Many Kuwaiti institutions work to help people in need, not only at home but also around the world. One of the oldest and most <em class="hl">active</em> institutions is the <strong>Kuwait Red Crescent Society (KRCS)</strong>. <em class="hl">Established</em> in 1966, this organisation sends food, medicine, and aid to families affected by natural <em class="hl">disasters</em>. Its volunteers have <em class="hl">operated</em> in several countries, giving <em class="hl">shelter</em>, healthcare, and clean water to those in difficult situations. The KRCS also supports hospitals and schools in Kuwait and <em class="hl">coaches</em> young people on how to become responsible volunteers that people can <em class="hl">count on</em>.</p>
+
+    <p data-i18n="l5.p2">Another important organisation is the <strong>Direct Aid Society</strong>, founded in 1981. It focuses on long-term <em class="hl">development</em> instead of short-term help. Direct Aid <em class="hl">constructs</em> schools and hospitals, provides clean water, and supports families in Africa and Asia. Its volunteers believe that education and health are the keys to strong communities. The group also runs <em class="hl">training</em> programmes to help many women <em class="hl">acquire</em> new skills and earn an income <em class="hl">independently</em> to support their families.</p>
+
+    <p data-i18n="l5.p3">A third well-known centre is the <strong>Kuwait Voluntary Work Centre (KVWC)</strong>, established in 1974. It encourages young Kuwaitis to serve their community. The centre organises activities such as cleaning beaches, planting trees, and visiting hospitals. Members learn about teamwork, leadership, and <em class="hl">environmental</em> care. The KVWC has created a new <em class="hl">generation</em> of active citizens who see volunteering as a <em class="hl">duty</em> and a joy. Together, these institutions show that helping others is a <em class="hl">blessing</em> and is at the heart of Kuwait's true progress.</p>
+  </article>
+
+  <!-- Institutions cards -->
+  <div class="card">
+    <h3 data-i18n="l5.tableT">Institutions at a glance</h3>
+    <div class="orgs">
+      <div class="org">
+        <div class="org-head"><span class="org-flag">🟥</span><h4>KRCS</h4><span class="muted">Est. 1966</span></div>
+        <p><strong data-i18n="l5.work">Main work:</strong> Sends food, medicine and aid.</p>
+        <p><strong data-i18n="l5.who">Who they help:</strong> Families affected by natural disasters in Kuwait and abroad.</p>
+        <p><strong data-i18n="l5.activities">Key activities:</strong> Shelter, healthcare, clean water, coaching young volunteers.</p>
+      </div>
+      <div class="org">
+        <div class="org-head"><span class="org-flag">🟩</span><h4>Direct Aid Society</h4><span class="muted">Est. 1981</span></div>
+        <p><strong data-i18n="l5.work">Main work:</strong> Long-term development.</p>
+        <p><strong data-i18n="l5.who">Who they help:</strong> Families in Africa and Asia, especially women.</p>
+        <p><strong data-i18n="l5.activities">Key activities:</strong> Building schools and hospitals, clean water, training programmes.</p>
+      </div>
+      <div class="org">
+        <div class="org-head"><span class="org-flag">🟦</span><h4>KVWC</h4><span class="muted">Est. 1974</span></div>
+        <p><strong data-i18n="l5.work">Main work:</strong> Encourages young Kuwaitis to volunteer.</p>
+        <p><strong data-i18n="l5.who">Who they help:</strong> The local community and the environment.</p>
+        <p><strong data-i18n="l5.activities">Key activities:</strong> Cleaning beaches, planting trees, visiting hospitals.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz L5 -->
+  <div class="card">
+    <h3 data-i18n="l5.checkT">Check Your Understanding</h3>
+    <div class="quiz" data-quiz="l5">
+      <div class="q mcq" data-correct="c">
+        <p class="q-text" data-i18n="l5.qtheir">1. The underlined word "their" in the 2nd paragraph refers to:</p>
+        <label><input type="radio" name="l5their" value="a"><span>a. new skills</span></label>
+        <label><input type="radio" name="l5their" value="b"><span>b. training programmes</span></label>
+        <label><input type="radio" name="l5their" value="c"><span>c. many women</span></label>
+        <label><input type="radio" name="l5their" value="d"><span>d. strong communities</span></label>
+      </div>
+      <div class="q mcq" data-correct="c">
+        <p class="q-text" data-i18n="l5.qpurpose">2. The main purpose of the writer is to show how:</p>
+        <label><input type="radio" name="l5purpose" value="a"><span>a. natural disasters affect countries.</span></label>
+        <label><input type="radio" name="l5purpose" value="b"><span>b. schools help volunteering institutes.</span></label>
+        <label><input type="radio" name="l5purpose" value="c"><span>c. Kuwait helps others through volunteering.</span></label>
+        <label><input type="radio" name="l5purpose" value="d"><span>d. students learn about Asia and Africa.</span></label>
+      </div>
+      <button class="btn btn-primary check-quiz" data-i18n="ui.check">Check</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Word sorting (drag) -->
+  <div class="card">
+    <h3 data-i18n="l5.sortT">🗂️ Sort the words: Noun · Verb · Adjective</h3>
+    <p class="muted" data-i18n="l5.sortP">Drag each word to the correct column. Use the glossary to check.</p>
+    <div class="sort-bank" id="sortBank">
+      <span class="sort-word" draggable="true" data-cat="noun">generation</span>
+      <span class="sort-word" draggable="true" data-cat="verb">operate</span>
+      <span class="sort-word" draggable="true" data-cat="adjective">generous</span>
+      <span class="sort-word" draggable="true" data-cat="verb">acquire</span>
+      <span class="sort-word" draggable="true" data-cat="adjective">environmental</span>
+      <span class="sort-word" draggable="true" data-cat="noun">disaster</span>
+    </div>
+    <div class="sort-cols">
+      <div class="sort-drop" data-cat="noun"><h4>Noun</h4></div>
+      <div class="sort-drop" data-cat="verb"><h4>Verb</h4></div>
+      <div class="sort-drop" data-cat="adjective"><h4>Adjective</h4></div>
+    </div>
+    <button class="btn btn-primary" id="checkSort" data-i18n="ui.check">Check Sorting</button>
+    <p class="sort-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Spotlight Message -->
+  <div class="card highlight">
+    <h3>🌟 <span data-i18n="l5.spotT">Spotlight Message: Support This Institution!</span></h3>
+    <p data-i18n="l5.spotP">Choose KRCS, Direct Aid, or KVWC. Write three sentences encouraging others to support it: one reason, one benefit, and one first conditional sentence.</p>
+    <textarea class="open-answer big" placeholder="If more people support KRCS, ..."></textarea>
+  </div>
+</section>
+
+<!-- LESSON 6 — Grammar 2 -->
+<section id="lesson-6" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 6</span>
+    <h2><span data-i18n="l6.title">Verbs Followed by a Gerund (verb + -ing)</span></h2>
+    <p class="lesson-sub" data-i18n="l6.sub">Grammar · Activities as nouns</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l6.ruleT">📘 The Rule</h3>
+    <p data-i18n="l6.rule">A <strong>gerund</strong> is a verb + <em>-ing</em> used as a noun to talk about an activity (swimming, reading, playing…).</p>
+    <p data-i18n="l6.after">Some verbs are always followed by a gerund:</p>
+    <div class="chips">
+      <span class="chip">enjoy</span>
+      <span class="chip">finish</span>
+      <span class="chip">practise</span>
+      <span class="chip">suggest</span>
+      <span class="chip">discuss</span>
+      <span class="chip">encourage</span>
+      <span class="chip">avoid</span>
+      <span class="chip">consider</span>
+    </div>
+    <ul class="examples">
+      <li>He <strong>enjoyed painting</strong> the walls.</li>
+      <li>They <strong>finished watering</strong> all the flowers.</li>
+      <li>The student <strong>practised explaining</strong> the lesson to the class.</li>
+      <li>My sister <strong>suggested volunteering</strong> at the cooperative society.</li>
+      <li>We <strong>discussed helping</strong> families in need with charity.</li>
+      <li>The teacher <strong>encouraged serving</strong> our community.</li>
+    </ul>
+  </div>
+
+  <!-- Fill -->
+  <div class="card">
+    <h3 data-i18n="l6.fillT">✏️ Complete the sentences with the correct form of the verb.</h3>
+    <div class="fill" data-fill="l6">
+      <p>a. My teacher encouraged <input data-answer="cooperating" placeholder="(cooperate)"> on the project.</p>
+      <p>b. The team enjoyed <input data-answer="representing" placeholder="(represent)"> Kuwait at the competition.</p>
+      <p>c. We discussed <input data-answer="organising|organizing" placeholder="(organise)"> the school event.</p>
+      <button class="btn btn-primary check-fill" data-i18n="ui.check">Check</button>
+      <p class="fill-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Reorder -->
+  <div class="card">
+    <h3 data-i18n="l6.reorderT">🔀 Rewrite the words to make correct sentences (use gerunds).</h3>
+    <div class="reorder">
+      <div class="reorder-q" data-correct="The team enjoyed working together.">
+        <p class="muted">a. team — the — enjoyed — working — together</p>
+        <input type="text" placeholder="Type the correct sentence...">
+      </div>
+      <div class="reorder-q" data-correct="The teacher suggested joining the campaign.">
+        <p class="muted">b. teacher — suggested — the — joining — campaign — the</p>
+        <input type="text" placeholder="Type the correct sentence...">
+      </div>
+      <div class="reorder-q" data-correct="The students practised presenting the project.">
+        <p class="muted">c. students — the — practised — presenting — project — the</p>
+        <input type="text" placeholder="Type the correct sentence...">
+      </div>
+      <button class="btn btn-primary check-reorder" data-i18n="ui.check">Check</button>
+      <p class="reorder-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Caption this -->
+  <div class="card highlight">
+    <h3>📸 <span data-i18n="l6.capT">Caption This!</span></h3>
+    <p data-i18n="l6.capP">Write a sentence using verb + gerund for each photo.</p>
+    <div class="caption-grid">
+      <figure>
+        <div class="ph">🌳</div>
+        <figcaption><input type="text" placeholder="They enjoyed planting trees..."></figcaption>
+      </figure>
+      <figure>
+        <div class="ph">🧹</div>
+        <figcaption><input type="text" placeholder="The volunteers practised cleaning..."></figcaption>
+      </figure>
+      <figure>
+        <div class="ph">📦</div>
+        <figcaption><input type="text" placeholder="They finished packing the boxes..."></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- LESSON 7 — Writing -->
+<section id="lesson-7" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 7</span>
+    <h2><span data-i18n="l7.title">Making a Difference</span></h2>
+    <p class="lesson-sub" data-i18n="l7.sub">Writing · Two-paragraph expository report</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l7.linkersT">🔗 Linkers — Use each once</h3>
+    <p class="muted">in conclusion · in addition · however · despite</p>
+    <div class="fill" data-fill="l7" data-mode="words">
+      <p>Helping others improves mood and builds communities. <input data-answer="In addition"> , it teaches empathy and responsibility. <input data-answer="However"> , some people feel too busy to volunteer. <input data-answer="Despite"> these challenges, small acts of kindness make a difference. <input data-answer="In conclusion"> , helping others benefits everyone, including ourselves.</p>
+      <button class="btn btn-primary check-fill" data-i18n="ui.check">Check</button>
+      <p class="fill-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n="l7.organiserT">🗒️ Graphic Organiser — Volunteering</h3>
+    <div class="organiser">
+      <div class="organiser-cell"><h4 data-i18n="l7.why">Why people volunteer</h4><textarea placeholder="• To help others..."></textarea></div>
+      <div class="organiser-cell"><h4 data-i18n="l7.what">What actions they can do</h4><textarea placeholder="• Pack food..."></textarea></div>
+      <div class="organiser-cell"><h4 data-i18n="l7.where">Where people can volunteer</h4><textarea placeholder="• Co-op, hospital..."></textarea></div>
+      <div class="organiser-cell"><h4 data-i18n="l7.benefit">How volunteering benefits the community</h4><textarea placeholder="• Stronger bonds..."></textarea></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 data-i18n="l7.outlineT">📝 Report Outline</h3>
+    <div class="outline">
+      <label><strong data-i18n="l7.intro">Introduction</strong>
+        <textarea placeholder="Hook + general idea..."></textarea>
+      </label>
+      <label><strong>Paragraph 1 — <span data-i18n="l7.p1t">The Importance of Community Service</span></strong>
+        <textarea placeholder="Topic sentence + supporting details + concluding sentence..."></textarea>
+      </label>
+      <label><strong>Paragraph 2 — <span data-i18n="l7.p2t">The Actions We Can Do</span></strong>
+        <textarea placeholder="Topic sentence + supporting details + concluding sentence..."></textarea>
+      </label>
+      <label><strong data-i18n="l7.concl">Conclusion</strong>
+        <textarea placeholder="Final thought + call to action..."></textarea>
+      </label>
+    </div>
+
+    <div class="checklist-box">
+      <strong data-i18n="l7.editT">✅ Editing checklist</strong>
+      <label><input type="checkbox"> <span data-i18n="l7.e1">Clear introduction and conclusion?</span></label>
+      <label><input type="checkbox"> <span data-i18n="l7.e2">Two paragraphs with strong topic sentences?</span></label>
+      <label><input type="checkbox"> <span data-i18n="l7.e3">Linking words used clearly? (but, although, however…)</span></label>
+      <label><input type="checkbox"> <span data-i18n="l7.e4">Spelling and punctuation checked?</span></label>
+    </div>
+
+    <button class="btn btn-primary" id="downloadReport" data-i18n="l7.download">⬇️ Download My Report</button>
+  </div>
+</section>
+
+<!-- VOCAB & GLOSSARY -->
+<section id="vocab" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num" data-i18n="vocab.label">Vocabulary</span>
+    <h2><span data-i18n="vocab.title">Glossary — EN ↔ AR</span></h2>
+    <p class="lesson-sub" data-i18n="vocab.sub">Click any card to flip · search in English or Arabic</p>
+  </header>
+
+  <div class="card">
+    <div class="vocab-toolbar">
+      <input type="search" id="vocabSearch" placeholder="Search words..." />
+      <div class="vocab-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="noun">Nouns</button>
+        <button class="filter-btn" data-filter="verb">Verbs</button>
+        <button class="filter-btn" data-filter="adjective">Adjectives</button>
+        <button class="filter-btn" data-filter="adverb">Adverbs</button>
+        <button class="filter-btn" data-filter="phrasal">Phrasal Verbs</button>
+      </div>
+    </div>
+    <div class="vocab-grid" id="vocabGrid"><!-- cards rendered by JS --></div>
+  </div>
+
+  <!-- Flashcards -->
+  <div class="card highlight">
+    <h3>🧠 <span data-i18n="vocab.flashT">Flashcards Practice</span></h3>
+    <div class="flash">
+      <div class="flash-card" id="flashCard">
+        <div class="flash-front"><span id="flashEn">word</span><small class="muted" id="flashType">noun</small></div>
+        <div class="flash-back"><span id="flashAr">معنى</span></div>
+      </div>
+      <div class="flash-controls">
+        <button class="btn btn-ghost" id="flashPrev">←</button>
+        <button class="btn btn-primary" id="flashFlip" data-i18n="vocab.flip">Flip</button>
+        <button class="btn btn-ghost" id="flashNext">→</button>
+      </div>
+      <p class="muted center"><span id="flashIdx">1</span> / <span id="flashTotal">40</span></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> English Pearls of Kuwait — Grade 8 · Learning Unit 5</p>
+    <p class="muted" data-i18n="footer.note">Made for interactive bilingual learning (EN/AR).</p>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

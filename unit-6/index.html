@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Unit 6 — The Power of Media & Influencers | English Pearls</title>
+<meta name="description" content="Interactive bilingual (EN/AR) learning site for Unit 6: The Power of Media & Influencers. Grade 8." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📱%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- XP / Badge HUD -->
+<div id="xpHud" class="xp-hud" aria-live="polite">
+  <span class="xp-icon">⭐</span>
+  <div class="xp-bar-wrap"><div class="xp-bar" id="xpBar"></div></div>
+  <span class="xp-text"><b id="xpVal">0</b> XP · <span id="xpLevel">Level 1</span></span>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#hero">
+      <span class="brand-badge">6</span>
+      <span class="brand-text">
+        <strong data-i18n="brand.title">The Power of Media &amp; Influencers</strong>
+        <small data-i18n="brand.sub">English Pearls of Kuwait — Grade 8</small>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Lessons">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="navMenu">
+        <li><a href="#lesson-1" data-i18n="nav.l1">Reading 1</a></li>
+        <li><a href="#lesson-2" data-i18n="nav.l2">Grammar 1</a></li>
+        <li><a href="#lesson-3" data-i18n="nav.l3">Listening</a></li>
+        <li><a href="#lesson-4" data-i18n="nav.l4">Speaking</a></li>
+        <li><a href="#lesson-5" data-i18n="nav.l5">Reading 2</a></li>
+        <li><a href="#lesson-6" data-i18n="nav.l6">Grammar 2</a></li>
+        <li><a href="#lesson-7" data-i18n="nav.l7">Writing</a></li>
+        <li><a href="#vocab" data-i18n="nav.vocab">Vocabulary</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang-btn" data-lang="ar" aria-pressed="false">عربى</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="hero" class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="kicker" data-i18n="hero.kicker">Learning Unit 6</span>
+      <h1 data-i18n="hero.title">The Power of Media &amp; Influencers</h1>
+      <p class="lead" data-i18n="hero.lead">Look beyond the filters. Explore reading, grammar, listening, speaking and writing through games, quizzes, and role-plays — bilingual EN ↔ AR.</p>
+      <div class="hero-cta">
+        <a href="#lesson-1" class="btn btn-primary" data-i18n="hero.start">▶ Start the Journey</a>
+        <a href="#vocab" class="btn btn-ghost" data-i18n="hero.vocab">📚 Vocabulary</a>
+      </div>
+      <ul class="hero-stats">
+        <li><strong>7</strong><span data-i18n="hero.lessons">Lessons</span></li>
+        <li><strong>10+</strong><span data-i18n="hero.games">Mini-Games</span></li>
+        <li><strong>40+</strong><span data-i18n="hero.words">Words</span></li>
+        <li><strong>EN/AR</strong><span data-i18n="hero.bilingual">Bilingual</span></li>
+      </ul>
+    </div>
+    <!-- Mock phone -->
+    <div class="phone" aria-hidden="true">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="story-row">
+          <span class="story"><span>👑</span></span>
+          <span class="story"><span>📸</span></span>
+          <span class="story"><span>🎬</span></span>
+          <span class="story"><span>🌟</span></span>
+        </div>
+        <div class="post">
+          <div class="post-head"><span class="avatar">😎</span><b>@hamad_dreams</b></div>
+          <div class="post-img">🏖️</div>
+          <div class="post-actions"><span>❤️ 12.4k</span><span>💬 803</span><span>↗️</span></div>
+          <p class="post-cap"><b>Hamad</b> Living the dream! ✨ #DreamBig</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+<!-- Outcomes -->
+<section class="card outcomes">
+  <h2 class="section-title"><span class="dot"></span><span data-i18n="outcomes.title">Learning Outcomes</span></h2>
+  <div class="outcome-grid">
+    <article><h3>🎧 <span data-i18n="outcomes.listen">Listening</span></h3>
+      <p data-i18n="outcomes.listenDesc">Analyse persuasive talks; recognise feelings, attitudes and tone in oral texts about influencers.</p></article>
+    <article><h3>🗣️ <span data-i18n="outcomes.speak">Speaking</span></h3>
+      <p data-i18n="outcomes.speakDesc">Deliver persuasive presentations using clear opinion, reasons, body language and persuasive techniques.</p></article>
+    <article><h3>📖 <span data-i18n="outcomes.read">Reading</span></h3>
+      <p data-i18n="outcomes.readDesc">Analyse persuasive texts about social media and trust; identify viewpoint, purpose and persuasive techniques.</p></article>
+    <article><h3>✍️ <span data-i18n="outcomes.write">Writing</span></h3>
+      <p data-i18n="outcomes.writeDesc">Produce a coherent two-paragraph persuasive report using linking words and persuasive techniques.</p></article>
+  </div>
+</section>
+
+<!-- LESSON 1 -->
+<section id="lesson-1" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 1</span>
+    <h2><span data-i18n="l1.title">Behind the Screen: The Unreal Life Online</span></h2>
+    <p class="lesson-sub" data-i18n="l1.sub">Reading · Persuasive Texts</p>
+  </header>
+
+  <!-- Agree/Disagree poll -->
+  <div class="card">
+    <h3>🗳️ <span data-i18n="l1.pollT">Agree or Disagree?</span></h3>
+    <p class="muted" data-i18n="l1.pollP">Tap a button for each statement. The class poll will animate.</p>
+    <div class="poll" id="poll1">
+      <div class="poll-row" data-id="p1">
+        <p data-i18n="l1.poll1">1. Influencers always show the truth about their lives online.</p>
+        <div class="poll-buttons">
+          <button class="poll-btn agree" data-vote="agree">✓ Agree</button>
+          <button class="poll-btn disagree" data-vote="disagree">✗ Disagree</button>
+        </div>
+        <div class="poll-bar"><span class="poll-fill"></span></div>
+      </div>
+      <div class="poll-row" data-id="p2">
+        <p data-i18n="l1.poll2">2. Having many followers means you are successful.</p>
+        <div class="poll-buttons">
+          <button class="poll-btn agree" data-vote="agree">✓ Agree</button>
+          <button class="poll-btn disagree" data-vote="disagree">✗ Disagree</button>
+        </div>
+        <div class="poll-bar"><span class="poll-fill"></span></div>
+      </div>
+      <div class="poll-row" data-id="p3">
+        <p data-i18n="l1.poll3">3. People can always trust what they see on social media.</p>
+        <div class="poll-buttons">
+          <button class="poll-btn agree" data-vote="agree">✓ Agree</button>
+          <button class="poll-btn disagree" data-vote="disagree">✗ Disagree</button>
+        </div>
+        <div class="poll-bar"><span class="poll-fill"></span></div>
+      </div>
+    </div>
+    <div class="info-box">
+      <strong data-i18n="l1.didyouT">💡 Did you know?</strong>
+      <p data-i18n="l1.didyouP">Not all influencers are famous. Many people influence others through knowledge, volunteer work, and good deeds.</p>
+    </div>
+  </div>
+
+  <!-- Two side-by-side texts -->
+  <div class="card">
+    <h3 data-i18n="l1.textsT">📰 Two voices about social media</h3>
+    <div class="dual-texts">
+      <article class="post-card insta">
+        <div class="post-head">
+          <span class="avatar">😎</span>
+          <div><b>@hamad_dreams</b><small> · Kuwait</small></div>
+        </div>
+        <div class="post-img big">🏝️</div>
+        <p class="post-cap" data-i18n="l1.hamad">I'm Hamad from Kuwait, and I'm <em class="hl">living proof</em> that dreams can come true! Every morning, I wake up in my beautiful, huge villa facing the beach and feel thankful for what I've achieved. I start my day with a healthy smoothie, a quick workout, and messages from my <em class="hl">amazing fans</em> who inspire me to keep going. Life is all about passion, hard work, and believing in yourself. I travel to different countries, drive my <em class="hl">luxurious</em> car, and enjoy every moment because success doesn't just happen — you create it. Don't wait for opportunities, make them! Believe, act, and never give up. If I can do it, you can do it!</p>
+        <p class="hashtags">#Motivation #DreamBig #HamadTravels</p>
+        <div class="post-actions"><span>❤️ 12.4k</span><span>💬 803</span><span>↗️ Share</span></div>
+      </article>
+
+      <article class="post-card article">
+        <div class="art-head">
+          <span class="badge-pill">📰 Article</span>
+          <h4 data-i18n="l1.drT">The Unreal Life: Why We Should Not Believe Everything We See Online</h4>
+          <small data-i18n="l1.drBy">by Dr. Noha Saad</small>
+        </div>
+        <p data-i18n="l1.dr1">In recent years, the rise of social media <em class="hl">influencers</em> has changed how people define success. They often <em class="hl">appear</em> to live perfect, happy lives, achieving their goals <em class="hl">effortlessly</em>. <strong>However</strong>, the reality behind these pictures is very different. Every photo hides hours of work and pressure to stay popular and look perfect all the time.</p>
+        <p data-i18n="l1.dr2">They carefully <em class="hl">select</em> their content to appear more successful than they truly are. They <em class="hl">edit</em> and retouch their photos, making followers believe in their endless travel and <em class="hl">wealth</em>. This can cause followers to compare themselves <em class="hl">unfairly</em> and lose confidence, making them feel they are unsuccessful.</p>
+        <p data-i18n="l1.dr3">The unreal lives of influencers are not only affecting themselves, but also the lives of young teenagers. Do you look at pictures of famous people and feel <em class="hl">insecure</em> about how you look? You are not the only one. <strong>In fact, studies show</strong> that many teenagers your age report that social media makes them feel worse about their image. <strong>Additionally</strong>, those pictures try to trick your brain into feeling like you are not good enough, which might cause <em class="hl">depression</em>.</p>
+        <p data-i18n="l1.dr4">True success cannot be measured by images, likes, or followers but by honesty, effort, and emotional balance. <strong>Therefore</strong>, we must ask ourselves: when you become a fan of an influencer, are you admiring their unreal life or their real success? <strong>It is time to look beyond filters</strong> and recognise the human reality behind the screen. <em>We see, we admire, we compare, but we never forget what is real!</em></p>
+      </article>
+    </div>
+  </div>
+
+  <!-- Persuasive techniques drag -->
+  <div class="card">
+    <h3>🎯 <span data-i18n="l1.techT">Persuasive Techniques Hunt</span></h3>
+    <p class="muted" data-i18n="l1.techP">Drag each example from Dr. Noha's article onto the technique it shows.</p>
+    <div class="hunt">
+      <div class="hunt-bank" id="huntBank">
+        <span class="hunt-item" draggable="true" data-tech="facts">"studies show that many teenagers report social media makes them feel worse"</span>
+        <span class="hunt-item" draggable="true" data-tech="question">"Do you look at pictures of famous people and feel insecure?"</span>
+        <span class="hunt-item" draggable="true" data-tech="repetition">"We see, we admire, we compare, but we never forget what is real!"</span>
+        <span class="hunt-item" draggable="true" data-tech="cta">"It is time to look beyond filters and recognise the human reality."</span>
+      </div>
+      <div class="hunt-targets">
+        <div class="hunt-drop" data-tech="facts"><h4>📊 Facts &amp; Statistics</h4><p class="muted">Numbers, research, studies.</p></div>
+        <div class="hunt-drop" data-tech="question"><h4>🤔 Thinking Question</h4><p class="muted">Asks reader to reflect.</p></div>
+        <div class="hunt-drop" data-tech="repetition"><h4>🔁 Repetition</h4><p class="muted">Same word/idea repeated.</p></div>
+        <div class="hunt-drop" data-tech="cta"><h4>📣 Call to Action</h4><p class="muted">Asks the reader to do something.</p></div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="checkHunt" data-i18n="ui.check">Check</button>
+    <p class="hunt-result" aria-live="polite"></p>
+  </div>
+
+  <!-- MCQs -->
+  <div class="card">
+    <h3 data-i18n="l1.checkTitle">Check Your Understanding</h3>
+    <div class="quiz" data-quiz="l1">
+      <div class="q mcq" data-correct="b">
+        <p class="q-text" data-i18n="l1.q1">1. How does Hamad really want his fans to feel after reading his post?</p>
+        <label><input type="radio" name="l1q1" value="a"><span>a. bored</span></label>
+        <label><input type="radio" name="l1q1" value="b"><span>b. inspired</span></label>
+        <label><input type="radio" name="l1q1" value="c"><span>c. confused</span></label>
+        <label><input type="radio" name="l1q1" value="d"><span>d. scared</span></label>
+      </div>
+      <div class="q mcq" data-correct="b">
+        <p class="q-text" data-i18n="l1.q2">2. The main purpose of Dr. Noha Saad in writing this article is to:</p>
+        <label><input type="radio" name="l1q2" value="a"><span>a. show us how to edit and retouch personal photos.</span></label>
+        <label><input type="radio" name="l1q2" value="b"><span>b. persuade us not to believe everything on social media.</span></label>
+        <label><input type="radio" name="l1q2" value="c"><span>c. advise us to work hard to become influencers.</span></label>
+        <label><input type="radio" name="l1q2" value="d"><span>d. inform us about the advantages of following famous people.</span></label>
+      </div>
+      <button class="btn btn-primary check-quiz" data-i18n="ui.check">Check Answers</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Persuasive type identifier -->
+  <div class="card">
+    <h3>🧭 <span data-i18n="l1.typeT">What kind of writing is Dr. Noha's article?</span></h3>
+    <div class="type-cards" data-correct="persuasive">
+      <button class="type-card" data-type="descriptive"><div class="type-emoji">🎨</div><h4>Descriptive</h4><p>Sensory details about people, places, objects.</p></button>
+      <button class="type-card" data-type="expository"><div class="type-emoji">📚</div><h4>Expository</h4><p>Facts and information without opinion.</p></button>
+      <button class="type-card" data-type="persuasive"><div class="type-emoji">🎯</div><h4>Persuasive</h4><p>Convinces the reader to believe or act.</p></button>
+    </div>
+    <p class="type-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Request for change -->
+  <div class="card highlight">
+    <h3>✍️ <span data-i18n="l1.reqT">A Request for a Change!</span></h3>
+    <p data-i18n="l1.reqP">Write 4–5 sentences persuading your principal to improve the school. Use at least 2 persuasive techniques.</p>
+    <div class="topic-ideas">
+      <span>🧹 Cleaning campaign</span>
+      <span>🌳 Outdoor classroom</span>
+      <span>💧 Water stations</span>
+      <span>📚 Reading corner</span>
+      <span>♻️ Recycling bins</span>
+    </div>
+    <textarea class="open-answer big" placeholder="Dear Principal, ..."></textarea>
+  </div>
+</section>
+
+<!-- LESSON 2 -->
+<section id="lesson-2" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 2</span>
+    <h2><span data-i18n="l2.title">Reported Speech (Statements — Present Tense)</span></h2>
+    <p class="lesson-sub" data-i18n="l2.sub">Grammar · Telling what someone said</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l2.ruleT">📘 The Rule</h3>
+    <p data-i18n="l2.rule">When we tell what someone said, we change <strong>tense</strong>, <strong>pronouns</strong>, and <strong>time/place words</strong>.</p>
+    <div class="rule-table">
+      <div class="rule-row head"><span>Direct (Present)</span><span>Reported (Past)</span></div>
+      <div class="rule-row"><span>Present Simple</span><span>Past Simple</span></div>
+      <div class="rule-row"><span>Present Continuous</span><span>Past Continuous</span></div>
+      <div class="rule-row"><span>Present Perfect</span><span>Past Perfect</span></div>
+    </div>
+    <div class="rule-mini">
+      <h4 data-i18n="l2.swapT">Swap these too 👇</h4>
+      <div class="swaps">
+        <span class="swap"><b>my</b> → <b>his/her</b></span>
+        <span class="swap"><b>our</b> → <b>their</b></span>
+        <span class="swap"><b>this</b> → <b>that</b></span>
+        <span class="swap"><b>these</b> → <b>those</b></span>
+        <span class="swap"><b>now</b> → <b>then</b></span>
+        <span class="swap"><b>today</b> → <b>that day</b></span>
+        <span class="swap"><b>here</b> → <b>there</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Speech bubble transformer -->
+  <div class="card">
+    <h3>💬 <span data-i18n="l2.transT">Speech Bubble Transformer</span></h3>
+    <p class="muted" data-i18n="l2.transP">Click each direct sentence to see its reported version.</p>
+    <div class="bubbles">
+      <div class="bubble-pair">
+        <div class="bubble direct">"I need this tablet," <small>— Bader</small></div>
+        <div class="bubble-arrow">→</div>
+        <div class="bubble reported hidden">Bader said that he <b>needed</b> <b>that</b> tablet.</div>
+      </div>
+      <div class="bubble-pair">
+        <div class="bubble direct">"I'm writing my report," <small>— Ali</small></div>
+        <div class="bubble-arrow">→</div>
+        <div class="bubble reported hidden">Ali said that he <b>was writing</b> <b>his</b> report.</div>
+      </div>
+      <div class="bubble-pair">
+        <div class="bubble direct">"I have bought Reem these presents," <small>— Mona</small></div>
+        <div class="bubble-arrow">→</div>
+        <div class="bubble reported hidden">Mona said that she <b>had bought</b> Reem <b>those</b> presents.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fill in -->
+  <div class="card">
+    <h3 data-i18n="l2.fillT">✏️ Complete the reported sentences</h3>
+    <div class="fill" data-fill="l2">
+      <p>a. My teacher said, <em>"I need this book today."</em><br>→ My teacher said that <input data-answer="she needed that book that day|he needed that book that day" placeholder="..." style="width: 100%; max-width: 480px;"></p>
+      <p>b. Waleed said, <em>"I'm training with my coach now."</em><br>→ He said that <input data-answer="he was training with his coach then" placeholder="..." style="width: 100%; max-width: 480px;"></p>
+      <p>c. The engineers said, <em>"We've worked on our project for months."</em><br>→ The engineers said that <input data-answer="they had worked on their project for months" placeholder="..." style="width: 100%; max-width: 520px;"></p>
+      <button class="btn btn-primary check-fill" data-i18n="ui.check">Check</button>
+      <p class="fill-result" aria-live="polite"></p>
+      <details class="model"><summary data-i18n="ui.showAnswers">Show answers</summary>
+        <ul>
+          <li>a. she needed that book that day</li>
+          <li>b. he was training with his coach then</li>
+          <li>c. they had worked on their project for months</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <!-- Pass the message game -->
+  <div class="card highlight">
+    <h3>🎲 <span data-i18n="l2.passT">Pass the Message — Mini Game</span></h3>
+    <p data-i18n="l2.passP">Press the button to get a random direct sentence. Type its reported version in the bubble.</p>
+    <div class="pass-game">
+      <button class="btn btn-primary" id="passNew" data-i18n="l2.passNew">🎲 New message</button>
+      <div class="bubble direct big" id="passDirect">"I love this app today," said Layla.</div>
+      <input type="text" class="pass-input" id="passInput" placeholder="Type the reported version...">
+      <button class="btn btn-ghost" id="passCheck" data-i18n="ui.check">Check</button>
+      <p class="pass-result" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- LESSON 3 -->
+<section id="lesson-3" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 3</span>
+    <h2><span data-i18n="l3.title">The Hidden Truth of Social Media</span></h2>
+    <p class="lesson-sub" data-i18n="l3.sub">Listening · Podcast with a fashion influencer</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l3.beforeT">Before You Listen</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l3.b1">Do you think influencers' lives are perfect?</li>
+      <li data-i18n="l3.b2">What kind of pressures might influencers face online?</li>
+    </ul>
+  </div>
+
+  <!-- Word matching -->
+  <div class="card">
+    <h3 data-i18n="l3.wordsT">🔗 Match the words to their meanings</h3>
+    <div class="match-list" id="matchL3">
+      <div class="ml-row">
+        <div class="ml-word">An <b>influencer</b> posts daily videos.</div>
+        <select class="ml-select" data-correct="3">
+          <option value="">— choose —</option>
+          <option value="1">to make changes to a picture or film</option>
+          <option value="2">the quality of being certain of your abilities</option>
+          <option value="3">someone who affects how others behave</option>
+        </select>
+      </div>
+      <div class="ml-row">
+        <div class="ml-word"><b>Edit</b> your work carefully.</div>
+        <select class="ml-select" data-correct="1">
+          <option value="">— choose —</option>
+          <option value="1">to make changes to a picture or film</option>
+          <option value="2">the quality of being certain of your abilities</option>
+          <option value="3">someone who affects how others behave</option>
+        </select>
+      </div>
+      <div class="ml-row">
+        <div class="ml-word">He speaks with <b>confidence</b>.</div>
+        <select class="ml-select" data-correct="2">
+          <option value="">— choose —</option>
+          <option value="1">to make changes to a picture or film</option>
+          <option value="2">the quality of being certain of your abilities</option>
+          <option value="3">someone who affects how others behave</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="checkML3" data-i18n="ui.check">Check</button>
+    <p class="ml-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Podcast player -->
+  <div class="card">
+    <h3>🎙️ <span data-i18n="l3.podT">Podcast: A Day in Emma's Life</span></h3>
+    <div class="player">
+      <button class="play-btn" id="playL3" aria-label="Play"><span class="play-icon">▶</span></button>
+      <div class="player-info">
+        <strong>Track 6.1 — The Hidden Truth of Social Media</strong>
+        <span class="muted" data-i18n="l3.tts">Browser text-to-speech</span>
+      </div>
+      <div class="speed-ctrl">
+        <label>Speed: <select id="speedL3"><option value="0.85">0.85×</option><option value="1" selected>1×</option><option value="1.15">1.15×</option></select></label>
+      </div>
+    </div>
+
+    <details class="transcript">
+      <summary data-i18n="l3.showTranscript">Show transcript</summary>
+      <div id="transcriptL3" class="transcript-body">
+        <p><strong>Host:</strong> Welcome to "Behind the Filter". Today, our guest is Emma, a popular fashion influencer with over a million followers. Emma, your life looks amazing online. Is it really like that?</p>
+        <p><strong>Emma:</strong> Honestly, no. People see the photos, the trips, the new clothes. They don't see the long hours, the pressure to post every day, or the comments that hurt. My life is exciting, but it's also very challenging.</p>
+        <p><strong>Host:</strong> Some influencers advertise unhealthy or unsuitable products. Why?</p>
+        <p><strong>Emma:</strong> The truth is, brands pay a lot of money. Some influencers say yes because they need the income, even if the product is not good for their followers. I try to refuse those deals, but it's not always easy.</p>
+        <p><strong>Host:</strong> What do you do when you feel stressed or under pressure?</p>
+        <p><strong>Emma:</strong> I take a break from my phone. I go for a walk, I read, I spend time with my family. Sometimes I write in a journal. Real life keeps me balanced.</p>
+        <p><strong>Host:</strong> What is your message to teenagers?</p>
+        <p><strong>Emma:</strong> Don't compare your real life to someone's edited photo. Behind every filter is a person with worries and bad days. Be kind to yourself. You are enough — exactly as you are.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Quiz -->
+  <div class="card">
+    <h3 data-i18n="l3.checkT">Check Your Listening</h3>
+    <div class="quiz" data-quiz="l3">
+      <div class="q mcq" data-correct="c">
+        <p class="q-text">1. What is the podcast mainly about?</p>
+        <label><input type="radio" name="l3q1" value="a"><span>a. How influencers become rich</span></label>
+        <label><input type="radio" name="l3q1" value="b"><span>b. How to avoid food that causes obesity</span></label>
+        <label><input type="radio" name="l3q1" value="c"><span>c. The truth behind influencers' lives</span></label>
+        <label><input type="radio" name="l3q1" value="d"><span>d. Tips for better photos</span></label>
+      </div>
+      <div class="q mcq" data-correct="b">
+        <p class="q-text">2. Emma describes her life as:</p>
+        <label><input type="radio" name="l3q2" value="a"><span>a. easy</span></label>
+        <label><input type="radio" name="l3q2" value="b"><span>b. challenging</span></label>
+        <label><input type="radio" name="l3q2" value="c"><span>c. simple</span></label>
+        <label><input type="radio" name="l3q2" value="d"><span>d. boring</span></label>
+      </div>
+      <div class="q mcq" data-correct="c">
+        <p class="q-text">3. In the podcast, Emma is mostly:</p>
+        <label><input type="radio" name="l3q3" value="a"><span>a. proud</span></label>
+        <label><input type="radio" name="l3q3" value="b"><span>b. angry</span></label>
+        <label><input type="radio" name="l3q3" value="c"><span>c. honest</span></label>
+        <label><input type="radio" name="l3q3" value="d"><span>d. mad</span></label>
+      </div>
+      <button class="btn btn-primary check-quiz" data-i18n="ui.check">Check</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Persuasive Speech -->
+  <div class="card highlight">
+    <h3>🎤 <span data-i18n="l3.speechT">Beyond the Filter — A Call for Wise Social Media Use</span></h3>
+    <p data-i18n="l3.speechP">Build a short persuasive speech with the slots below. Tick each part as you finish it.</p>
+    <div class="speech-builder">
+      <label><input type="checkbox"> 1. <span data-i18n="l3.s1">Start with an interesting question</span>
+        <input type="text" placeholder="Do you know the people you follow online?">
+      </label>
+      <label><input type="checkbox"> 2. <span data-i18n="l3.s2">State your opinion</span>
+        <input type="text" placeholder="Many teenagers believe..., but actually...">
+      </label>
+      <label><input type="checkbox"> 3. <span data-i18n="l3.s3">Give strong reasons</span>
+        <input type="text" placeholder="One reason is... · Researchers show that...">
+      </label>
+      <label><input type="checkbox"> 4. <span data-i18n="l3.s4">End with a call to action</span>
+        <input type="text" placeholder="Now is the time to... · Take the first step and...">
+      </label>
+    </div>
+    <button class="btn btn-primary" id="speakSpeech" data-i18n="l3.speakIt">🔊 Read it aloud</button>
+  </div>
+</section>
+
+<!-- LESSON 4 -->
+<section id="lesson-4" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 4</span>
+    <h2><span data-i18n="l4.title">Fame: Dream or Pressure?</span></h2>
+    <p class="lesson-sub" data-i18n="l4.sub">Speaking · Persuasive Debate</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l4.tps">Think · Pair · Share</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l4.q1">Would you like to be a famous person or have many followers one day?</li>
+      <li data-i18n="l4.q2">Do you think being famous makes people happy?</li>
+      <li data-i18n="l4.q3">What challenges or pressures can fame create?</li>
+    </ul>
+  </div>
+
+  <!-- For/Against table -->
+  <div class="card">
+    <h3 data-i18n="l4.scaleT">⚖️ For &amp; Against — Build Your Case</h3>
+    <p class="muted" data-i18n="l4.scaleP">Drag each idea to the side it supports. Watch the scale tip!</p>
+    <div class="scale">
+      <div class="scale-side for-side" data-side="for">
+        <h4>👍 <span data-i18n="l4.for">FOR being famous</span></h4>
+        <div class="scale-drop" data-side="for"></div>
+      </div>
+      <div class="scale-side against-side" data-side="against">
+        <h4>👎 <span data-i18n="l4.against">AGAINST being famous</span></h4>
+        <div class="scale-drop" data-side="against"></div>
+      </div>
+    </div>
+    <div class="scale-bank" id="scaleBank">
+      <span class="scale-card" draggable="true" data-side="for">💰 Earn good money</span>
+      <span class="scale-card" draggable="true" data-side="against">📵 No privacy</span>
+      <span class="scale-card" draggable="true" data-side="for">🌍 Inspire others</span>
+      <span class="scale-card" draggable="true" data-side="against">😰 Daily pressure</span>
+      <span class="scale-card" draggable="true" data-side="for">🎁 Free products</span>
+      <span class="scale-card" draggable="true" data-side="against">🗯️ Mean comments</span>
+      <span class="scale-card" draggable="true" data-side="for">✈️ Travel a lot</span>
+      <span class="scale-card" draggable="true" data-side="against">🕒 Loss of free time</span>
+    </div>
+    <p class="scale-counter muted" id="scaleCounter">For: 0  ·  Against: 0</p>
+  </div>
+
+  <!-- Speech outline -->
+  <div class="card">
+    <h3 data-i18n="l4.outlineT">🎤 Build Your Persuasive Speech</h3>
+    <div class="outline">
+      <label><strong data-i18n="l4.intro">Introduction (Thinking question)</strong>
+        <textarea placeholder="Everyone dreams of being famous online, but is it really worth it?"></textarea>
+      </label>
+      <label><strong data-i18n="l4.opinion">Opinion (For or Against)</strong>
+        <textarea placeholder="In my opinion, being famous is..."></textarea>
+      </label>
+      <label><strong data-i18n="l4.r1">Reason 1 (with example/study)</strong>
+        <textarea placeholder="One reason is... For example..."></textarea>
+      </label>
+      <label><strong data-i18n="l4.r2">Reason 2 (with example/study)</strong>
+        <textarea placeholder="Studies show that..."></textarea>
+      </label>
+      <label><strong data-i18n="l4.cta">Conclusion (Call to action)</strong>
+        <textarea placeholder="Therefore, we should..."></textarea>
+      </label>
+    </div>
+    <div class="useful-language">
+      <strong data-i18n="l4.expressT">Expressing Opinion</strong>
+      <ul>
+        <li>In my opinion, …</li>
+        <li>Personally, I believe…</li>
+        <li>From my point of view, …</li>
+        <li>I see your point, but…</li>
+        <li>I am against…</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LESSON 5 -->
+<section id="lesson-5" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 5</span>
+    <h2><span data-i18n="l5.title">Trust: The Power That Connects Us</span></h2>
+    <p class="lesson-sub" data-i18n="l5.sub">Reading · Persuasive Article</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l5.tps">Think · Pair · Share</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l5.q1">What does the word "trust" mean to you?</li>
+      <li data-i18n="l5.q2">Who is the person you trust the most? Why?</li>
+      <li data-i18n="l5.q3">Is it easy or difficult to earn someone's trust?</li>
+    </ul>
+  </div>
+
+  <article class="card reading">
+    <p data-i18n="l5.p1">Why should you work to become a person others can trust? Trust is the <em class="hl">foundation</em> of every strong relationship, both at home and in society. Without it, teamwork fails, friendships <em class="hl">weaken</em>, and leadership loses <em>its</em> strength. Therefore, how can you earn people's trust?</p>
+
+    <p data-i18n="l5.p2">Firstly, trust comes <em class="hl">mostly</em> from <em class="hl">honesty</em>. Ask yourself: "Who would you rather <em class="hl">believe in</em>: someone who just talks, or someone who speaks with both truth and heart?" People believe in you when you tell the truth or when you do your job well. Even small actions, such as telling the truth or <em class="hl">admitting</em> mistakes, build <em class="hl">trustworthiness</em> over time. <em class="hl">Psychologists</em> also discovered that honest behaviour <em class="hl">activates</em> the brain's "trust circuits". In other words, the more truthful you are, the more others naturally feel safe around you. Isn't that what everyone wants — to feel safe, to be respected, and to be understood?</p>
+
+    <p data-i18n="l5.p3">Another quality that builds trust is <em class="hl">empathy</em>. It is highly important to understand people's emotions. Showing empathy means using positive words, respecting others' <em class="hl">viewpoints</em>, and responding respectfully even when you disagree. People trust those who communicate kindly, both online and in person. For example, when someone is <em class="hl">upset</em>, an empathetic person listens carefully, shows <em class="hl">patience</em>, and avoids judging their feelings.</p>
+
+    <p data-i18n="l5.p4">In today's digital world, being a trusted and <em class="hl">reliable</em> person does not stop in real life; it continues online. Every post, comment, or photo you share on social media tells others who you are. <strong>In addition</strong>, when we speak <em class="hl">sincerely</em>, respect others' opinions, and avoid sharing <em class="hl">false</em> information, we build real trust that lasts beyond the screen.</p>
+
+    <p data-i18n="l5.p5"><strong>In conclusion</strong>, trust is built through honest actions, empathy, and respect, in both real life and the digital world. The way we speak, act, and respond reveals who we truly are. <em>Trust builds us, trust guides us, trust protects us.</em></p>
+  </article>
+
+  <!-- Mind map -->
+  <div class="card">
+    <h3 data-i18n="l5.mindT">🗺️ Mind Map — How to Earn People's Trust</h3>
+    <div class="mindmap">
+      <div class="mm-center">How to Earn Trust</div>
+      <div class="mm-branches">
+        <div class="mm-branch">
+          <h4>1. Honesty</h4>
+          <textarea placeholder="Evidence/Example: Tell the truth, admit mistakes..."></textarea>
+          <textarea placeholder="Study/fact: Honest behaviour activates the brain's trust circuits."></textarea>
+        </div>
+        <div class="mm-branch">
+          <h4>2. Empathy</h4>
+          <textarea placeholder="Evidence/Example: Listen carefully, respect viewpoints..."></textarea>
+          <textarea placeholder="Online example: Speak sincerely, avoid false info."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MCQ -->
+  <div class="card">
+    <h3 data-i18n="l5.checkT">Check Your Understanding</h3>
+    <div class="quiz" data-quiz="l5">
+      <div class="q mcq" data-correct="c">
+        <p class="q-text">1. The underlined word "its" in the 1st paragraph refers to:</p>
+        <label><input type="radio" name="l5q1" value="a"><span>a. society</span></label>
+        <label><input type="radio" name="l5q1" value="b"><span>b. teamwork</span></label>
+        <label><input type="radio" name="l5q1" value="c"><span>c. leadership</span></label>
+        <label><input type="radio" name="l5q1" value="d"><span>d. relationship</span></label>
+      </div>
+      <div class="q mcq" data-correct="b">
+        <p class="q-text">2. The opposite of the word "upset" in the 3rd paragraph is:</p>
+        <label><input type="radio" name="l5q2" value="a"><span>a. popular</span></label>
+        <label><input type="radio" name="l5q2" value="b"><span>b. happy</span></label>
+        <label><input type="radio" name="l5q2" value="c"><span>c. sleepy</span></label>
+        <label><input type="radio" name="l5q2" value="d"><span>d. serious</span></label>
+      </div>
+      <div class="q mcq" data-correct="b">
+        <p class="q-text">3. The writer uses the following persuasive techniques EXCEPT:</p>
+        <label><input type="radio" name="l5q3" value="a"><span>a. Repetition to inspire the readers.</span></label>
+        <label><input type="radio" name="l5q3" value="b"><span>b. A story about a trusted person.</span></label>
+        <label><input type="radio" name="l5q3" value="c"><span>c. Facts from research and expert studies.</span></label>
+        <label><input type="radio" name="l5q3" value="d"><span>d. Thinking questions to persuade the readers.</span></label>
+      </div>
+      <button class="btn btn-primary check-quiz" data-i18n="ui.check">Check</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Antonym game -->
+  <div class="card">
+    <h3>🔁 <span data-i18n="l5.antT">Antonym Lightning Round</span></h3>
+    <p class="muted" data-i18n="l5.antP">Tap the antonym (opposite) of each word.</p>
+    <div class="antonym-game" id="antGame"></div>
+    <p class="ant-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Word fill -->
+  <div class="card">
+    <h3 data-i18n="l5.fillT">📝 Fill in with: admit · mostly · foundation</h3>
+    <div class="fill" data-fill="l5">
+      <p>a. Everyone should <input data-answer="admit" placeholder="..."> the truth, even when it's difficult.</p>
+      <p>b. Practising vocabulary gives you a strong <input data-answer="foundation" placeholder="..."> for speaking.</p>
+      <p>c. Her followers like her videos <input data-answer="mostly" placeholder="..."> because they are fun and positive.</p>
+      <button class="btn btn-primary check-fill" data-i18n="ui.check">Check</button>
+      <p class="fill-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Infographic -->
+  <div class="card highlight">
+    <h3>🎨 <span data-i18n="l5.infoT">Design an Infographic: The Way to Trust</span></h3>
+    <p data-i18n="l5.infoP">Pick values, write tips, and your live infographic preview will update.</p>
+    <div class="infographic-builder">
+      <div class="ib-form">
+        <label>Title <input type="text" id="ibTitle" placeholder="The Way to Trust"></label>
+        <label>Value 1 <input type="text" id="ibV1" placeholder="Honesty 🤝"></label>
+        <label>Tip 1 <input type="text" id="ibT1" placeholder="Tell the truth, admit mistakes."></label>
+        <label>Value 2 <input type="text" id="ibV2" placeholder="Empathy 💛"></label>
+        <label>Tip 2 <input type="text" id="ibT2" placeholder="Listen carefully and respect others."></label>
+        <label>Quote/Stat <input type="text" id="ibQ" placeholder="Honest behaviour activates the brain's trust circuits."></label>
+      </div>
+      <div class="ib-preview" id="ibPreview">
+        <h3 id="ibPvTitle">Your Title Here</h3>
+        <div class="ib-card"><span>🤝</span><b id="ibPvV1">Value 1</b><p id="ibPvT1">Tip 1</p></div>
+        <div class="ib-card"><span>💛</span><b id="ibPvV2">Value 2</b><p id="ibPvT2">Tip 2</p></div>
+        <blockquote id="ibPvQ">"Your quote/stat appears here."</blockquote>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="ibDownload">⬇️ Download as image</button>
+  </div>
+</section>
+
+<!-- LESSON 6 -->
+<section id="lesson-6" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 6</span>
+    <h2><span data-i18n="l6.title">Reflexive Pronouns</span></h2>
+    <p class="lesson-sub" data-i18n="l6.sub">Grammar · myself, yourself, himself…</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l6.ruleT">📘 The Rule</h3>
+    <p data-i18n="l6.rule">We use a <strong>reflexive pronoun</strong> when the subject and the object are the same.</p>
+    <div class="reflexive-grid">
+      <div class="rfx"><b>I</b> → myself</div>
+      <div class="rfx"><b>You</b> → yourself</div>
+      <div class="rfx"><b>He</b> → himself</div>
+      <div class="rfx"><b>She</b> → herself</div>
+      <div class="rfx"><b>It</b> → itself</div>
+      <div class="rfx"><b>We</b> → ourselves</div>
+      <div class="rfx"><b>You (pl.)</b> → yourselves</div>
+      <div class="rfx"><b>They</b> → themselves</div>
+    </div>
+  </div>
+
+  <!-- Drag matching -->
+  <div class="card">
+    <h3>🎯 <span data-i18n="l6.dragT">Drag the right reflexive pronoun</span></h3>
+    <div class="rfx-game">
+      <div class="rfx-bank" id="rfxBank">
+        <span class="rfx-chip" draggable="true" data-w="myself">myself</span>
+        <span class="rfx-chip" draggable="true" data-w="yourself">yourself</span>
+        <span class="rfx-chip" draggable="true" data-w="himself">himself</span>
+        <span class="rfx-chip" draggable="true" data-w="ourselves">ourselves</span>
+        <span class="rfx-chip" draggable="true" data-w="themselves">themselves</span>
+      </div>
+      <div class="rfx-sentences">
+        <p>1. The baby can't feed <span class="rfx-slot" data-need="himself"></span> yet.</p>
+        <p>2. You should study every day and depend on <span class="rfx-slot" data-need="yourself"></span>.</p>
+        <p>3. We had a great time! We really enjoyed <span class="rfx-slot" data-need="ourselves"></span>.</p>
+        <p>4. I looked at <span class="rfx-slot" data-need="myself"></span> in the mirror before the interview.</p>
+        <p>5. Students should behave <span class="rfx-slot" data-need="themselves"></span> during the break time.</p>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="checkRfx" data-i18n="ui.check">Check</button>
+    <p class="rfx-result" aria-live="polite"></p>
+  </div>
+
+  <!-- I did it myself -->
+  <div class="card highlight">
+    <h3>🏆 <span data-i18n="l6.proudT">I Did it Myself!</span></h3>
+    <p data-i18n="l6.proudP">Write things you (or others) did and felt proud of, using different reflexive pronouns.</p>
+    <div class="proud-list">
+      <input type="text" placeholder="I washed my father's car myself.">
+      <input type="text" placeholder="My brother taught himself to ride a bike.">
+      <input type="text" placeholder="We organised the school party ourselves.">
+      <input type="text" placeholder="She learnt French herself.">
+    </div>
+  </div>
+</section>
+
+<!-- LESSON 7 -->
+<section id="lesson-7" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 7</span>
+    <h2><span data-i18n="l7.title">Should We Believe Everything on Social Media?</span></h2>
+    <p class="lesson-sub" data-i18n="l7.sub">Writing · Two-paragraph persuasive report</p>
+  </header>
+
+  <!-- Linkers match -->
+  <div class="card">
+    <h3>🔗 <span data-i18n="l7.linkersT">Match the Linkers to their Function</span></h3>
+    <div class="linkers" id="linkersGame">
+      <div class="lk-bank">
+        <span class="lk-chip" draggable="true" data-cat="contrast">however</span>
+        <span class="lk-chip" draggable="true" data-cat="contrast">but</span>
+        <span class="lk-chip" draggable="true" data-cat="contrast">although</span>
+        <span class="lk-chip" draggable="true" data-cat="addition">also</span>
+        <span class="lk-chip" draggable="true" data-cat="addition">moreover</span>
+        <span class="lk-chip" draggable="true" data-cat="addition">in addition</span>
+        <span class="lk-chip" draggable="true" data-cat="conclusion">in conclusion</span>
+        <span class="lk-chip" draggable="true" data-cat="conclusion">to sum up</span>
+        <span class="lk-chip" draggable="true" data-cat="conclusion">finally</span>
+      </div>
+      <div class="lk-cols">
+        <div class="lk-drop" data-cat="contrast"><h4>↔️ Contrast</h4></div>
+        <div class="lk-drop" data-cat="addition"><h4>➕ Addition</h4></div>
+        <div class="lk-drop" data-cat="conclusion"><h4>🏁 Conclusion</h4></div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="checkLinkers" data-i18n="ui.check">Check</button>
+    <p class="lk-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Sentence rewrite -->
+  <div class="card">
+    <h3 data-i18n="l7.rewriteT">✏️ Rewrite using the linker in brackets</h3>
+    <div class="reorder">
+      <div class="reorder-q" data-correct="Although I love travelling, I do not like packing my bags.|I love travelling although I do not like packing my bags.">
+        <p class="muted">1. I love travelling. I do not like packing my bags. (although)</p>
+        <input type="text" placeholder="Type the new sentence...">
+      </div>
+      <div class="reorder-q" data-correct="Doing exercise keeps you fit. Moreover, it improves your mood.|Moreover, doing exercise keeps you fit and it improves your mood.">
+        <p class="muted">2. Doing exercise keeps you fit. It improves your mood. (moreover)</p>
+        <input type="text" placeholder="Type the new sentence...">
+      </div>
+      <div class="reorder-q" data-correct="In conclusion, we should protect our privacy and use social media carefully.|In conclusion, we should protect our privacy. We must use social media carefully.">
+        <p class="muted">3. We should protect our privacy. We must use social media carefully. (in conclusion)</p>
+        <input type="text" placeholder="Type the new sentence...">
+      </div>
+      <button class="btn btn-primary check-reorder" data-i18n="ui.check">Check</button>
+      <p class="reorder-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Outline -->
+  <div class="card">
+    <h3 data-i18n="l7.outlineT">📝 Persuasive Report Outline</h3>
+    <p class="muted" data-i18n="l7.outlineP">"Social media has become part of our daily lives, but not everything we see online is true."</p>
+    <div class="outline">
+      <label><strong data-i18n="l7.intro">Introduction (Hook + thinking question)</strong>
+        <textarea placeholder="Should we let fake images decide how we feel about ourselves?"></textarea>
+      </label>
+      <label><strong data-i18n="l7.r1">Paragraph 1 — Reason 1</strong>
+        <textarea placeholder="Topic sentence: Many influencers post edited photos and videos that show only the perfect side..."></textarea>
+      </label>
+      <label><strong data-i18n="l7.r2">Paragraph 2 — Reason 2</strong>
+        <textarea placeholder="Topic sentence: Studies show that many teenagers compare themselves to others online..."></textarea>
+      </label>
+      <label><strong data-i18n="l7.concl">Conclusion (Call to action)</strong>
+        <textarea placeholder="Therefore, we should think carefully before believing what we see online..."></textarea>
+      </label>
+    </div>
+    <div class="checklist-box">
+      <strong data-i18n="l7.editT">✅ Editing checklist</strong>
+      <label><input type="checkbox"> <span data-i18n="l7.e1">Clear topic sentence with my opinion?</span></label>
+      <label><input type="checkbox"> <span data-i18n="l7.e2">Examples or evidence to support my opinion?</span></label>
+      <label><input type="checkbox"> <span data-i18n="l7.e3">Persuasive techniques used?</span></label>
+      <label><input type="checkbox"> <span data-i18n="l7.e4">Linking words connect ideas (firstly, however, moreover…)?</span></label>
+      <label><input type="checkbox"> <span data-i18n="l7.e5">Spelling and punctuation checked?</span></label>
+    </div>
+    <button class="btn btn-primary" id="downloadReport" data-i18n="l7.download">⬇️ Download My Report</button>
+  </div>
+</section>
+
+<!-- VOCAB -->
+<section id="vocab" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num" data-i18n="vocab.label">Vocabulary</span>
+    <h2><span data-i18n="vocab.title">Glossary — EN ↔ AR</span></h2>
+    <p class="lesson-sub" data-i18n="vocab.sub">Click any card to flip · search in English or Arabic</p>
+  </header>
+
+  <div class="card">
+    <div class="vocab-toolbar">
+      <input type="search" id="vocabSearch" placeholder="Search words..." />
+      <div class="vocab-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="noun">Nouns</button>
+        <button class="filter-btn" data-filter="verb">Verbs</button>
+        <button class="filter-btn" data-filter="adjective">Adjectives</button>
+        <button class="filter-btn" data-filter="adverb">Adverbs</button>
+        <button class="filter-btn" data-filter="phrasal">Phrasal</button>
+      </div>
+    </div>
+    <div class="vocab-grid" id="vocabGrid"></div>
+  </div>
+
+  <!-- Word Match Game -->
+  <div class="card highlight">
+    <h3>🧠 <span data-i18n="vocab.matchT">Memory Match — EN ↔ AR</span></h3>
+    <p data-i18n="vocab.matchP">Find pairs! Click two cards to see if they match. Try to clear them all.</p>
+    <button class="btn btn-ghost" id="memShuffle">🔀 New Game</button>
+    <div class="mem-grid" id="memGrid"></div>
+    <p class="muted" id="memScore">Pairs: 0 / 8</p>
+  </div>
+
+  <!-- Flashcards -->
+  <div class="card">
+    <h3>🎴 <span data-i18n="vocab.flashT">Flashcards</span></h3>
+    <div class="flash">
+      <div class="flash-card" id="flashCard">
+        <div class="flash-front"><span id="flashEn">word</span><small class="muted" id="flashType">noun</small></div>
+        <div class="flash-back"><span id="flashAr">معنى</span></div>
+      </div>
+      <div class="flash-controls">
+        <button class="btn btn-ghost" id="flashPrev">←</button>
+        <button class="btn btn-primary" id="flashFlip" data-i18n="vocab.flip">Flip</button>
+        <button class="btn btn-ghost" id="flashNext">→</button>
+      </div>
+      <p class="muted center"><span id="flashIdx">1</span> / <span id="flashTotal">40</span></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> English Pearls of Kuwait — Grade 8 · Learning Unit 6</p>
+    <p class="muted" data-i18n="footer.note">Made for interactive bilingual learning (EN/AR).</p>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

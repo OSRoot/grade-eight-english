@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MR Osama Revision · مراجعة شاملة في اللغة الإنجليزية</title>
+<meta name="description" content="موقع مراجعة شاملة في أساسيات اللغة الإنجليزية للطلاب: الحروف، الضمائر، المفردات، الأزمنة، والكلام المنقول. تفاعلي وثنائي اللغة." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📚%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- XP HUD -->
+<div id="xpHud" class="xp-hud">
+  <span class="xp-icon">⭐</span>
+  <div class="xp-bar-wrap"><div class="xp-bar" id="xpBar"></div></div>
+  <span class="xp-text"><b id="xpVal">0</b> XP · <span id="xpLevel">المستوى ١</span></span>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#hero">
+      <span class="brand-badge">MR<br>O</span>
+      <span class="brand-text">
+        <strong data-i18n="brand.title">مراجعة الأستاذ أسامة</strong>
+        <small data-i18n="brand.sub">MR Osama Revision · أساسيات اللغة الإنجليزية</small>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Sections">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="navMenu">
+        <li><a href="#s1" data-i18n="nav.s1">١. الحروف</a></li>
+        <li><a href="#s2" data-i18n="nav.s2">٢. الضمائر</a></li>
+        <li><a href="#s3" data-i18n="nav.s3">٣. مفردات وأفعال</a></li>
+        <li><a href="#s4" data-i18n="nav.s4">٤. الأزمنة</a></li>
+        <li><a href="#s5" data-i18n="nav.s5">٥. الكلام المنقول</a></li>
+        <li><a href="#test" data-i18n="nav.test">الاختبار النهائي</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="ar" aria-pressed="true">عربى</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="hero" class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="kicker" data-i18n="hero.kicker">📅 الحصة الأولى — ٠٢/٠٥/٢٠٢٦</span>
+      <h1 data-i18n="hero.title">مراجعة شاملة<br>في أساسيات اللغة الإنجليزية</h1>
+      <p class="lead" data-i18n="hero.lead">رحلة تأسيسية تفاعلية تبدأ من الحروف وتنتهي بالكلام المنقول — مع شرح بالعربية، أمثلة عملية، وألعاب ذكاء لكل قسم.</p>
+      <div class="hero-cta">
+        <a href="#s1" class="btn btn-primary" data-i18n="hero.start">▶ ابدأ المراجعة</a>
+        <a href="#test" class="btn btn-ghost" data-i18n="hero.test">📝 اختبر نفسك</a>
+      </div>
+      <ul class="hero-stats">
+        <li><strong>٥</strong><span data-i18n="hero.sections">أقسام</span></li>
+        <li><strong>+١٢</strong><span data-i18n="hero.games">لعبة وتمرين</span></li>
+        <li><strong>+٨٠</strong><span data-i18n="hero.words">كلمة شائعة</span></li>
+        <li><strong>عربي/EN</strong><span data-i18n="hero.bilingual">شرح ثنائي</span></li>
+      </ul>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-emoji">📖</div>
+      <div class="hero-card-tags">
+        <span>🔤 Letters</span>
+        <span>👥 Pronouns</span>
+        <span>📚 Vocabulary</span>
+        <span>⏰ Tenses</span>
+        <span>💬 Reported Speech</span>
+        <span>🎯 Final Test</span>
+      </div>
+      <div class="hero-card-meter">
+        <span data-i18n="hero.progress">تقدّمك في المراجعة</span>
+        <div class="meter"><div class="meter-fill" id="progressMeter"></div></div>
+        <small id="progressText">0%</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+<!-- Index -->
+<section class="card index-card">
+  <h2 class="section-title"><span class="dot"></span><span data-i18n="index.title">الفهرس · Index</span></h2>
+  <div class="index-grid">
+    <a href="#s1" class="index-item"><span class="ix-num">١</span><div><b data-i18n="index.s1">الحروف</b><small>ساكنة ومتحركة · Vowels & Consonants</small></div></a>
+    <a href="#s2" class="index-item"><span class="ix-num">٢</span><div><b data-i18n="index.s2">الضمائر وأسماء الإشارة</b><small>الجمع/المفرد · العاقل وغير العاقل</small></div></a>
+    <a href="#s3" class="index-item"><span class="ix-num">٣</span><div><b data-i18n="index.s3">مفردات وأفعال أساسية</b><small>تمهيد للدراسة · Foundation</small></div></a>
+    <a href="#s4" class="index-item"><span class="ix-num">٤</span><div><b data-i18n="index.s4">الأزمنة</b><small>المضارع · الماضي · المستقبل · الأمر</small></div></a>
+    <a href="#s5" class="index-item"><span class="ix-num">٥</span><div><b data-i18n="index.s5">الكلام المباشر والمنقول</b><small>Direct & Reported Speech</small></div></a>
+    <a href="#test" class="index-item highlighted"><span class="ix-num">🏆</span><div><b data-i18n="index.test">الاختبار النهائي</b><small>اختبر كل ما درسته</small></div></a>
+  </div>
+</section>
+
+<!-- ============== SECTION 1 — LETTERS ============== -->
+<section id="s1" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">القسم ١</span>
+    <h2><span data-i18n="s1.title">الحروف · Letters</span></h2>
+    <p class="lesson-sub" data-i18n="s1.sub">الحروف الساكنة والمتحركة · Consonants &amp; Vowels</p>
+  </header>
+
+  <div class="card">
+    <h3>📌 <span data-i18n="s1.ruleT">القاعدة الأساسية</span></h3>
+    <p data-i18n="s1.rule">الأبجدية الإنجليزية تتكون من <b>٢٦ حرف</b>: <b>٥ حروف متحركة</b> (Vowels) و <b>٢١ حرف ساكن</b> (Consonants). الحرف <b>Y</b> أحيانًا يُعتبر متحركًا (مثل: <em>my</em>, <em>happy</em>).</p>
+
+    <div class="vowel-cons">
+      <div class="vc-block vowels">
+        <h4>🅰️ <span data-i18n="s1.vowels">الحروف المتحركة (٥)</span></h4>
+        <p class="muted" data-i18n="s1.vowelsP">تخرج بسهولة من الفم بدون عائق. الفم مفتوح.</p>
+        <div class="letter-row" id="vowels">
+          <button class="letter v" data-letter="A" data-sound="A">A a</button>
+          <button class="letter v" data-letter="E" data-sound="E">E e</button>
+          <button class="letter v" data-letter="I" data-sound="I">I i</button>
+          <button class="letter v" data-letter="O" data-sound="O">O o</button>
+          <button class="letter v" data-letter="U" data-sound="U">U u</button>
+          <button class="letter v half" data-letter="Y" data-sound="Y">Y y *</button>
+        </div>
+      </div>
+      <div class="vc-block consonants">
+        <h4>🅱️ <span data-i18n="s1.consT">الحروف الساكنة (٢١)</span></h4>
+        <p class="muted" data-i18n="s1.consP">يحدث فيها إغلاق أو ضيق في مخرج الصوت.</p>
+        <div class="letter-row" id="consonants">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </div>
+    <p class="hint">💡 <span data-i18n="s1.tap">اضغط على أي حرف لسماع نطقه (تشغيل صوتي بالمتصفح).</span></p>
+  </div>
+
+  <!-- Sounds of vowels -->
+  <div class="card">
+    <h3>🔊 <span data-i18n="s1.soundsT">أصوات الحروف المتحركة</span></h3>
+    <p class="muted" data-i18n="s1.soundsP">كل حرف متحرك له أكثر من نطق. اسمع الفرق بين القصير والطويل.</p>
+    <div class="sounds-grid">
+      <div class="sound-card">
+        <h4>A</h4>
+        <p><b data-i18n="s1.short">قصير:</b> /æ/ — <em>cat</em>, <em>map</em></p>
+        <p><b data-i18n="s1.long">طويل:</b> /eɪ/ — <em>cake</em>, <em>name</em></p>
+        <button class="btn btn-mini" data-speak="cat. map. cake. name.">🔊</button>
+      </div>
+      <div class="sound-card">
+        <h4>E</h4>
+        <p><b data-i18n="s1.short">قصير:</b> /e/ — <em>red</em>, <em>pen</em></p>
+        <p><b data-i18n="s1.long">طويل:</b> /iː/ — <em>see</em>, <em>three</em></p>
+        <button class="btn btn-mini" data-speak="red. pen. see. three.">🔊</button>
+      </div>
+      <div class="sound-card">
+        <h4>I</h4>
+        <p><b data-i18n="s1.short">قصير:</b> /ɪ/ — <em>sit</em>, <em>big</em></p>
+        <p><b data-i18n="s1.long">طويل:</b> /aɪ/ — <em>like</em>, <em>time</em></p>
+        <button class="btn btn-mini" data-speak="sit. big. like. time.">🔊</button>
+      </div>
+      <div class="sound-card">
+        <h4>O</h4>
+        <p><b data-i18n="s1.short">قصير:</b> /ɒ/ — <em>hot</em>, <em>dog</em></p>
+        <p><b data-i18n="s1.long">طويل:</b> /oʊ/ — <em>go</em>, <em>home</em></p>
+        <button class="btn btn-mini" data-speak="hot. dog. go. home.">🔊</button>
+      </div>
+      <div class="sound-card">
+        <h4>U</h4>
+        <p><b data-i18n="s1.short">قصير:</b> /ʌ/ — <em>cup</em>, <em>sun</em></p>
+        <p><b data-i18n="s1.long">طويل:</b> /juː/ — <em>cute</em>, <em>use</em></p>
+        <button class="btn btn-mini" data-speak="cup. sun. cute. use.">🔊</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sort game -->
+  <div class="card">
+    <h3>🎯 <span data-i18n="s1.sortT">لعبة: صنّف الحروف</span></h3>
+    <p data-i18n="s1.sortP">اسحب كل حرف إلى الصندوق الصحيح: متحرك أم ساكن؟</p>
+    <div class="sort-bank" id="lSortBank">
+      <span class="sort-w" draggable="true" data-cat="vowel">A</span>
+      <span class="sort-w" draggable="true" data-cat="consonant">B</span>
+      <span class="sort-w" draggable="true" data-cat="consonant">D</span>
+      <span class="sort-w" draggable="true" data-cat="vowel">E</span>
+      <span class="sort-w" draggable="true" data-cat="consonant">G</span>
+      <span class="sort-w" draggable="true" data-cat="vowel">I</span>
+      <span class="sort-w" draggable="true" data-cat="consonant">M</span>
+      <span class="sort-w" draggable="true" data-cat="vowel">O</span>
+      <span class="sort-w" draggable="true" data-cat="consonant">P</span>
+      <span class="sort-w" draggable="true" data-cat="vowel">U</span>
+      <span class="sort-w" draggable="true" data-cat="consonant">T</span>
+      <span class="sort-w" draggable="true" data-cat="consonant">S</span>
+    </div>
+    <div class="sort-cols">
+      <div class="sort-drop" data-cat="vowel"><h4>🅰️ <span data-i18n="s1.vowelsBin">متحركة (Vowels)</span></h4></div>
+      <div class="sort-drop" data-cat="consonant"><h4>🅱️ <span data-i18n="s1.consBin">ساكنة (Consonants)</span></h4></div>
+    </div>
+    <button class="btn btn-primary" id="checkSort">تحقّق</button>
+    <p class="sort-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Word builder -->
+  <div class="card highlight">
+    <h3>🧩 <span data-i18n="s1.buildT">عدّ الحروف المتحركة في الكلمة</span></h3>
+    <p class="muted" data-i18n="s1.buildP">اضغط على الكلمة، ثم اكتب عدد الحروف المتحركة فيها.</p>
+    <div class="count-game" id="countGame"></div>
+  </div>
+</section>
+
+<!-- ============== SECTION 2 — PRONOUNS ============== -->
+<section id="s2" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">القسم ٢</span>
+    <h2><span data-i18n="s2.title">الضمائر وأسماء الإشارة</span></h2>
+    <p class="lesson-sub" data-i18n="s2.sub">Pronouns &amp; Demonstratives</p>
+  </header>
+
+  <div class="card">
+    <h3>👥 <span data-i18n="s2.subjT">ضمائر الفاعل · Subject Pronouns</span></h3>
+    <div class="pron-grid">
+      <div class="pron"><b>I</b><span>أنا</span><small>مفرد متكلم</small></div>
+      <div class="pron"><b>You</b><span>أنتَ / أنتِ / أنتم</span><small>مخاطب</small></div>
+      <div class="pron"><b>He</b><span>هو</span><small>مفرد عاقل مذكر</small></div>
+      <div class="pron"><b>She</b><span>هي</span><small>مفرد عاقل مؤنث</small></div>
+      <div class="pron"><b>It</b><span>هو/هي (لغير العاقل)</span><small>للأشياء والحيوانات</small></div>
+      <div class="pron"><b>We</b><span>نحن</span><small>جمع متكلم</small></div>
+      <div class="pron"><b>They</b><span>هم / هنّ</span><small>جمع — عاقل أو غير عاقل</small></div>
+    </div>
+    <div class="info-box">
+      <strong data-i18n="s2.tipT">⚠️ تنبيهات مهمة</strong>
+      <ul>
+        <li><b>You</b> تستخدم للمفرد والجمع: <em>You are kind</em> · <em>You are all kind</em>.</li>
+        <li><b>It</b> تستخدم لغير العاقل (الأشياء والحيوانات والأماكن).</li>
+        <li><b>They</b> تستخدم للجمع: للعاقل (الناس) أو غير العاقل (الأشياء).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🪞 <span data-i18n="s2.objT">الجدول الكامل: فاعل · مفعول · ملكية · انعكاسي</span></h3>
+    <div class="table-wrap">
+      <table class="big-table">
+        <thead>
+          <tr><th>Subject</th><th>Object</th><th>Possessive Adj.</th><th>Possessive Pron.</th><th>Reflexive</th><th>المعنى</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>I</td><td>me</td><td>my</td><td>mine</td><td>myself</td><td>أنا</td></tr>
+          <tr><td>You</td><td>you</td><td>your</td><td>yours</td><td>yourself</td><td>أنتَ/أنتِ</td></tr>
+          <tr><td>He</td><td>him</td><td>his</td><td>his</td><td>himself</td><td>هو</td></tr>
+          <tr><td>She</td><td>her</td><td>her</td><td>hers</td><td>herself</td><td>هي</td></tr>
+          <tr><td>It</td><td>it</td><td>its</td><td>—</td><td>itself</td><td>هو/هي (شيء)</td></tr>
+          <tr><td>We</td><td>us</td><td>our</td><td>ours</td><td>ourselves</td><td>نحن</td></tr>
+          <tr><td>You (pl.)</td><td>you</td><td>your</td><td>yours</td><td>yourselves</td><td>أنتم</td></tr>
+          <tr><td>They</td><td>them</td><td>their</td><td>theirs</td><td>themselves</td><td>هم/هنّ</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Demonstratives -->
+  <div class="card">
+    <h3>👈 <span data-i18n="s2.demT">أسماء الإشارة · Demonstratives</span></h3>
+    <div class="dem-grid">
+      <div class="dem near">
+        <div class="dem-emoji">👇</div>
+        <h4>This</h4>
+        <p><b>هذا/هذه</b> — للمفرد القريب</p>
+        <em>This book is mine.</em>
+      </div>
+      <div class="dem far">
+        <div class="dem-emoji">👉</div>
+        <h4>That</h4>
+        <p><b>ذلك/تلك</b> — للمفرد البعيد</p>
+        <em>That car is new.</em>
+      </div>
+      <div class="dem near">
+        <div class="dem-emoji">👇👇</div>
+        <h4>These</h4>
+        <p><b>هؤلاء/هذه</b> — للجمع القريب</p>
+        <em>These books are mine.</em>
+      </div>
+      <div class="dem far">
+        <div class="dem-emoji">👉👉</div>
+        <h4>Those</h4>
+        <p><b>أولئك/تلك</b> — للجمع البعيد</p>
+        <em>Those cars are new.</em>
+      </div>
+    </div>
+    <div class="warn">
+      ⚠️ <span data-i18n="s2.demTip">قاعدة سهلة: مع <b>This/That</b> يأتي فعل <b>is</b> ومع <b>These/Those</b> يأتي فعل <b>are</b>.</span>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="card">
+    <h3>✏️ <span data-i18n="s2.quizT">تمرين: اختر الضمير الصحيح</span></h3>
+    <div class="quiz" data-quiz="s2">
+      <div class="q mcq" data-correct="b">
+        <p class="q-text">1. ____ is my friend Ahmed.</p>
+        <label><input type="radio" name="s2q1" value="a"><span>a. She</span></label>
+        <label><input type="radio" name="s2q1" value="b"><span>b. He</span></label>
+        <label><input type="radio" name="s2q1" value="c"><span>c. It</span></label>
+        <label><input type="radio" name="s2q1" value="d"><span>d. They</span></label>
+      </div>
+      <div class="q mcq" data-correct="c">
+        <p class="q-text">2. The cat is hungry. ____ wants food.</p>
+        <label><input type="radio" name="s2q2" value="a"><span>a. He</span></label>
+        <label><input type="radio" name="s2q2" value="b"><span>b. She</span></label>
+        <label><input type="radio" name="s2q2" value="c"><span>c. It</span></label>
+        <label><input type="radio" name="s2q2" value="d"><span>d. They</span></label>
+      </div>
+      <div class="q mcq" data-correct="b">
+        <p class="q-text">3. ____ books on the table are new.</p>
+        <label><input type="radio" name="s2q3" value="a"><span>a. This</span></label>
+        <label><input type="radio" name="s2q3" value="b"><span>b. These</span></label>
+        <label><input type="radio" name="s2q3" value="c"><span>c. That</span></label>
+        <label><input type="radio" name="s2q3" value="d"><span>d. It</span></label>
+      </div>
+      <div class="q mcq" data-correct="d">
+        <p class="q-text">4. Sara and Mona are sisters. ____ are my friends.</p>
+        <label><input type="radio" name="s2q4" value="a"><span>a. She</span></label>
+        <label><input type="radio" name="s2q4" value="b"><span>b. We</span></label>
+        <label><input type="radio" name="s2q4" value="c"><span>c. He</span></label>
+        <label><input type="radio" name="s2q4" value="d"><span>d. They</span></label>
+      </div>
+      <div class="q mcq" data-correct="a">
+        <p class="q-text">5. Look at ____ tower over there!</p>
+        <label><input type="radio" name="s2q5" value="a"><span>a. that</span></label>
+        <label><input type="radio" name="s2q5" value="b"><span>b. these</span></label>
+        <label><input type="radio" name="s2q5" value="c"><span>c. those</span></label>
+        <label><input type="radio" name="s2q5" value="d"><span>d. they</span></label>
+      </div>
+      <button class="btn btn-primary check-quiz">تحقّق</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Drag pronouns -->
+  <div class="card highlight">
+    <h3>🎮 <span data-i18n="s2.dragT">لعبة: ضع الضمير المناسب</span></h3>
+    <div class="rfx-game">
+      <div class="rfx-bank" id="proBank">
+        <span class="rfx-chip" draggable="true" data-w="he">he</span>
+        <span class="rfx-chip" draggable="true" data-w="she">she</span>
+        <span class="rfx-chip" draggable="true" data-w="it">it</span>
+        <span class="rfx-chip" draggable="true" data-w="they">they</span>
+        <span class="rfx-chip" draggable="true" data-w="we">we</span>
+        <span class="rfx-chip" draggable="true" data-w="this">this</span>
+        <span class="rfx-chip" draggable="true" data-w="these">these</span>
+        <span class="rfx-chip" draggable="true" data-w="those">those</span>
+      </div>
+      <div class="rfx-sentences">
+        <p>1. Omar is my brother. <span class="rfx-slot" data-need="he"></span> is in grade 8.</p>
+        <p>2. Look at <span class="rfx-slot" data-need="this"></span> beautiful flower next to me!</p>
+        <p>3. My mother is a teacher. <span class="rfx-slot" data-need="she"></span> works at our school.</p>
+        <p>4. The dogs are friendly. <span class="rfx-slot" data-need="they"></span> love children.</p>
+        <p>5. I have a new phone. <span class="rfx-slot" data-need="it"></span> is fast.</p>
+        <p>6. <span class="rfx-slot" data-need="we"></span> are playing football together.</p>
+        <p>7. <span class="rfx-slot" data-need="these"></span> apples in my hand are sweet.</p>
+        <p>8. <span class="rfx-slot" data-need="those"></span> mountains far away are high.</p>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="checkPro">تحقّق</button>
+    <p class="pro-result" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ============== SECTION 3 — VOCAB ============== -->
+<section id="s3" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">القسم ٣</span>
+    <h2><span data-i18n="s3.title">المفردات والأفعال الأساسية</span></h2>
+    <p class="lesson-sub" data-i18n="s3.sub">Foundation Vocabulary &amp; Verbs</p>
+  </header>
+
+  <div class="card">
+    <h3>📚 <span data-i18n="s3.intro">كلمات مهمة لازم تعرفها قبل أي درس</span></h3>
+    <p class="muted" data-i18n="s3.introP">صُنّفت لك في فئات. اضغط على أي كلمة لسماعها وقلبها.</p>
+
+    <div class="vocab-toolbar">
+      <input type="search" id="vocabSearch" placeholder="ابحث بالعربية أو الإنجليزية..." />
+      <div class="vocab-filters">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="noun">أسماء</button>
+        <button class="filter-btn" data-filter="verb">أفعال</button>
+        <button class="filter-btn" data-filter="adjective">صفات</button>
+        <button class="filter-btn" data-filter="time">زمن</button>
+        <button class="filter-btn" data-filter="number">أرقام</button>
+        <button class="filter-btn" data-filter="qword">أدوات استفهام</button>
+      </div>
+    </div>
+    <div class="vocab-grid" id="vocabGrid"></div>
+  </div>
+
+  <!-- Be / Have / Do -->
+  <div class="card">
+    <h3>⚡ <span data-i18n="s3.coreT">أهم ٣ أفعال في الإنجليزية: Be · Have · Do</span></h3>
+    <div class="core-verbs">
+      <div class="cv">
+        <h4>to be (يكون)</h4>
+        <table>
+          <tr><th>Subject</th><th>Present</th><th>Past</th></tr>
+          <tr><td>I</td><td>am</td><td>was</td></tr>
+          <tr><td>He / She / It</td><td>is</td><td>was</td></tr>
+          <tr><td>We / You / They</td><td>are</td><td>were</td></tr>
+        </table>
+        <p class="ex"><em>I am happy.</em> · <em>She was tired.</em></p>
+      </div>
+      <div class="cv">
+        <h4>to have (يملك)</h4>
+        <table>
+          <tr><th>Subject</th><th>Present</th><th>Past</th></tr>
+          <tr><td>I / You / We / They</td><td>have</td><td>had</td></tr>
+          <tr><td>He / She / It</td><td>has</td><td>had</td></tr>
+        </table>
+        <p class="ex"><em>I have a book.</em> · <em>He had a pen.</em></p>
+      </div>
+      <div class="cv">
+        <h4>to do (يفعل)</h4>
+        <table>
+          <tr><th>Subject</th><th>Present</th><th>Past</th></tr>
+          <tr><td>I / You / We / They</td><td>do</td><td>did</td></tr>
+          <tr><td>He / She / It</td><td>does</td><td>did</td></tr>
+        </table>
+        <p class="ex"><em>They do their homework.</em> · <em>She did the test.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Memory match for vocab -->
+  <div class="card highlight">
+    <h3>🧠 <span data-i18n="s3.memT">لعبة الذاكرة — وصّل الكلمة الإنجليزية بمعناها</span></h3>
+    <button class="btn btn-ghost" id="memShuffle">🔀 لعبة جديدة</button>
+    <div class="mem-grid" id="memGrid"></div>
+    <p class="muted" id="memScore">الأزواج: ٠ / ٨</p>
+  </div>
+</section>
+
+<!-- ============== SECTION 4 — TENSES ============== -->
+<section id="s4" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">القسم ٤</span>
+    <h2><span data-i18n="s4.title">الأزمنة · Tenses</span></h2>
+    <p class="lesson-sub" data-i18n="s4.sub">المضارع · الماضي · المستقبل · الأمر</p>
+  </header>
+
+  <!-- Timeline -->
+  <div class="card">
+    <h3>⏳ <span data-i18n="s4.timeT">الخط الزمني للأزمنة</span></h3>
+    <div class="timeline">
+      <div class="tl-bar">
+        <span class="tl-past">الماضي</span>
+        <span class="tl-now">الآن</span>
+        <span class="tl-future">المستقبل</span>
+      </div>
+      <div class="tl-points">
+        <div class="tl-pt past">Past<br><small>I played</small></div>
+        <div class="tl-pt now">Present<br><small>I play / I am playing</small></div>
+        <div class="tl-pt future">Future<br><small>I will play</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs for tenses -->
+  <div class="card">
+    <h3>📘 <span data-i18n="s4.detT">شرح كل زمن بالأمثلة</span></h3>
+    <div class="tense-tabs">
+      <button class="tt-btn active" data-tab="present">المضارع · Present</button>
+      <button class="tt-btn" data-tab="past">الماضي · Past</button>
+      <button class="tt-btn" data-tab="future">المستقبل · Future</button>
+      <button class="tt-btn" data-tab="imperative">الأمر · Imperative</button>
+    </div>
+
+    <div class="tt-panels">
+      <!-- Present -->
+      <div class="tt-panel active" data-panel="present">
+        <h4>1. Present Simple — المضارع البسيط</h4>
+        <p><b>الاستخدام:</b> الحقائق والعادات اليومية.</p>
+        <p><b>التركيب:</b> <span class="chip">Subject</span> + <span class="chip green">verb</span> (مع he/she/it نضيف <b>s/es</b>)</p>
+        <ul class="examples">
+          <li>I <b>play</b> football every Friday.</li>
+          <li>She <b>plays</b> the piano. / He <b>watches</b> TV.</li>
+          <li>The sun <b>rises</b> in the east.</li>
+        </ul>
+        <p class="muted">كلمات دلالية: <em>always, usually, every day, sometimes, never</em></p>
+
+        <h4>2. Present Continuous — المضارع المستمر</h4>
+        <p><b>الاستخدام:</b> فعل يحدث الآن أو في هذه الفترة.</p>
+        <p><b>التركيب:</b> <span class="chip">Subject</span> + <span class="chip blue">am/is/are</span> + <span class="chip green">verb-ing</span></p>
+        <ul class="examples">
+          <li>I <b>am studying</b> now.</li>
+          <li>They <b>are playing</b> in the garden.</li>
+          <li>She <b>is reading</b> a book at the moment.</li>
+        </ul>
+        <p class="muted">كلمات دلالية: <em>now, at the moment, today, right now, look!, listen!</em></p>
+      </div>
+
+      <!-- Past -->
+      <div class="tt-panel" data-panel="past">
+        <h4>1. Past Simple — الماضي البسيط</h4>
+        <p><b>الاستخدام:</b> فعل حدث وانتهى في الماضي.</p>
+        <p><b>التركيب:</b> <span class="chip">Subject</span> + <span class="chip green">verb-ed</span> (للأفعال المنتظمة) أو <span class="chip green">v2</span> (للأفعال الشاذة)</p>
+        <ul class="examples">
+          <li>I <b>played</b> football yesterday.</li>
+          <li>He <b>went</b> to school. <small>(go → went)</small></li>
+          <li>They <b>visited</b> their grandmother.</li>
+        </ul>
+        <p class="muted">كلمات دلالية: <em>yesterday, last week, ago, in 2020</em></p>
+
+        <h4>2. Past Continuous — الماضي المستمر</h4>
+        <p><b>الاستخدام:</b> فعل كان مستمرًا في الماضي.</p>
+        <p><b>التركيب:</b> <span class="chip">Subject</span> + <span class="chip blue">was/were</span> + <span class="chip green">verb-ing</span></p>
+        <ul class="examples">
+          <li>I <b>was watching</b> TV at 8 pm.</li>
+          <li>They <b>were playing</b> when it started to rain.</li>
+        </ul>
+      </div>
+
+      <!-- Future -->
+      <div class="tt-panel" data-panel="future">
+        <h4>1. Future with "will" — المستقبل البسيط</h4>
+        <p><b>الاستخدام:</b> قرار لحظي، توقع، وعد.</p>
+        <p><b>التركيب:</b> <span class="chip">Subject</span> + <span class="chip blue">will</span> + <span class="chip green">verb</span></p>
+        <ul class="examples">
+          <li>I <b>will help</b> you tomorrow.</li>
+          <li>She <b>will be</b> a doctor.</li>
+          <li>It <b>will rain</b> tomorrow.</li>
+        </ul>
+
+        <h4>2. Future with "be going to" — المستقبل المخطط له</h4>
+        <p><b>الاستخدام:</b> خطة محضّرة من قبل أو توقع بدليل واضح.</p>
+        <p><b>التركيب:</b> <span class="chip">Subject</span> + <span class="chip blue">am/is/are going to</span> + <span class="chip green">verb</span></p>
+        <ul class="examples">
+          <li>I <b>am going to visit</b> my uncle next week.</li>
+          <li>Look at the clouds! It <b>is going to rain</b>.</li>
+        </ul>
+        <p class="muted">كلمات دلالية: <em>tomorrow, next week/year, soon, in the future</em></p>
+      </div>
+
+      <!-- Imperative -->
+      <div class="tt-panel" data-panel="imperative">
+        <h4>الأمر — Imperative</h4>
+        <p><b>الاستخدام:</b> توجيه أمر، طلب، تحذير، أو نصيحة.</p>
+        <p><b>التركيب:</b> نبدأ بالفعل مباشرةً (بدون فاعل).</p>
+        <ul class="examples">
+          <li><b>Open</b> the door, please.</li>
+          <li><b>Be</b> quiet!</li>
+          <li><b>Don't</b> run in the corridor. <small>(للأمر السلبي)</small></li>
+          <li><b>Listen</b> to your teacher.</li>
+        </ul>
+        <p class="muted">في صيغة الأمر السلبي: <em>Don't / Do not + verb</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Verb conjugator -->
+  <div class="card">
+    <h3>🔄 <span data-i18n="s4.conjT">آلة تصريف الفعل</span></h3>
+    <p class="muted" data-i18n="s4.conjP">اختر فعل ومعرف، وشاهد كيف يتغير في كل زمن.</p>
+    <div class="conj">
+      <div class="conj-controls">
+        <label>الفعل
+          <select id="conjVerb">
+            <option value="play|played|playing">play (يلعب)</option>
+            <option value="study|studied|studying">study (يدرس)</option>
+            <option value="watch|watched|watching">watch (يشاهد)</option>
+            <option value="go|went|going">go (يذهب)</option>
+            <option value="eat|ate|eating">eat (يأكل)</option>
+            <option value="write|wrote|writing">write (يكتب)</option>
+            <option value="read|read|reading">read (يقرأ)</option>
+            <option value="visit|visited|visiting">visit (يزور)</option>
+          </select>
+        </label>
+        <label>الفاعل
+          <select id="conjSub">
+            <option value="I">I (أنا)</option>
+            <option value="You">You (أنت)</option>
+            <option value="He">He (هو)</option>
+            <option value="She">She (هي)</option>
+            <option value="It">It (هو/هي ش)</option>
+            <option value="We">We (نحن)</option>
+            <option value="They">They (هم)</option>
+          </select>
+        </label>
+      </div>
+      <div class="conj-output" id="conjOut">
+        <div class="conj-row"><b>Present Simple</b><span id="conjPres"></span></div>
+        <div class="conj-row"><b>Present Continuous</b><span id="conjPresC"></span></div>
+        <div class="conj-row"><b>Past Simple</b><span id="conjPast"></span></div>
+        <div class="conj-row"><b>Past Continuous</b><span id="conjPastC"></span></div>
+        <div class="conj-row"><b>Future (will)</b><span id="conjFut"></span></div>
+        <div class="conj-row"><b>Future (be going to)</b><span id="conjFutG"></span></div>
+        <div class="conj-row"><b>Imperative</b><span id="conjImp"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tense identification game -->
+  <div class="card">
+    <h3>🎯 <span data-i18n="s4.idT">حدّد الزمن!</span></h3>
+    <p class="muted" data-i18n="s4.idP">اقرأ الجملة واختر الزمن الصحيح.</p>
+    <div id="tenseGame" class="tense-game"></div>
+    <p class="tense-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Fill in the blanks -->
+  <div class="card">
+    <h3>✏️ <span data-i18n="s4.fillT">تمرين: ضع الفعل في الزمن المناسب</span></h3>
+    <div class="fill" data-fill="s4">
+      <p>1. Every morning, my father ____ <input data-answer="drinks" placeholder="(drink)"> coffee.</p>
+      <p>2. Look! The cat ____ <input data-answer="is sleeping|is sleeping on" placeholder="(sleep)"> on my bed.</p>
+      <p>3. Yesterday, we ____ <input data-answer="visited" placeholder="(visit)"> our grandfather.</p>
+      <p>4. Tomorrow, I ____ <input data-answer="will travel|am going to travel" placeholder="(travel)"> to Cairo.</p>
+      <p>5. ____ <input data-answer="open|please open|open the" placeholder="(open)"> the window, please.</p>
+      <p>6. While I was reading, my brother ____ <input data-answer="was playing" placeholder="(play)">.</p>
+      <button class="btn btn-primary check-fill">تحقّق</button>
+      <p class="fill-result" aria-live="polite"></p>
+      <details class="model"><summary>إظهار الإجابات</summary>
+        <ul>
+          <li>1. drinks (مضارع بسيط مع always)</li>
+          <li>2. is sleeping (مضارع مستمر مع Look!)</li>
+          <li>3. visited (ماضي بسيط مع yesterday)</li>
+          <li>4. will travel / am going to travel (مستقبل مع tomorrow)</li>
+          <li>5. open (أمر)</li>
+          <li>6. was playing (ماضي مستمر مع while)</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SECTION 5 — REPORTED SPEECH ============== -->
+<section id="s5" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">القسم ٥</span>
+    <h2><span data-i18n="s5.title">الكلام المباشر والكلام المنقول</span></h2>
+    <p class="lesson-sub" data-i18n="s5.sub">Direct &amp; Reported (Indirect) Speech</p>
+  </header>
+
+  <div class="card">
+    <h3>📌 <span data-i18n="s5.ruleT">القاعدة الأساسية</span></h3>
+    <ul class="rule-list">
+      <li>الكلام <b>المباشر</b>: نقل كلام الشخص <b>بنفس كلماته</b> داخل علامتي تنصيص <b>" "</b>.</li>
+      <li>الكلام <b>المنقول</b>: نقل كلام الشخص <b>بكلماتنا</b> بدون علامات تنصيص.</li>
+      <li>عند التحويل من مباشر إلى منقول، نُغيّر: <b>الزمن · الضمائر · كلمات الزمان والمكان</b>.</li>
+    </ul>
+  </div>
+
+  <!-- Tense changes table -->
+  <div class="card">
+    <h3>⏰ <span data-i18n="s5.tenseT">جدول تغيير الأزمنة</span></h3>
+    <div class="table-wrap">
+      <table class="big-table">
+        <thead><tr><th>Direct (مباشر)</th><th>Reported (منقول)</th><th>مثال</th></tr></thead>
+        <tbody>
+          <tr><td>Present Simple</td><td>Past Simple</td><td>"I <b>play</b>" → He said he <b>played</b>.</td></tr>
+          <tr><td>Present Continuous</td><td>Past Continuous</td><td>"I <b>am playing</b>" → He said he <b>was playing</b>.</td></tr>
+          <tr><td>Present Perfect</td><td>Past Perfect</td><td>"I <b>have played</b>" → He said he <b>had played</b>.</td></tr>
+          <tr><td>Past Simple</td><td>Past Perfect</td><td>"I <b>played</b>" → He said he <b>had played</b>.</td></tr>
+          <tr><td>Will</td><td>Would</td><td>"I <b>will go</b>" → He said he <b>would go</b>.</td></tr>
+          <tr><td>Can</td><td>Could</td><td>"I <b>can swim</b>" → He said he <b>could swim</b>.</td></tr>
+          <tr><td>May</td><td>Might</td><td>"I <b>may come</b>" → He said he <b>might come</b>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Pronouns and time/place -->
+  <div class="card">
+    <h3>🔄 <span data-i18n="s5.swapsT">تغيير الضمائر وكلمات الزمن والمكان</span></h3>
+    <div class="swaps-grid">
+      <div class="swap-grp">
+        <h4>الضمائر</h4>
+        <span class="swap"><b>I</b> → <b>he/she</b></span>
+        <span class="swap"><b>we</b> → <b>they</b></span>
+        <span class="swap"><b>my</b> → <b>his/her</b></span>
+        <span class="swap"><b>our</b> → <b>their</b></span>
+        <span class="swap"><b>this</b> → <b>that</b></span>
+        <span class="swap"><b>these</b> → <b>those</b></span>
+      </div>
+      <div class="swap-grp">
+        <h4>كلمات الزمن</h4>
+        <span class="swap"><b>now</b> → <b>then</b></span>
+        <span class="swap"><b>today</b> → <b>that day</b></span>
+        <span class="swap"><b>tomorrow</b> → <b>the next day</b></span>
+        <span class="swap"><b>yesterday</b> → <b>the day before</b></span>
+        <span class="swap"><b>tonight</b> → <b>that night</b></span>
+        <span class="swap"><b>ago</b> → <b>before</b></span>
+      </div>
+      <div class="swap-grp">
+        <h4>كلمات المكان</h4>
+        <span class="swap"><b>here</b> → <b>there</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step by step example -->
+  <div class="card">
+    <h3>🪜 <span data-i18n="s5.stepT">مثال خطوة بخطوة</span></h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div><b>الجملة المباشرة:</b><br><em>Sara said, "I am studying my English book today."</em></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div><b>غيّر الزمن:</b> am studying → was studying</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div><b>غيّر الضمائر:</b> I → she · my → her</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div><b>غيّر كلمة الزمن:</b> today → that day</div>
+      </div>
+      <div class="step result">
+        <div class="step-num">✓</div>
+        <div><b>الجملة المنقولة:</b><br><em>Sara said that <b>she was studying her</b> English book <b>that day</b>.</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bubble pairs -->
+  <div class="card">
+    <h3>💬 <span data-i18n="s5.bubT">محوّل الفقاعات — اضغط لرؤية الإجابة</span></h3>
+    <div class="bubbles">
+      <div class="bubble-pair">
+        <div class="bubble direct">"I love this song," <small>— Layla</small></div>
+        <div class="bubble-arrow">←</div>
+        <div class="bubble reported hidden">Layla said that she <b>loved that</b> song.</div>
+      </div>
+      <div class="bubble-pair">
+        <div class="bubble direct">"We are going to the park now," <small>— The kids</small></div>
+        <div class="bubble-arrow">←</div>
+        <div class="bubble reported hidden">The kids said that <b>they were going</b> to the park <b>then</b>.</div>
+      </div>
+      <div class="bubble-pair">
+        <div class="bubble direct">"I will visit my grandmother tomorrow," <small>— Hassan</small></div>
+        <div class="bubble-arrow">←</div>
+        <div class="bubble reported hidden">Hassan said that <b>he would</b> visit <b>his</b> grandmother <b>the next day</b>.</div>
+      </div>
+      <div class="bubble-pair">
+        <div class="bubble direct">"I have finished my homework," <small>— Omar</small></div>
+        <div class="bubble-arrow">←</div>
+        <div class="bubble reported hidden">Omar said that <b>he had finished his</b> homework.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transformation exercise -->
+  <div class="card highlight">
+    <h3>✏️ <span data-i18n="s5.exT">تمرين: حوّل إلى كلام منقول</span></h3>
+    <div class="reorder">
+      <div class="reorder-q" data-correct="Ali said that he liked that book.|Ali said he liked that book.">
+        <p class="muted">1. Ali said, "I like this book."</p>
+        <input type="text" placeholder="Ali said that...">
+      </div>
+      <div class="reorder-q" data-correct="Mona said that she was reading her novel then.|Mona said she was reading her novel then.">
+        <p class="muted">2. Mona said, "I am reading my novel now."</p>
+        <input type="text" placeholder="Mona said that...">
+      </div>
+      <div class="reorder-q" data-correct="The teacher said that we would have a test the next day.|The teacher said we would have a test the next day.">
+        <p class="muted">3. The teacher said, "We will have a test tomorrow."</p>
+        <input type="text" placeholder="The teacher said that...">
+      </div>
+      <div class="reorder-q" data-correct="My mother said that she had cooked the food.|My mother said she had cooked the food.">
+        <p class="muted">4. My mother said, "I have cooked the food."</p>
+        <input type="text" placeholder="My mother said that...">
+      </div>
+      <button class="btn btn-primary check-reorder">تحقّق</button>
+      <p class="reorder-result" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL TEST ============== -->
+<section id="test" class="lesson final-test">
+  <header class="lesson-head">
+    <span class="lesson-num">🏆 الاختبار</span>
+    <h2><span data-i18n="test.title">الاختبار النهائي · Final Test</span></h2>
+    <p class="lesson-sub" data-i18n="test.sub">١٠ أسئلة من جميع الأقسام</p>
+  </header>
+
+  <div class="card">
+    <div class="test-header">
+      <div class="test-stat">⏱️ <span id="testTimer">00:00</span></div>
+      <div class="test-stat">📊 <span id="testProgress">0 / 10</span></div>
+      <div class="test-stat">✅ <span id="testScore">0</span></div>
+    </div>
+
+    <div class="quiz" id="finalTest"></div>
+
+    <div class="test-actions">
+      <button class="btn btn-primary" id="startTest">▶ ابدأ الاختبار</button>
+      <button class="btn btn-ghost" id="submitTest" disabled>إنهاء الاختبار</button>
+    </div>
+
+    <div class="test-result" id="testResult" hidden>
+      <div class="big-score" id="bigScore">0%</div>
+      <h3 id="testGrade">تقدير</h3>
+      <p id="testSummary"></p>
+      <button class="btn btn-ghost" id="retakeTest">🔁 أعد الاختبار</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> MR Osama Revision · مراجعة شاملة للأساسيات</p>
+    <p class="muted" data-i18n="footer.note">صُمِّم لتعلّم تفاعلي ثنائي اللغة (عربي/إنجليزي).</p>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

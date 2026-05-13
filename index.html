@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Unit 7 — Real Trips & Virtual Voyages | English Pearls</title>
+<meta name="description" content="Interactive bilingual (EN/AR) learning site for Unit 7: Explore the World — Real Trips & Virtual Voyages. Grade 8." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E✈️%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- XP HUD -->
+<div id="xpHud" class="xp-hud" aria-live="polite">
+  <span class="xp-icon">✈️</span>
+  <div class="xp-bar-wrap"><div class="xp-bar" id="xpBar"></div></div>
+  <span class="xp-text"><b id="xpVal">0</b> XP · <span id="xpLevel">Level 1</span></span>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#hero">
+      <span class="brand-badge">7</span>
+      <span class="brand-text">
+        <strong data-i18n="brand.title">Real Trips &amp; Virtual Voyages</strong>
+        <small data-i18n="brand.sub">English Pearls of Kuwait — Grade 8</small>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Lessons">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="navMenu">
+        <li><a href="#lesson-1" data-i18n="nav.l1">Reading 1</a></li>
+        <li><a href="#lesson-2" data-i18n="nav.l2">Grammar 1</a></li>
+        <li><a href="#lesson-3" data-i18n="nav.l3">Listening</a></li>
+        <li><a href="#lesson-4" data-i18n="nav.l4">Speaking</a></li>
+        <li><a href="#lesson-5" data-i18n="nav.l5">Reading 2</a></li>
+        <li><a href="#lesson-6" data-i18n="nav.l6">Grammar 2</a></li>
+        <li><a href="#lesson-7" data-i18n="nav.l7">Writing</a></li>
+        <li><a href="#vocab" data-i18n="nav.vocab">Vocabulary</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang-btn" data-lang="ar" aria-pressed="false">عربى</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="hero" class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="kicker" data-i18n="hero.kicker">Learning Unit 7</span>
+      <h1 data-i18n="hero.title">Explore the World<br>Real Trips &amp; Virtual Voyages</h1>
+      <p class="lead" data-i18n="hero.lead">Pack your bags, put on a VR headset — both work. Travel through reading, grammar, listening, speaking and writing, with bilingual EN ↔ AR support and a smart game in every lesson.</p>
+      <div class="hero-cta">
+        <a href="#lesson-1" class="btn btn-primary" data-i18n="hero.start">✈️ Start the Journey</a>
+        <a href="#vocab" class="btn btn-ghost" data-i18n="hero.vocab">📚 Vocabulary</a>
+      </div>
+      <ul class="hero-stats">
+        <li><strong>7</strong><span data-i18n="hero.lessons">Lessons</span></li>
+        <li><strong>10+</strong><span data-i18n="hero.games">Mini-Games</span></li>
+        <li><strong>50+</strong><span data-i18n="hero.words">Travel Words</span></li>
+        <li><strong>EN/AR</strong><span data-i18n="hero.bilingual">Bilingual</span></li>
+      </ul>
+    </div>
+    <!-- Boarding pass -->
+    <div class="boarding-pass" aria-hidden="true">
+      <div class="bp-top">
+        <div class="bp-airline">
+          <span class="bp-logo">✈️</span>
+          <span>PEARLS AIR</span>
+        </div>
+        <div class="bp-num">UNIT 7</div>
+      </div>
+      <div class="bp-route">
+        <div class="bp-city"><b>KWI</b><small>Kuwait</small></div>
+        <div class="bp-line">
+          <div class="bp-plane">✈</div>
+        </div>
+        <div class="bp-city"><b>WLD</b><small>The World</small></div>
+      </div>
+      <div class="bp-info">
+        <div><span>Passenger</span><b>Grade 8 Explorer</b></div>
+        <div><span>Gate</span><b>L1</b></div>
+        <div><span>Seat</span><b>7A</b></div>
+        <div><span>Boarding</span><b>NOW</b></div>
+      </div>
+      <div class="bp-barcode"></div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+<!-- Outcomes -->
+<section class="card outcomes">
+  <h2 class="section-title"><span class="dot"></span><span data-i18n="outcomes.title">Learning Outcomes</span></h2>
+  <div class="outcome-grid">
+    <article><h3>🎧 <span data-i18n="outcomes.listen">Listening</span></h3>
+      <p data-i18n="outcomes.listenDesc">Analyse oral texts about travelling; locate main idea, supporting details and inferred meanings; recognise tone and feelings.</p></article>
+    <article><h3>🗣️ <span data-i18n="outcomes.speak">Speaking</span></h3>
+      <p data-i18n="outcomes.speakDesc">Deliver structured speeches about travel plans, express opinions with reasons, use rising intonation for excitement.</p></article>
+    <article><h3>📖 <span data-i18n="outcomes.read">Reading</span></h3>
+      <p data-i18n="outcomes.readDesc">Analyse expository texts about travelling and virtual reality; interpret context clues; create simple visual organisers.</p></article>
+    <article><h3>✍️ <span data-i18n="outcomes.write">Writing</span></h3>
+      <p data-i18n="outcomes.writeDesc">Produce a two-paragraph expository report about how technology is changing travel, using linking words.</p></article>
+  </div>
+</section>
+
+<!-- LESSON 1 -->
+<section id="lesson-1" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 1</span>
+    <h2><span data-i18n="l1.title">Explore the World Through Travelling</span></h2>
+    <p class="lesson-sub" data-i18n="l1.sub">Reading · Expository Webpage</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l1.beforeT">Before You Read</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l1.b1">If you could visit any place in the world, where would you go? Why?</li>
+      <li data-i18n="l1.b2">What skills or knowledge do people gain when they travel?</li>
+    </ul>
+    <div class="info-box">
+      <strong data-i18n="l1.expoT">📌 Writer's Tip</strong>
+      <p data-i18n="l1.expoP">Writers use subheadings like "Education &amp; History" to organise ideas by category.</p>
+    </div>
+  </div>
+
+  <!-- Subheading matching game -->
+  <div class="card">
+    <h3>🎯 <span data-i18n="l1.matchT">Choose the best heading for each paragraph</span></h3>
+    <p class="muted" data-i18n="l1.matchP">Click each paragraph card and pick the best subheading.</p>
+    <div class="paragraphs" id="paragraphs">
+      <!-- Filled by JS -->
+    </div>
+    <p class="paragraphs-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Reading -->
+  <article class="card reading">
+    <h3 data-i18n="l1.webT">🌍 Explore the World Through Travelling</h3>
+    <div class="reading-p" data-p="1">
+      <h4 class="muted-h">📚 Education &amp; History</h4>
+      <p data-i18n="l1.r1">Every trip is an opportunity to learn. You can visit famous museums, ancient landmarks, and historical cities. For example, in Tokyo, visitors explore the National Museum of Nature and Science, where they can learn about animals, space, and fossils. In Turkey, tourists walk through famous mosques such as the Hagia Sophia Grand Mosque. <strong>Although</strong> travelling can be expensive, the knowledge you gain will <em class="hl">broaden</em> your mind!</p>
+    </div>
+    <div class="reading-p" data-p="2">
+      <h4 class="muted-h">🎢 Fun &amp; Adventures</h4>
+      <p data-i18n="l1.r2">Travelling is not only about learning; it is also about <em class="hl">enjoyment</em>! You can go horse-riding on the beaches of Salalah, in Oman. <strong>In addition</strong>, you can go skiing in the mountains of Switzerland. Some people will try new sports or join local events to make new memories. <strong>However</strong>, to truly enjoy all these activities, it is essential to plan in advance and make the most of every moment.</p>
+    </div>
+    <div class="reading-p" data-p="3">
+      <h4 class="muted-h">🤝 People &amp; Culture</h4>
+      <p data-i18n="l1.r3">Meeting people with different <em class="hl">backgrounds</em> is one of the best parts of travelling. When you <em class="hl">socialise</em> with locals, it <em class="hl">significantly</em> helps you <em class="hl">deepen</em> your understanding of customs. Every culture has its own <em class="hl">greetings</em> and customs. For example, people in South Korea <em class="hl">bow</em> politely, while in many Muslim and Arab countries, it is always polite to give and receive things with the right hand. <strong>Despite</strong> different customs, a smile always <em class="hl">connects</em> hearts.</p>
+    </div>
+    <div class="reading-p" data-p="4">
+      <h4 class="muted-h">🍜 Food &amp; Cuisines</h4>
+      <p data-i18n="l1.r4">Food and international <em class="hl">cuisines</em> are a special part of every journey. Eating traditional dishes helps travellers truly understand the culture and feel the history of the place they are visiting. Each country has its own traditional dishes, flavours and <em class="hl">unforgettable</em> table manners <em class="hl">that visitors should respect</em>. Engaging with local cuisine and <em class="hl">etiquette</em> is the best way to <em class="hl">enrich</em> your trip and create <em class="hl">unforgettable</em> memories.</p>
+    </div>
+  </article>
+
+  <!-- Quiz -->
+  <div class="card">
+    <h3 data-i18n="l1.checkT">Check Your Understanding</h3>
+    <div class="quiz" data-quiz="l1">
+      <div class="q mcq" data-correct="b">
+        <p class="q-text" data-i18n="l1.q1">1. What does the underlined word "connects" in the 3rd paragraph mean?</p>
+        <label><input type="radio" name="l1q1" value="a"><span>a. avoids</span></label>
+        <label><input type="radio" name="l1q1" value="b"><span>b. joins</span></label>
+        <label><input type="radio" name="l1q1" value="c"><span>c. harms</span></label>
+        <label><input type="radio" name="l1q1" value="d"><span>d. stops</span></label>
+      </div>
+      <div class="q mcq" data-correct="b">
+        <p class="q-text" data-i18n="l1.q2">2. The author's main purpose in writing this passage is to:</p>
+        <label><input type="radio" name="l1q2" value="a"><span>a. warn us against travelling.</span></label>
+        <label><input type="radio" name="l1q2" value="b"><span>b. discuss the benefits of travelling.</span></label>
+        <label><input type="radio" name="l1q2" value="c"><span>c. describe how we can prepare for trips.</span></label>
+        <label><input type="radio" name="l1q2" value="d"><span>d. explain how travellers can book flights.</span></label>
+      </div>
+      <button class="btn btn-primary check-quiz" data-i18n="ui.check">Check Answers</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Travel benefits organiser -->
+  <div class="card">
+    <h3>🗂️ <span data-i18n="l1.benT">Benefits of Travelling — Make Your Notes</span></h3>
+    <div class="ben-grid">
+      <div class="ben"><h4>📚 Education &amp; History</h4><textarea placeholder="Museums, landmarks, history..."></textarea></div>
+      <div class="ben"><h4>🎢 Fun &amp; Adventures</h4><textarea placeholder="Horse-riding, skiing, new sports..."></textarea></div>
+      <div class="ben"><h4>🤝 People &amp; Culture</h4><textarea placeholder="Greetings, customs, smile..."></textarea></div>
+      <div class="ben"><h4>🍜 Food &amp; Cuisines</h4><textarea placeholder="Traditional dishes, etiquette..."></textarea></div>
+    </div>
+  </div>
+
+  <!-- Vocab analysis table -->
+  <div class="card">
+    <h3>📝 <span data-i18n="l1.vocT">Word Analysis</span></h3>
+    <table class="data-table">
+      <thead><tr><th>Word</th><th>Paragraph</th><th>Part of Speech</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>historical</td><td>1</td><td>adjective</td><td>related to the past or to history</td></tr>
+        <tr><td>enjoyment</td><td>2</td><td>noun</td><td>the feeling of enjoying something</td></tr>
+        <tr><td>deepen</td><td>3</td><td>verb</td><td>to make something stronger or more thorough</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Travel card -->
+  <div class="card highlight">
+    <h3>🎫 <span data-i18n="l1.cardT">My Mini Travel Card</span></h3>
+    <p data-i18n="l1.cardP">Imagine a dream trip. Fill in the card and your live preview updates.</p>
+    <div class="travel-card-builder">
+      <div class="tcb-form">
+        <label>Country <input type="text" id="tcCountry" placeholder="Japan"></label>
+        <label>Flag emoji <input type="text" id="tcFlag" placeholder="🇯🇵" maxlength="6"></label>
+        <label>Why this place? <input type="text" id="tcWhy" placeholder="To see Mount Fuji"></label>
+        <label>What to learn? <input type="text" id="tcLearn" placeholder="Japanese culture and food"></label>
+        <label>Activity <input type="text" id="tcAct" placeholder="Visit Shinjuku gardens"></label>
+        <label>Cuisine <input type="text" id="tcCuisine" placeholder="Sushi, ramen"></label>
+      </div>
+      <div class="tcb-preview">
+        <div class="tcb-flag" id="tcvFlag">🌍</div>
+        <h3 id="tcvCountry">Country</h3>
+        <div class="tcb-row"><b>Why:</b><span id="tcvWhy">—</span></div>
+        <div class="tcb-row"><b>Learn:</b><span id="tcvLearn">—</span></div>
+        <div class="tcb-row"><b>Activity:</b><span id="tcvAct">—</span></div>
+        <div class="tcb-row"><b>Cuisine:</b><span id="tcvCuisine">—</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSON 2 -->
+<section id="lesson-2" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 2</span>
+    <h2><span data-i18n="l2.title">Linkers of Contrast</span></h2>
+    <p class="lesson-sub" data-i18n="l2.sub">Grammar · but, however, although, despite, in spite of</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l2.ruleT">📘 The Rule</h3>
+    <p data-i18n="l2.rule">Contrast linkers are words that show an <strong>opposite</strong> idea or something <strong>different</strong> from what we expect.</p>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Linker</th><th>Example</th><th>Punctuation</th></tr></thead>
+        <tbody>
+          <tr><td><b>but</b></td><td>Travelling is fun, <b>but</b> it can be expensive.</td><td>Comma <em>before</em> "but".</td></tr>
+          <tr><td><b>however</b></td><td>The flight was delayed. <b>However</b>, we arrived safely.</td><td>Comma <em>after</em> "However".</td></tr>
+          <tr><td><b>although</b></td><td><b>Although</b> it rained heavily, we still went sightseeing.</td><td>Comma after the <em>although</em>-clause if it comes first.</td></tr>
+          <tr><td><b>although</b></td><td>We still went sightseeing, <b>although</b> it rained heavily.</td><td>Comma <em>before</em> "although" if it comes after.</td></tr>
+          <tr><td><b>despite / in spite of</b> + noun</td><td><b>Despite</b> the rain, we had a great day.</td><td>Comma after the phrase if it comes first.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Linker bridge game -->
+  <div class="card">
+    <h3>🌉 <span data-i18n="l2.bridgeT">Linker Bridge — connect the opposite ideas</span></h3>
+    <p class="muted" data-i18n="l2.bridgeP">Drag the correct linker to the gap. Watch the bridge connect!</p>
+    <div class="linker-bridge" id="linkerBridge"></div>
+    <p class="bridge-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Fill -->
+  <div class="card">
+    <h3 data-i18n="l2.fillT">✏️ Fill in with the correct contrast linker</h3>
+    <div class="fill" data-fill="l2">
+      <p>a. <input data-answer="although" placeholder="..."> it was snowing, we went hiking.</p>
+      <p>b. <input data-answer="despite|in spite of" placeholder="..."> the long flight, we were excited to arrive.</p>
+      <p>c. The hotel was full. <input data-answer="however" placeholder="..."> , we found another place nearby.</p>
+      <p>d. We wanted to travel to Japan, <input data-answer="but" placeholder="..."> we didn't find plane tickets.</p>
+      <button class="btn btn-primary check-fill" data-i18n="ui.check">Check</button>
+      <p class="fill-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Rewrite -->
+  <div class="card">
+    <h3 data-i18n="l2.rewriteT">✏️ Rewrite using the linker in brackets</h3>
+    <div class="reorder">
+      <div class="reorder-q" data-correct="Despite the delay, we arrived on time.|Despite the delayed flight, we arrived on time.">
+        <p class="muted">1. The flight was delayed. We arrived on time. <b>(despite)</b></p>
+        <input type="text" placeholder="Despite the delay,...">
+      </div>
+      <div class="reorder-q" data-correct="The museum was closed. However, we explored other places.|However, the museum was closed; we explored other places.">
+        <p class="muted">2. The museum was closed. We explored other places. <b>(however)</b></p>
+        <input type="text" placeholder="The museum was closed. However,...">
+      </div>
+      <div class="reorder-q" data-correct="The hotel was beautiful, but it was far from the city.|The hotel was beautiful but it was far from the city.">
+        <p class="muted">3. The hotel was beautiful. It was far from the city. <b>(but)</b></p>
+        <input type="text" placeholder="The hotel was beautiful, but...">
+      </div>
+      <div class="reorder-q" data-correct="Although the film was long, we really enjoyed it.|We really enjoyed the film although it was long.">
+        <p class="muted">4. The film was long. We really enjoyed it. <b>(although)</b></p>
+        <input type="text" placeholder="Although the film was long,...">
+      </div>
+      <button class="btn btn-primary check-reorder" data-i18n="ui.check">Check</button>
+      <p class="reorder-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Amazing trip writing -->
+  <div class="card highlight">
+    <h3>📝 <span data-i18n="l2.tripT">My Amazing Trip (Although Nothing Was Perfect!)</span></h3>
+    <p data-i18n="l2.tripP">Write a 4–5 sentence post about a trip that didn't go as planned. Use at least 2 linkers of contrast.</p>
+    <ul class="checklist">
+      <li data-i18n="l2.c1">What happened during your trip</li>
+      <li data-i18n="l2.c2">The problem or challenge and how you solved it</li>
+      <li data-i18n="l2.c3">How you still enjoyed the trip</li>
+      <li data-i18n="l2.c4">At least two contrast linkers (but / although / however / despite)</li>
+    </ul>
+    <textarea class="open-answer big" placeholder="Last summer, my family and I travelled to..." id="tripStory"></textarea>
+    <button class="btn btn-ghost" id="tripCheck" data-i18n="l2.tripCheck">🔍 Count my contrast linkers</button>
+    <p class="trip-result muted" id="tripResult"></p>
+  </div>
+</section>
+
+<!-- LESSON 3 -->
+<section id="lesson-3" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 3</span>
+    <h2><span data-i18n="l3.title">A Journey of Faith</span></h2>
+    <p class="lesson-sub" data-i18n="l3.sub">Listening · "My Journey to Mecca"</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l3.beforeT">Think · Pair · Share</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l3.b1">What makes Mecca a special place for Muslims?</li>
+      <li data-i18n="l3.b2">What values do people learn during Hajj or Umrah?</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🎙️ <span data-i18n="l3.podT">Podcast: My Journey to Mecca</span></h3>
+    <div class="player">
+      <button class="play-btn" id="playL3" aria-label="Play"><span class="play-icon">▶</span></button>
+      <div class="player-info">
+        <strong>Track 7.1 — A Journey of Faith</strong>
+        <span class="muted" data-i18n="l3.tts">Browser text-to-speech</span>
+      </div>
+      <div class="speed-ctrl">
+        <label>Speed: <select id="speedL3"><option value="0.85">0.85×</option><option value="1" selected>1×</option><option value="1.15">1.15×</option></select></label>
+      </div>
+    </div>
+
+    <details class="transcript">
+      <summary data-i18n="l3.showTranscript">Show transcript</summary>
+      <div id="transcriptL3" class="transcript-body">
+        <p><strong>Host:</strong> Welcome back to our podcast. Today, we have Ahmad with us. Ahmad just returned from his journey to Mecca. Ahmad, welcome!</p>
+        <p><strong>Ahmad:</strong> Thank you. It is wonderful to share this experience.</p>
+        <p><strong>Host:</strong> How was this trip different from your other trips?</p>
+        <p><strong>Ahmad:</strong> Honestly, very different. My other trips were about sightseeing and shopping. But this trip was about my heart, my faith, and my values. I was nervous at first because of the crowds and the long days. However, after a few days, I felt deep peace.</p>
+        <p><strong>Host:</strong> Can you describe an act of kindness you saw there?</p>
+        <p><strong>Ahmad:</strong> Many! Strangers shared their water and dates with me. One elderly man helped me find my group when I was lost. Despite the heat, everyone was patient and respectful.</p>
+        <p><strong>Host:</strong> What life lessons did you learn?</p>
+        <p><strong>Ahmad:</strong> I learned patience, gratitude, and equality. In Mecca, everyone wears the same simple clothes. Rich or poor, young or old, we all stand together. I also learned that true happiness does not come from things — it comes from peace inside.</p>
+        <p><strong>Host:</strong> Beautiful. Thank you, Ahmad.</p>
+        <p><strong>Ahmad:</strong> Thank you for having me. To anyone planning this journey: go with an open heart. You will return a better person.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Quiz -->
+  <div class="card">
+    <h3 data-i18n="l3.checkT">Check Your Listening</h3>
+    <div class="quiz" data-quiz="l3">
+      <div class="q mcq" data-correct="a">
+        <p class="q-text">1. The podcast is mainly about:</p>
+        <label><input type="radio" name="l3q1" value="a"><span>a. A trip that taught Ahmad important lessons</span></label>
+        <label><input type="radio" name="l3q1" value="b"><span>b. How to plan for a long international journey</span></label>
+        <label><input type="radio" name="l3q1" value="c"><span>c. Shopping and fun activities in Mecca</span></label>
+        <label><input type="radio" name="l3q1" value="d"><span>d. Learning new languages while travelling</span></label>
+      </div>
+      <div class="q mcq" data-correct="d">
+        <p class="q-text">2. How did Ahmad feel during his journey to Mecca?</p>
+        <label><input type="radio" name="l3q2" value="a"><span>a. Angry and uncomfortable because of the crowds</span></label>
+        <label><input type="radio" name="l3q2" value="b"><span>b. Excited and focused on shopping and entertainment</span></label>
+        <label><input type="radio" name="l3q2" value="c"><span>c. Upset and disappointed by the long days</span></label>
+        <label><input type="radio" name="l3q2" value="d"><span>d. Nervous at first, but later thankful and peaceful</span></label>
+      </div>
+      <button class="btn btn-primary check-quiz" data-i18n="ui.check">Check</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Challenges table -->
+  <div class="card">
+    <h3 data-i18n="l3.chalT">Challenges &amp; Solutions — Use contrast linkers</h3>
+    <div class="chal-table">
+      <div class="chal-row head"><span>Challenge</span><span>Solution (use a contrast linker)</span></div>
+      <div class="chal-row">
+        <span>😔 Missing your family</span>
+        <span>Although I missed my family, I stayed positive during the trip.</span>
+      </div>
+      <div class="chal-row">
+        <span>😴 Difficulty finding rest</span>
+        <input type="text" placeholder="In spite of the long days, I rested whenever I could...">
+      </div>
+      <div class="chal-row">
+        <span>👥 Crowds and heat</span>
+        <input type="text" placeholder="Despite the crowds and heat,...">
+      </div>
+    </div>
+  </div>
+
+  <!-- A journey that changed me -->
+  <div class="card highlight">
+    <h3>✍️ <span data-i18n="l3.changeT">A Journey That Changed Me</span></h3>
+    <p data-i18n="l3.changeP">Write one paragraph (4–5 sentences) about a trip that taught you something important.</p>
+    <div class="useful-language">
+      <strong data-i18n="l3.startersT">Sentence starters</strong>
+      <ul>
+        <li>"Last summer, I went to…"</li>
+        <li>"At first, I felt…, but…"</li>
+        <li>"During the trip, I learned the value of…"</li>
+        <li>"This experience taught me that…"</li>
+      </ul>
+    </div>
+    <textarea class="open-answer big" placeholder="Last summer, I went to..."></textarea>
+  </div>
+</section>
+
+<!-- LESSON 4 -->
+<section id="lesson-4" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 4</span>
+    <h2><span data-i18n="l4.title">Around the World in 20 Days</span></h2>
+    <p class="lesson-sub" data-i18n="l4.sub">Speaking · Travel plan presentation</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l4.tps">Think · Pair · Share</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l4.q1">Why is it important to plan your trip before travelling?</li>
+      <li data-i18n="l4.q2">Look at the world map below. Where do you dream of going?</li>
+    </ul>
+  </div>
+
+  <!-- 20-Day trip planner -->
+  <div class="card">
+    <h3>🗺️ <span data-i18n="l4.plannerT">Plan Your 20-Day Trip</span></h3>
+    <p class="muted" data-i18n="l4.plannerP">Pick destinations, activities and transport. Save your itinerary and download as a card.</p>
+    <table class="data-table editable">
+      <thead><tr><th>Days</th><th data-i18n="l4.dest">Destination</th><th data-i18n="l4.act">Activity</th><th data-i18n="l4.tran">Transport</th></tr></thead>
+      <tbody id="planTable">
+        <tr><td>1–4</td>
+          <td><input type="text" value="France (Paris)" data-key="dest1"></td>
+          <td><input type="text" value="Visit the Eiffel Tower" data-key="act1"></td>
+          <td><select data-key="tran1"><option>Plane</option><option>Train</option><option>Bus</option><option>Boat</option></select></td></tr>
+        <tr><td>5–9</td>
+          <td><input type="text" placeholder="e.g., Turkey (Istanbul)" data-key="dest2"></td>
+          <td><input type="text" placeholder="e.g., Visit Hagia Sophia" data-key="act2"></td>
+          <td><select data-key="tran2"><option>Plane</option><option>Train</option><option>Bus</option><option>Boat</option></select></td></tr>
+        <tr><td>10–14</td>
+          <td><input type="text" placeholder="e.g., Japan (Tokyo)" data-key="dest3"></td>
+          <td><input type="text" placeholder="e.g., See the cherry blossoms" data-key="act3"></td>
+          <td><select data-key="tran3"><option>Plane</option><option>Train</option><option>Bus</option><option>Boat</option></select></td></tr>
+        <tr><td>15–20</td>
+          <td><input type="text" placeholder="e.g., Oman (Salalah)" data-key="dest4"></td>
+          <td><input type="text" placeholder="e.g., Horse-riding on the beach" data-key="act4"></td>
+          <td><select data-key="tran4"><option>Plane</option><option>Train</option><option>Bus</option><option>Boat</option></select></td></tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary" id="genItinerary">🧳 Generate my itinerary</button>
+    <button class="btn btn-ghost" id="downloadItinerary">⬇️ Download as text</button>
+    <div class="itinerary" id="itinerary" hidden></div>
+  </div>
+
+  <!-- Sentence starters / presentation -->
+  <div class="card">
+    <h3>🎤 <span data-i18n="l4.presT">Present Your Travel Plan</span></h3>
+    <div class="useful-language">
+      <strong data-i18n="l4.startersT">Sentence starters</strong>
+      <ul>
+        <li>"We will start in…"</li>
+        <li>"We will visit…"</li>
+        <li>"We're excited to…"</li>
+        <li>"It will be an amazing experience!"</li>
+      </ul>
+    </div>
+    <div class="checklist-box">
+      <strong data-i18n="l4.checkT">✅ Presentation Checklist</strong>
+      <label><input type="checkbox"><span data-i18n="l4.ck1">Clear travel plan with destinations, activities, and transport</span></label>
+      <label><input type="checkbox"><span data-i18n="l4.ck2">Wide range of travel vocabulary</span></label>
+      <label><input type="checkbox"><span data-i18n="l4.ck3">Spoke clearly and confidently</span></label>
+      <label><input type="checkbox"><span data-i18n="l4.ck4">Used clear and accurate intonation</span></label>
+      <label><input type="checkbox"><span data-i18n="l4.ck5">Good eye contact</span></label>
+      <label><input type="checkbox"><span data-i18n="l4.ck6">Worked well with my group</span></label>
+    </div>
+  </div>
+
+  <!-- Pronunciation: rising intonation -->
+  <div class="card highlight">
+    <h3>🎵 <span data-i18n="l4.intT">Say it with Excitement! — Rising Intonation</span></h3>
+    <p data-i18n="l4.intP">When we are excited, our voice goes <strong>up</strong> at the end. Click each sentence to hear it.</p>
+    <div class="intonation">
+      <div class="int-line" data-speak="We will start in France!">
+        <span>We will start in <b class="up">France↗</b>!</span>
+        <span class="btn btn-mini">🔊</span>
+      </div>
+      <div class="int-line" data-speak="We're excited to see the Eiffel Tower!">
+        <span>We're excited to see the <b class="up">Eiffel Tower↗</b>!</span>
+        <span class="btn btn-mini">🔊</span>
+      </div>
+      <div class="int-line" data-speak="It will be an amazing experience!">
+        <span>It will be an <b class="up">amazing↗</b> experience!</span>
+        <span class="btn btn-mini">🔊</span>
+      </div>
+    </div>
+    <details class="model">
+      <summary data-i18n="l4.tipT">💡 Excitement tip</summary>
+      <p data-i18n="l4.tipP">Stretch the key word, raise the pitch, and smile while you speak — it changes the sound!</p>
+    </details>
+  </div>
+</section>
+
+<!-- LESSON 5 -->
+<section id="lesson-5" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 5</span>
+    <h2><span data-i18n="l5.title">Discover the World at Home: Virtual Tourism</span></h2>
+    <p class="lesson-sub" data-i18n="l5.sub">Reading · Expository Article</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l5.beforeT">Before You Read</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l5.b1">Have you ever used Virtual Reality (VR) to visit a place?</li>
+      <li data-i18n="l5.b2">What new things can you learn through virtual travel?</li>
+      <li data-i18n="l5.b3">Do you prefer travelling in real life or with VR? Why?</li>
+    </ul>
+    <div class="info-box">
+      <strong>💡 <span data-i18n="l5.factT">Did you know?</span></strong>
+      <p data-i18n="l5.factP">Researchers are developing masks that <strong>release smells</strong> to make VR experiences more realistic!</p>
+    </div>
+  </div>
+
+  <article class="card reading">
+    <h3 data-i18n="l5.artT">No Passport Needed: Experience the World with VR</h3>
+    <p data-i18n="l5.p1">Have you ever wanted to explore the world without packing your <em class="hl">suitcase</em>? Thanks to technology, it is now possible to travel from your living room using <em class="hl">Virtual Reality (VR)</em>, also known as virtual <em class="hl">tourism</em>. Many apps and websites <em class="hl">display</em> 360° tour videos that <em class="hl">enable</em> you to visit famous places and learn about the world in a new way. For example, you can walk through the Louvre Museum in Paris and admire paintings like the Mona Lisa without standing in a long <em class="hl">queue</em>. You can also take a virtual walk in Hyde Park in London, listen to the sounds of birds, enjoy the <em class="hl">delicate</em> roses, and happily watch people feed the ducks online.</p>
+
+    <p data-i18n="l5.p2">When people travel through Virtual Reality (VR), they use special <em class="hl">headsets</em> that create the feeling of being in another place. With this technology, <em class="hl">users</em> can <em class="hl">experience</em> activities such as climbing mountains or diving under the sea, all without the real dangers these activities <em class="hl">involve</em>. VR headsets are also <em class="hl">beneficial</em> for learning about <em class="hl">remote</em> environments. For example, space fans can explore NASA's "At Home" through online programmes. They demonstrate how astronauts live and work during <em>their</em> space missions. These programmes <em class="hl">enable</em> learners to understand life in space while sitting comfortably at their desks.</p>
+
+    <p data-i18n="l5.p3">Moreover, virtual travel has important <em class="hl">advantages</em>. It is cheaper, faster, and more <em class="hl">accessible</em> for everyone, especially students who cannot go <em class="hl">abroad</em>. In addition, it helps protect the environment because when people stay home, they use less fuel and create less pollution. For these reasons, virtual travel is a brilliant option for anyone who cares about the planet.</p>
+
+    <p data-i18n="l5.p4">In conclusion, Virtual Reality gives us exciting new ways to experience places, cultures, and history from home. Although it cannot <em class="hl">substitute</em> the real feeling of travelling, it can <em class="hl">truly</em> open our minds and help us learn about the world in a safe, fun, and affordable way.</p>
+  </article>
+
+  <!-- Real vs Virtual -->
+  <div class="card">
+    <h3>⚖️ <span data-i18n="l5.cmpT">Real vs Virtual — Compare</span></h3>
+    <div class="cmp-grid">
+      <div class="cmp real">
+        <h4>✈️ Real Travel</h4>
+        <ul>
+          <li>Real sights, smells, tastes</li>
+          <li>Meet locals face-to-face</li>
+          <li>Authentic cultural experience</li>
+          <li>❌ Expensive, time-consuming</li>
+          <li>❌ Uses fuel, creates pollution</li>
+        </ul>
+      </div>
+      <div class="cmp virtual">
+        <h4>🥽 Virtual Travel (VR)</h4>
+        <ul>
+          <li>Cheap, fast, accessible</li>
+          <li>No real dangers</li>
+          <li>Visit remote / dangerous places</li>
+          <li>Eco-friendly (less fuel, less pollution)</li>
+          <li>❌ Cannot fully substitute real feelings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="card">
+    <h3 data-i18n="l5.checkT">Check Your Understanding</h3>
+    <div class="quiz" data-quiz="l5">
+      <div class="q mcq" data-correct="c">
+        <p class="q-text">1. What is the main idea of the 3rd paragraph?</p>
+        <label><input type="radio" name="l5q1" value="a"><span>a. Many websites offer 360° tours.</span></label>
+        <label><input type="radio" name="l5q1" value="b"><span>b. Online programmes show space missions.</span></label>
+        <label><input type="radio" name="l5q1" value="c"><span>c. Virtual travel has many advantages.</span></label>
+        <label><input type="radio" name="l5q1" value="d"><span>d. VR is better than real travel.</span></label>
+      </div>
+      <div class="q mcq" data-correct="c">
+        <p class="q-text">2. What does the underlined word "their" in the 2nd paragraph refer to?</p>
+        <label><input type="radio" name="l5q2" value="a"><span>a. people</span></label>
+        <label><input type="radio" name="l5q2" value="b"><span>b. users</span></label>
+        <label><input type="radio" name="l5q2" value="c"><span>c. astronauts</span></label>
+        <label><input type="radio" name="l5q2" value="d"><span>d. fans</span></label>
+      </div>
+      <button class="btn btn-primary check-quiz" data-i18n="ui.check">Check</button>
+      <p class="quiz-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Synonym game -->
+  <div class="card">
+    <h3>🔤 <span data-i18n="l5.synT">Synonym Match</span></h3>
+    <p class="muted" data-i18n="l5.synP">Match each word with its synonym (similar meaning).</p>
+    <div class="match" id="synMatch">
+      <div class="match-col left">
+        <div class="match-item" draggable="true" data-id="1">beneficial</div>
+        <div class="match-item" draggable="true" data-id="2">truly</div>
+        <div class="match-item" draggable="true" data-id="3">remote</div>
+        <div class="match-item" draggable="true" data-id="4">enable</div>
+        <div class="match-item" draggable="true" data-id="5">substitute</div>
+      </div>
+      <div class="match-col right">
+        <div class="match-drop" data-accepts="3">far away</div>
+        <div class="match-drop" data-accepts="5">replace</div>
+        <div class="match-drop" data-accepts="1">useful</div>
+        <div class="match-drop" data-accepts="4">allow / make possible</div>
+        <div class="match-drop" data-accepts="2">really</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="checkSyn">Check Match</button>
+    <p class="syn-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Future of travel mind map -->
+  <div class="card highlight">
+    <h3>🚀 <span data-i18n="l5.futT">The Future of Travel — Mind Map</span></h3>
+    <p data-i18n="l5.futP">How will technology change travel? Build your idea map.</p>
+    <div class="mindmap">
+      <div class="mm-center">The Future of Travel</div>
+      <div class="mm-branches three">
+        <div class="mm-branch">
+          <h4>🚄 Transport</h4>
+          <textarea placeholder="Flying taxis, hyperloop trains, electric planes..."></textarea>
+        </div>
+        <div class="mm-branch">
+          <h4>🤖 Technology</h4>
+          <textarea placeholder="AI travel guides, smart glasses, instant translators..."></textarea>
+        </div>
+        <div class="mm-branch">
+          <h4>✨ Experience</h4>
+          <textarea placeholder="VR previews, smell-VR, immersive learning..."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="useful-language">
+      <strong>💡 Sentence Starters</strong>
+      <ul>
+        <li>"Travel will be…"</li>
+        <li>"AI is going to help…"</li>
+        <li>"Maybe we won't need… anymore."</li>
+        <li>"I think in the future, people will…"</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LESSON 6 -->
+<section id="lesson-6" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 6</span>
+    <h2><span data-i18n="l6.title">Future Tense (will, be going to, present continuous)</span></h2>
+    <p class="lesson-sub" data-i18n="l6.sub">Grammar · Three ways to talk about the future</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l6.ruleT">📘 The Rule</h3>
+    <p data-i18n="l6.rule">We can talk about future events in 3 ways. Each shows a different attitude.</p>
+    <div class="future-cards">
+      <div class="fc will">
+        <h4>1. will + base verb</h4>
+        <p class="muted"><b>Use:</b> Prediction · new decision</p>
+        <div class="examples"><em>It will rain.</em> · <em>I'll help you.</em></div>
+      </div>
+      <div class="fc bgt">
+        <h4>2. be going to + verb</h4>
+        <p class="muted"><b>Use:</b> Intention / plan made before</p>
+        <div class="examples"><em>I am going to visit my grandpa.</em></div>
+      </div>
+      <div class="fc pres">
+        <h4>3. Present Continuous</h4>
+        <p class="muted"><b>Use:</b> Fixed arrangement (ticket booked)</p>
+        <div class="examples"><em>We are flying to Dubai tonight.</em></div>
+      </div>
+    </div>
+    <div class="info-box">
+      <strong data-i18n="l6.timeT">⏰ Time expressions</strong>
+      <p>tomorrow · soon · this summer · on Monday · at 5:00 pm · tonight · next week / month…</p>
+    </div>
+  </div>
+
+  <!-- Decision game -->
+  <div class="card">
+    <h3>🎯 <span data-i18n="l6.decT">Pick the Right Future</span></h3>
+    <p class="muted" data-i18n="l6.decP">Read each situation and decide: <b>will</b>, <b>be going to</b>, or <b>present continuous</b>?</p>
+    <div id="futureGame" class="tense-game"></div>
+    <p class="tense-result" aria-live="polite"></p>
+  </div>
+
+  <!-- Conversation fill -->
+  <div class="card">
+    <h3 data-i18n="l6.convT">✏️ Complete the conversation</h3>
+    <div class="fill" data-fill="l6">
+      <p>A: Let's have a party this Saturday!</p>
+      <p>B: Great! We <input data-answer="will invite" placeholder="(invite)"> lots of friends. <span class="tag">new decision</span></p>
+      <p>A: I <input data-answer="am going to make|am going to bake" placeholder="(make)"> a chocolate cake. <span class="tag">intention</span></p>
+      <p>B: Delicious! Let's decide on the date and time.</p>
+      <p>A: The party <input data-answer="is starting|starts" placeholder="(start)"> at 5:00 p.m. <span class="tag">fixed arrangement</span></p>
+      <button class="btn btn-primary check-fill" data-i18n="ui.check">Check</button>
+      <p class="fill-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Rewrite situations -->
+  <div class="card">
+    <h3 data-i18n="l6.rwT">🔄 Rewrite each situation in the future</h3>
+    <div class="reorder">
+      <div class="reorder-q" data-correct="I will make some coffee now.|I'll make some coffee now.">
+        <p class="muted">1. You decided to make some coffee now. <b>(new decision)</b></p>
+        <input type="text" placeholder="I will make...">
+      </div>
+      <div class="reorder-q" data-correct="I am going to meet my friend at 6 pm in the park.|I'm going to meet my friend at 6 pm in the park.|Let's meet at 6 pm in the park.">
+        <p class="muted">2. You suggest a time and place to meet a friend. <b>(intention)</b></p>
+        <input type="text" placeholder="I am going to meet...">
+      </div>
+      <div class="reorder-q" data-correct="I am going to Winter Wonderland.|I'm going to Winter Wonderland.|I am visiting Winter Wonderland.">
+        <p class="muted">3. You have already booked a ticket to Winter Wonderland. <b>(fixed arrangement)</b></p>
+        <input type="text" placeholder="I am going to...">
+      </div>
+      <button class="btn btn-primary check-reorder" data-i18n="ui.check">Check</button>
+      <p class="reorder-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Role play prompt -->
+  <div class="card highlight">
+    <h3>🎭 <span data-i18n="l6.rpT">Role Play — Talk about your next holiday</span></h3>
+    <p data-i18n="l6.rpP">Build a short dialogue with a classmate. Take turns asking and answering using the future tense.</p>
+    <div class="bubbles roleplay">
+      <div class="bubble direct"><b>A:</b> What will you do during your next holiday?</div>
+      <div class="bubble reported"><b>B:</b> I'm going to visit Oman. I will climb the mountains.</div>
+    </div>
+    <textarea class="open-answer big" placeholder="A: What ...?
+B: I am going to ..."></textarea>
+  </div>
+</section>
+
+<!-- LESSON 7 -->
+<section id="lesson-7" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num">Lesson 7</span>
+    <h2><span data-i18n="l7.title">Travelling the World — For Real and Online!</span></h2>
+    <p class="lesson-sub" data-i18n="l7.sub">Writing · Two-paragraph expository report</p>
+  </header>
+
+  <div class="card">
+    <h3 data-i18n="l7.discT">💭 Discuss</h3>
+    <ul class="discuss-list">
+      <li data-i18n="l7.d1">How does technology make it easier for people to explore new places?</li>
+      <li data-i18n="l7.d2">What can people discover from travelling in person?</li>
+      <li data-i18n="l7.d3">What can people learn from travelling using VR?</li>
+      <li data-i18n="l7.d4">Do you prefer real travel or digital travel? Why?</li>
+    </ul>
+  </div>
+
+  <!-- Linker fill -->
+  <div class="card">
+    <h3>🔗 <span data-i18n="l7.lkT">Complete with: but · although · in spite of · however</span></h3>
+    <div class="fill" data-fill="l7">
+      <p>a. VR travel is safe and comfortable. <input data-answer="however" placeholder="..."> , it cannot give the same feelings as real travel.</p>
+      <p>b. <input data-answer="although" placeholder="..."> it is digital, VR travel teaches people about history, animals, and nature.</p>
+      <p>c. Travelling in person is exciting. <input data-answer="however" placeholder="..."> , it can be expensive for some families.</p>
+      <p>d. <input data-answer="in spite of|despite" placeholder="..."> the long flight, many tourists enjoy exploring new countries.</p>
+      <button class="btn btn-primary check-fill" data-i18n="ui.check">Check</button>
+      <p class="fill-result" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Model paragraph -->
+  <div class="card">
+    <h3>📖 <span data-i18n="l7.modelT">Read the model paragraph</span></h3>
+    <article class="model-para">
+      <p>Local trips offer wonderful opportunities for learning and enjoyment. They allow people to explore new places in their own country without travelling far or spending much money. <strong>For example</strong>, families can visit historical sites, enjoy nature in parks, or attend cultural events at weekends. <strong>In addition</strong>, local trips help us understand our culture better and spend quality time with people we care about. <strong>Although</strong> these trips are short, they still give us great memories and useful experiences.</p>
+    </article>
+    <div class="info-box">
+      <strong data-i18n="l7.tipT">💡 Writer's Tip</strong>
+      <p data-i18n="l7.tipP">Always think about your readers: Who will read it? What do they already know? What do I need to explain clearly?</p>
+    </div>
+  </div>
+
+  <!-- Outline -->
+  <div class="card">
+    <h3 data-i18n="l7.outlineT">📝 Report Outline</h3>
+    <p class="muted" data-i18n="l7.quote">"Whether we travel with our feet or with our screens, each journey teaches us something new."</p>
+    <div class="outline">
+      <label><strong data-i18n="l7.intro">Introduction</strong>
+        <textarea placeholder="Hook + thesis: Technology is changing how we travel..."></textarea>
+      </label>
+      <label><strong data-i18n="l7.p1">Paragraph 1 — How Technology Is Changing Travel</strong>
+        <textarea placeholder="Topic sentence + supporting details + concluding sentence..."></textarea>
+      </label>
+      <label><strong data-i18n="l7.p2">Paragraph 2 — Benefits of Travelling (Real or Digital)</strong>
+        <textarea placeholder="Topic sentence + supporting details + concluding sentence..."></textarea>
+      </label>
+      <label><strong data-i18n="l7.concl">Conclusion</strong>
+        <textarea placeholder="Final thought + call to action..."></textarea>
+      </label>
+    </div>
+
+    <div class="checklist-box">
+      <strong data-i18n="l7.editT">✅ Editing checklist</strong>
+      <label><input type="checkbox"><span data-i18n="l7.e1">Clear introduction and conclusion?</span></label>
+      <label><input type="checkbox"><span data-i18n="l7.e2">Two paragraphs with strong topic sentences?</span></label>
+      <label><input type="checkbox"><span data-i18n="l7.e3">Linking words used clearly (but, although, however, in spite of, in conclusion…)?</span></label>
+      <label><input type="checkbox"><span data-i18n="l7.e4">Spelling and punctuation checked?</span></label>
+    </div>
+
+    <div class="row-buttons">
+      <button class="btn btn-primary" id="downloadReport" data-i18n="l7.download">⬇️ Download My Report</button>
+      <button class="btn btn-ghost" id="readReport" data-i18n="l7.readAloud">🔊 Read it aloud</button>
+    </div>
+  </div>
+</section>
+
+<!-- VOCAB -->
+<section id="vocab" class="lesson">
+  <header class="lesson-head">
+    <span class="lesson-num" data-i18n="vocab.label">Vocabulary</span>
+    <h2><span data-i18n="vocab.title">Glossary — EN ↔ AR</span></h2>
+    <p class="lesson-sub" data-i18n="vocab.sub">Click any card to flip · search in English or Arabic</p>
+  </header>
+
+  <div class="card">
+    <div class="vocab-toolbar">
+      <input type="search" id="vocabSearch" placeholder="Search words..." />
+      <div class="vocab-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="noun">Nouns</button>
+        <button class="filter-btn" data-filter="verb">Verbs</button>
+        <button class="filter-btn" data-filter="adjective">Adjectives</button>
+        <button class="filter-btn" data-filter="adverb">Adverbs</button>
+        <button class="filter-btn" data-filter="linker">Linkers</button>
+      </div>
+    </div>
+    <div class="vocab-grid" id="vocabGrid"></div>
+  </div>
+
+  <!-- Memory match -->
+  <div class="card highlight">
+    <h3>🧠 <span data-i18n="vocab.matchT">Memory Match — EN ↔ AR</span></h3>
+    <button class="btn btn-ghost" id="memShuffle">🔀 New Game</button>
+    <div class="mem-grid" id="memGrid"></div>
+    <p class="muted" id="memScore">Pairs: 0 / 8</p>
+  </div>
+
+  <!-- Flashcards -->
+  <div class="card">
+    <h3>🎴 <span data-i18n="vocab.flashT">Flashcards</span></h3>
+    <div class="flash">
+      <div class="flash-card" id="flashCard">
+        <div class="flash-front"><span id="flashEn">word</span><small class="muted" id="flashType">noun</small></div>
+        <div class="flash-back"><span id="flashAr">معنى</span></div>
+      </div>
+      <div class="flash-controls">
+        <button class="btn btn-ghost" id="flashPrev">←</button>
+        <button class="btn btn-primary" id="flashFlip" data-i18n="vocab.flip">Flip</button>
+        <button class="btn btn-ghost" id="flashNext">→</button>
+      </div>
+      <p class="muted center"><span id="flashIdx">1</span> / <span id="flashTotal">40</span></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> English Pearls of Kuwait — Grade 8 · Learning Unit 7</p>
+    <p class="muted" data-i18n="footer.note">Made for interactive bilingual learning (EN/AR).</p>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
